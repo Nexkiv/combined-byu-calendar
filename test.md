@@ -1,3 +1,3 @@
-\nChange from my development environment!\n
+Change from my development environment!
 
 Change from GitHub
