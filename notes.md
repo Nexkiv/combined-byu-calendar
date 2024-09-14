@@ -29,4 +29,4 @@ You can ssh into your server using the format:
 ➜  ssh -i [key pair file] ubuntu@[ip address]
 ```
 
-The public ip address for my server is currently: 3.214.224.1
+The public ip address for my server is currently: 35.170.208.120
