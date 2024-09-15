@@ -1,4 +1,4 @@
-# Combine BYU Calendar
+# Combined BYU Calendar
 This is a repository for my BYU CS 260 startup.
 
 ## Specification Deliverable
@@ -7,6 +7,10 @@ Imagine having all your BYU class assignments from Learning Suite and Canvas in 
 
 ### Design
 Here are some rough sketches of how the inteface will look and operate.
+
+![Mock showing welcome page and calendar page with a description of the create account popup and how assignments will show up](mockUI_page1.jpg)
+
+![Mock showing the add assignment popup and the add class popup](mockUI_page2.jpg)
 
 ### Key features
 - Secure login over HTTPS
@@ -23,7 +27,7 @@ Here are some rough sketches of how the inteface will look and operate.
 I am going to use the required technologies in the following ways:
 
 - **HTML** - Uses HTML for structure of the webpages and their corresponding pop ups. There will be two pages: a sign in screen and a calendar page. There will be three pop up menus: a create account menu, an add assignment menu, and an add class menu.
-- **CSS** - Makes the website usable on different types of screens. The idea is to make it possible to use the website on a laptop and a phone and have the experience be consistent. The calendar itself will look clean and neat.
+- **CSS** - Makes the website usable on different types of screens. The idea is to make it possible to use the website on a laptop and a phone and have the experience be consistent. The calendar itself will look clean and neat. Color assignments based on their completion status.
 - **Javascript** Provides login, creat account, add assignment, and add calendar backend endpoint calls.
 - **React** - It will be used to make it so the website does not have to fully refresh to display new assignment and calendar data.
 - **Service** - Backend service with endpoints for:
