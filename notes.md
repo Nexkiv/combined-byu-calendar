@@ -3,6 +3,9 @@ This file can be used on the midterm and final
 
 <details>
 <summary><h2>Git and GitHub</h2></summary>
+
+---
+
 Today (2024-09-14) I learned about some basic Git command and about GitHub.
 
 ### Git
@@ -27,7 +30,8 @@ An online location to host repositories to be able to access them in one place a
 
 <details>
 <summary><h2>Amazon Web Services - EC2</h2></summary>
-<br>
+
+---
 
 You can ssh into your server using the format:
 ```sh
@@ -39,6 +43,8 @@ The public ip address for my server is currently: 35.170.208.120
 
 <details>
 <summary><h2>HTML Structure</h2></summary>
+
+---
 
 ### Purpose of HTML
 HTML serves two main purposes:
@@ -78,4 +84,7 @@ There is a distinction between block and inline elements:
 
 - **Block elements** create distinct blocks in the content flow (e.g., div, p).
 - **Inline elements** fit within the content flow of block elements without disrupting it (e.g., b, span).
+
+#### My CodePen file
+[html:structure](https://codepen.io/Nexkiv/pen/JjgPZBr)
 </details>
