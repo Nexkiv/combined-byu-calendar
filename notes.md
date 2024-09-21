@@ -87,8 +87,11 @@ There is a distinction between block and inline elements:
 
 #### My CodePen file
 [html:structure](https://codepen.io/Nexkiv/pen/JjgPZBr)
+
 </details>
 
+<details>
+<summary><h1>HTML</h1></summary>
 <details>
 <summary><h2>HTML Input</h2></summary>
 
@@ -133,4 +136,61 @@ The **output** element is introduced as a way to represent the result of a calcu
 
 #### My CodePen file
 [html:input](https://codepen.io/Nexkiv/pen/PoMYaMr)
-</details
+
+</details>
+
+<details>
+<summary><h2>HTML Media</h2></summary>
+
+---
+
+This section discussed HTML media elements and their usage in web development.
+
+### HTML Media Elements
+Five main media elements were covered:
+- img
+- audio
+- video
+- svg
+- canvas
+
+### External Media
+There are two ways to reference external media using URLs:
+
+- Full paths include protocol, domain name, and file path
+- Relative paths are preferred for easier code portability
+
+#### Image Element
+The `img` element is used to include images:
+- Requires a `src` attribute with the image URL
+- Should include an `alt` attribute for accessibility
+
+#### Audio Element
+The `audio` element is used for including audio files:
+- Requires a `src` attribute with the audio file URL
+- Optional attributes include `controls`, `autoplay`, and `loop`
+- Autoplay is discouraged without user opt-in
+
+#### Video Element
+The `video` element is used for including videos:
+- Requires a `src` attribute with the video file URL
+- Can include `controls` and `autoplay` attributes
+- May need `crossorigin="anonymous"` for files from different domains
+
+### Internal Media
+The section discussed two elements for creating images within HTML:
+
+#### SVG (Scalable Vector Graphics)
+- Allows inline creation of graphics in HTML
+- Can be combined with JavaScript and CSS for complex visualizations
+
+#### Canvas
+- Introduced for 2D drawing and animation
+- Requires JavaScript for actual drawing on the canvas
+
+### My CodePen file
+[html:media](https://codepen.io/Nexkiv/pen/OJKLwVL)
+
+</details>
+
+</details>
