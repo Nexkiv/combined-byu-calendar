@@ -88,3 +88,49 @@ There is a distinction between block and inline elements:
 #### My CodePen file
 [html:structure](https://codepen.io/Nexkiv/pen/JjgPZBr)
 </details>
+
+<details>
+<summary><h2>HTML Input</h2></summary>
+
+---
+
+This section discussed HTML input elements and their importance in web forms.
+
+### Purpose of Input Elements
+Input elements are useful for creating interactive web applications, allowing users to provide data that can be processed and stored.
+
+### Common Input Elements
+The document lists several input elements, including:
+
+text, password, email, number, tel, url, date, datetime-local, month, week, time, color, file, checkbox, radio, range, reset, submit, etc...
+
+### Input Attributes
+Important attributes for input elements are discussed:
+
+- **name**: Identifies the input when submitting to a server
+- **value**: Specifies the current value of the input
+- **required**: Indicates if the input must have a value
+- **placeholder**: Provides an example of what to enter
+- **autocomplete**: Suggests previous values as the user types
+- **autofocus**: Automatically focuses the input on page load
+- **spellcheck**: Enables spell checking for text
+
+### Form Element
+Input elements are typically wrapped in a **form** element, which:
+
+1. Groups related inputs
+2. Enables collective submission of input values
+
+### Label Element
+The importance of the **label** element is highlighted as:
+
+- Associating text with an input element
+- Increasing usability by expanding the clickable area
+- Improving accessibility for screen readers
+
+### Output Element
+The **output** element is introduced as a way to represent the result of a calculation or user action within a form.
+
+#### My CodePen file
+[html:input](https://codepen.io/Nexkiv/pen/PoMYaMr)
+</details
