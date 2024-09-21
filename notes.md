@@ -42,6 +42,9 @@ The public ip address for my server is currently: 35.170.208.120
 </details>
 
 <details>
+<summary><h1>HTML</h1></summary>
+
+<details>
 <summary><h2>HTML Structure</h2></summary>
 
 ---
@@ -90,8 +93,6 @@ There is a distinction between block and inline elements:
 
 </details>
 
-<details>
-<summary><h1>HTML</h1></summary>
 <details>
 <summary><h2>HTML Input</h2></summary>
 
