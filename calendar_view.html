@@ -35,7 +35,13 @@
                 <tr>
                     <td>General</td>
                     <td></td>
-                    <td>Devotional @ 11:00 am</td>
+                    <td>
+                        <div class="general">
+                            <ul>
+                                <li class="event">Devotional @ 11:00 am</li>
+                            </ul>
+                        </div>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -48,7 +54,7 @@
                         <div class="CS_252">
                             <ul>
                                 <li class="incomplete">
-                                    <p>Read 2.2 (last 8 pages)</p><p class="days_remailing">(2)</p>
+                                    <span>Read 2.2 (last 8 pages)</span><span class="days_remailing">(2)</span>
                                 </li>
                                 <li class="completed">
                                     <p>Homework 12</p><p class="days_remailing">(2)</p>
@@ -137,7 +143,7 @@
         </div>
 
         <!-- Add Event Pop-up Menu -->
-        <div id="add_calendar_popup" class="popup">
+        <div id="add_event_popup" class="popup">
             <div class="popup-content">
                 <form>
                     <div>
@@ -150,6 +156,28 @@
                     </div>
                     <div>
                         <span>Date: </span>
+                        <input type="datetime-local" />
+                    </div>
+                    <button type="submit" id="closePopup">Add to Calendar</button>
+                    <button type="reset" id="closePopup">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Add Assignment Pop-up Menu -->
+        <div id="add_assignment_popup" class="popup">
+            <div class="popup-content">
+                <form>
+                    <div>
+                        <span>Calendar ID: </span>
+                        <input type="text" placeholder="CS 252" />
+                    </div>
+                    <div>
+                        <span>Event Name: </span>
+                        <input type="text" placeholder="Homework 42" />
+                    </div>
+                    <div>
+                        <span>Due Date: </span>
                         <input type="datetime-local" />
                     </div>
                     <button type="submit" id="closePopup">Add to Calendar</button>
