@@ -46,7 +46,7 @@ For this deliverable I built out the structure of my calendar webservice using H
 - [x] **HTML pages** - Two HTML pages, the first one is a login screen and the second is the calendar itself
 - [x] **Links** - The login page has buttons to get to the calendar page. The calendar page has a sign-out button to get to the login page.
 - [x] **Text** - A sample calendar is included with the events having tags that will be utilized later.
-- [ ] **Images** - In progress.
+- [x] **Images** - Included a designed Y-Calendar image to the header.
 - [x] **Popup Menus** - Four Popup menus: Create Account, Add Calendar, Add Event, and Add Assignment. (I decided to sperate events and assignments to improve simplicity)
 - [x] **DB:Login** - The input and submit boxes for login and to create an account.
 - [x] **DB:Calendars,Events,Assignments** - The input and submit boxes for adding calendars, events and assignments. 
