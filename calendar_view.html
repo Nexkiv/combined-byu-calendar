@@ -111,6 +111,8 @@
         </table>
 
         <button id="add_calendar">Add Calendar</button>
+        <button id="add_event">Add Event</button>
+        <button id="add_assignment">Add Assignment</button>
             
         <!-- Add Calendar Pop-up Menu -->
         <div id="add_calendar_popup" class="popup">
@@ -128,6 +130,26 @@
                     <input type="text" placeholder="example.ical" />
                 </div>
                 <button id="closePopup">Add Calendar</button>
+                <button id="closePopup">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Add Event Pop-up Menu -->
+        <div id="add_calendar_popup" class="popup">
+            <div class="popup-content">
+                <div>
+                    <span>Calendar ID: </span>
+                    <input type="text" placeholder="General" />
+                </div>
+                <div>
+                    <span>Event Name: </span>
+                    <input type="text" placeholder="Devotional" />
+                </div>
+                <div>
+                    <span>Date: </span>
+                    <input type="date" />
+                </div>
+                <button id="closePopup">Add to Calendar</button>
                 <button id="closePopup">Cancel</button>
             </div>
         </div>
