@@ -14,40 +14,44 @@
 
     <main>
         <h2>Welcome to your BYU calendar</h2>
-      <form method="get" action="calendar_view.html">
-        <!-- Normal Login Menu -->
-        <div>
-          <span>Email: </span>
-          <input type="email" placeholder="your@email.com" />
-        </div>
-        <div>
-          <span>Password: </span>
-          <input type="password" placeholder="password" />
-        </div>
-        <button type="submit">Login</button>
-        <button id="create_account">Create Account</button>
-        
-        <!-- Create Account Pop-up Menu -->
-        <div id="account_creation_popup" class="popup">
-            <div class="popup-content">
-                <div></div>
-                    <span>First Name: </span>
-                    <input type="text" placeholder="your@email.com" />
-                </div>
-                <div>
-                    <span>Email: </span>
-                    <input type="email" placeholder="your@email.com" />
-                </div>
-                <div>
-                    <span>Password: </span>
-                    <input type="password" placeholder="password" />
-                </div>
-                <button type="submit" id="closePopup">
-                    Create Account
-                </button>
+        <form method="get" action="calendar_view.html">
+            
+            <!-- Normal Login Menu -->
+            <div>
+            <span>Email: </span>
+            <input type="email" placeholder="your@email.com" />
             </div>
-        </div>
-      </form>
+            <div>
+            <span>Password: </span>
+            <input type="password" placeholder="password" />
+            </div>
+            <input type="checkbox" id="persist_login" name="persist_login" value="persist_login">
+            <label for="persist_login">Keep me logged in.</label><br>
+
+            <button type="submit">Login</button>
+            <button id="create_account">Create Account</button>
+            
+            <!-- Create Account Pop-up Menu -->
+            <div id="account_creation_popup" class="popup">
+                <div class="popup-content">
+                    <div></div>
+                        <span>First Name: </span>
+                        <input type="text" placeholder="your@email.com" />
+                    </div>
+                    <div>
+                        <span>Email: </span>
+                        <input type="email" placeholder="your@email.com" />
+                    </div>
+                    <div>
+                        <span>Password: </span>
+                        <input type="password" placeholder="password" />
+                    </div>
+                    <button type="submit" id="closePopup">
+                        Create Account
+                    </button>
+                </div>
+            </div>
+        </form>
     </main>
 
     <footer>
