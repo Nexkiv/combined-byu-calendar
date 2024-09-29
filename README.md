@@ -40,6 +40,19 @@ I am going to use the required technologies in the following ways:
 - **WebSocket** - Provide calendar updates, adding a calendar or assignment will effect all the instances logged in with the same credentials, checking off an assignment will effect all instances of the calendars with the same credentials, notify users of an instructor change and gives them the option to accept it.
 
 ## HTML deliverable
+
+For this deliverable I built out the structure of my calendar webservice using HTML.
+
+- [x] **HTML pages** - Two HTML pages, the first one is a login screen and the second is the calendar itself
+- [x] **Links** - The login page has buttons to get to the calendar page. The calendar page has a sign-out button to get to the login page.
+- [x] **Text** - A sample calendar is included with the events having tags that will be utilized later.
+- [ ] **Images** - In progress.
+- [x] **Popup Menus** - Four Popup menus: Create Account, Add Calendar, Add Event, and Add Assignment. (I decided to sperate events and assignments to improve simplicity)
+- [x] **DB:Login** - The input and submit boxes for login and to create an account.
+- [x] **DB:Calendars,Events,Assignments** - The input and submit boxes for adding calendars, events and assignments. 
+- [x] **3rd Party Service Calls** - When a new calendar is imported a service call is made to parse the data and store it in the database.
+- [x] **WebSocket** Calendar data is pulled from the database when a user signs in and when it is updated on any device accross devices.
+
 ## CSS deliverable
 ## React deliverable
 ## Service deliverable
