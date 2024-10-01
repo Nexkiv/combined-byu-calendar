@@ -51,7 +51,7 @@ For this deliverable I built out the structure of my calendar webservice using H
 - [x] **DB:Login** - The input and submit boxes for login and to create an account.
 - [x] **DB:Calendars,Events,Assignments** - The input and submit boxes for adding calendars, events and assignments. 
 - [x] **3rd Party Service Calls** - When a new calendar is imported a service call is made to parse the data and store it in the database.
-- [x] **WebSocket** Calendar data is pulled from the database when a user signs in and when it is updated on any device accross devices.
+- [x] **WebSocket** - Calendar data is pulled from the database when a user signs in and when it is updated on any device accross devices.
 
 ## CSS deliverable
 ## React deliverable
