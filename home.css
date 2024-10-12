@@ -8,6 +8,12 @@ body {
 
 header {
     flex: 0 80px;
+    background-color: #103e6d;
+    color: white;
+}
+
+header img {
+    filter: grayscale(100%) brightness(1000%);
 }
 
 main {
@@ -23,12 +29,18 @@ main {
 }
 
 #login_box {
-    background-color: #4159c4;
+    background-color: #103e6d;
     color: white;
+    flex: 0.90;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 footer {
     flex: 0 30px;
+    background-color: #103e6d;
+    color: white;
 }
 
 @media (max-height: 600px) {
