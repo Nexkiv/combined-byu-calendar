@@ -44,6 +44,8 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 }
 
 ul {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     padding: 0;
     float: left;
@@ -67,8 +69,19 @@ ul .last_day {
     font-weight: bold;
 }
 
+li {
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+span {
+    flex: 4;
+}
+
 .days_remaining {
-    float: right;
+    flex: 1;
+    text-align: right;
 }
 
 td {
