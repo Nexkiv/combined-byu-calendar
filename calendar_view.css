@@ -31,6 +31,12 @@ thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-chil
 thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
     border-radius: 0 0 0 25px;
 }
+thead:first-child tr:first-child th:last-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 0 25px 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:last-child {
+    border-radius: 0 0 25px 0;
+}
 
 .classes {
     min-width: 150px;
@@ -38,6 +44,7 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 
 .weekday {
     min-width: 200px;
+    text-align: center;
 }
 
 .calendar {
