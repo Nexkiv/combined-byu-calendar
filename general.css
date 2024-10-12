@@ -43,3 +43,15 @@ footer a:hover {
     color: white;
 }
 
+@media (max-height: 800px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
+    }
+}

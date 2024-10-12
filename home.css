@@ -16,8 +16,8 @@ main {
     background-color: #103e6d;
     color: white;
     text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: min(100px, 2.5%);
+    padding-right: min(100px, 2.5%);
 }
 
 #login_box h1 {
@@ -46,17 +46,4 @@ main {
 
 .modal input[type=checkbox]:checked{
     background-color: grey;
-}
-
-@media (max-height: 600px) {
-    header {
-      display: none;
-    }
-    footer {
-      display: none;
-    }
-    main {
-      flex: 1 100vh;
-      min-height: 375px;
-    }
 }
