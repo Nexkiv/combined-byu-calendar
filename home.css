@@ -1,36 +1,8 @@
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-width: 375px;
-    height: 100vh;
-}  
-
-header {
-    flex: 0 80px;
-    background-color: #103e6d;
-    color: white;
-}
-
-header h1 {
-    margin: 0;
-    padding: 20px;
-}
-
-header img {
-    filter: grayscale(100%) brightness(1000%);
-}
-
 main {
-    margin: 0;
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-image: url('BYU\ Watercolor.png');
-    background-size: cover;
-    background-position: center;
 }
 
 #login_box {
@@ -73,21 +45,6 @@ main {
 
 .modal input[type=checkbox]:checked{
     background-color: grey;
-}
-
-footer {
-    flex: 0 30px;
-    background-color: #103e6d;
-    color: white;
-}
-
-footer a {
-    float: right;
-    color: white;
-}
-
-footer a:hover {
-    color: white;
 }
 
 @media (max-height: 600px) {
