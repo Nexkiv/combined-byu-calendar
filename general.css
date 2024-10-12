@@ -12,6 +12,15 @@ header {
     color: white;
 }
 
+header h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+header img {
+    filter: grayscale(100%) brightness(1000%);
+}
+
 main {
     margin: 0;
     flex: 1;
