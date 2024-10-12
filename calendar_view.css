@@ -1,15 +1,66 @@
-#calendar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+table { 
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 25px;
+    border-spacing: 0px;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: separate;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th, td {
+    padding: 5px 4px 6px 4px; 
+    text-align: left;
+    vertical-align: top;
+    border-left: 1px solid #ddd;    
+}
+td {
+    border-top: 1px solid #ddd;    
+}
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 25px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 25px;
 }
 
-.buttons {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+.classes {
+    min-width: 150px;
+}
+
+.weekday {
+    min-width: 200px;
+}
+
+.calendar {
+    padding: 50px;
+    padding-top: 0;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+thead, tbody  {
+    background-color: aliceblue;
+}
+
+@media (max-width: 1650px) {
+    .calendar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h1 {
+        padding-left: 10px;
+    }
 }

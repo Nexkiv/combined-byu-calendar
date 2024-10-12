@@ -24,7 +24,6 @@ header img {
 main {
     margin: 0;
     flex: 1;
-    background-image: url('BYU\ Watercolor.png');
     background-size: cover;
     background-position: center;
 }
@@ -42,4 +41,17 @@ footer a {
 
 footer a:hover {
     color: white;
+}
+
+@media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
+    }
 }
