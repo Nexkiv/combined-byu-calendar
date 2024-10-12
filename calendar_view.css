@@ -118,6 +118,11 @@ h1 {
     padding-bottom: 25px;
 }
 
+.second-sign-out-button {
+    text-align: center;
+    display: none;
+}
+
 @media (max-width: 1650px) {
     .calendar {
         padding-left: 10px;
@@ -127,5 +132,21 @@ h1 {
 
     h1 {
         padding-left: 10px;
+    }
+}
+
+@media (max-height: 800px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
+    }
+    .second-sign-out-button {
+        display: block;
     }
 }
