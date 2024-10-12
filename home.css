@@ -63,6 +63,14 @@ main {
     align-items: center;
 }
 
+.modal {
+    color: black;
+}
+
+.modal input[type=checkbox]:checked{
+    background-color: grey;
+}
+
 footer {
     flex: 0 30px;
     background-color: #103e6d;
