@@ -17,60 +17,62 @@
     </header>
 
     <main>
-        <h2>Welcome to your BYU calendar</h2>
-        <form method="get" action="calendar_view.html">
-            
-            <!-- Normal Login Menu -->
-            <div>
-                <span>Email: </span>
-                <input type="email" placeholder="your@email.com" />
-            </div>
-            <div>
-                <span>Password: </span>
-                <input type="password" placeholder="password" />
-            </div>
-            <input type="checkbox" id="persist_login" name="persist_login" value="persist_login">
-            <label for="persist_login">Keep me logged in</label><br>
-
-            <button type="submit">Login</button>
-            <!-- <button id="create_account">Create Account</button> -->
-            <button type="button" data-toggle="modal" data-target="#account_creation_popup">Create Account</button>
-
-            <!-- Create Account Pop-up -->
-            <div class="modal fade" id="account_creation_popup" role="dialog">
-                <div class="modal-dialog">
+        <div id="login_box">
+            <h2>Welcome to your BYU calendar</h2>
+            <form method="get" action="calendar_view.html">
                 
-                    <!-- Pop-up content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Create an Account</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <span>First Name: </span> 
-                                <input type="text" placeholder="first name" />
-                            </div>
-                            <div>
-                                <span>Email: </span>
-                                <input type="email" placeholder="your@email.com" />
-                            </div>
-                            <div>
-                                <span>Password: </span>
-                                <input type="password" placeholder="password" />
-                            </div>
-                            <input type="checkbox" id="persist_login" name="persist_login" value="persist_login">
-                            <label for="persist_login">Keep me logged in</label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-default" id="closePopup">Create Account</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                
+                <!-- Normal Login Menu -->
+                <div>
+                    <span>Email: </span>
+                    <input type="email" placeholder="your@email.com" />
                 </div>
-            </div>
-        </form>
+                <div>
+                    <span>Password: </span>
+                    <input type="password" placeholder="password" />
+                </div>
+                <input type="checkbox" id="persist_login" name="persist_login" value="persist_login">
+                <label for="persist_login">Keep me logged in</label><br>
+
+                <button type="submit">Login</button>
+                <!-- <button id="create_account">Create Account</button> -->
+                <button type="button" data-toggle="modal" data-target="#account_creation_popup">Create Account</button>
+
+                <!-- Create Account Pop-up -->
+                <div class="modal fade" id="account_creation_popup" role="dialog">
+                    <div class="modal-dialog">
+                    
+                        <!-- Pop-up content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Create an Account</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <span>First Name: </span> 
+                                    <input type="text" placeholder="first name" />
+                                </div>
+                                <div>
+                                    <span>Email: </span>
+                                    <input type="email" placeholder="your@email.com" />
+                                </div>
+                                <div>
+                                    <span>Password: </span>
+                                    <input type="password" placeholder="password" />
+                                </div>
+                                <input type="checkbox" id="persist_login" name="persist_login" value="persist_login">
+                                <label for="persist_login">Keep me logged in</label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" id="closePopup">Create Account</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer>

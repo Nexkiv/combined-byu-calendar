@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    height: 100vh;
+}  
+
+header {
+    flex: 0 80px;
+}
+
+main {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url('BYU\ Watercolor.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#login_box {
+    background-color: #4159c4;
+    color: white;
+}
+
+footer {
+    flex: 0 30px;
+}
+
+@media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
+    }
+}
