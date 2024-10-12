@@ -18,9 +18,11 @@
 <body>
     <header>
         <h1 class="title">BYU Combined Calender <img src="images/favicon.png" alt="Y calendar" height="50px"></h1>
-        <form method="get" action="index.html">
-            <button type="submit">Sign-out</button>
-        </form>
+        <div class="sign-out-button">
+            <form method="get" action="index.html">
+                <button class="btn btn-secondary" type="submit">Sign-out</button>
+            </form>
+        </div>
     </header>
 
     <main>
@@ -135,9 +137,9 @@
         </div>
 
         <div class="buttons">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#add_calendar_popup">Add Calendar</button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_calendar_popup">Add Calendar</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
         </div>
 
         <!-- Add Calendar Pop-up Menu -->

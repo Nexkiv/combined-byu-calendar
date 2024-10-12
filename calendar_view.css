@@ -1,9 +1,28 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header h1 {
+    flex: 1;
+}
+
+.sign-out-button {
+    text-align: right;
+    flex: 1;
+    padding: 30px;
+}
+
 table { 
     border: 1px solid #ddd;
     border-collapse: separate;
     border-left: 0;
     border-radius: 25px;
     border-spacing: 0px;
+}
+
+thead, tbody  {
+    background-color: aliceblue;
 }
 
 th, td {
@@ -94,17 +113,32 @@ h1 {
     padding-left: 50px;
 }
 
-thead, tbody  {
-    background-color: aliceblue;
+.buttons {
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 @media (max-width: 1650px) {
     .calendar {
         padding-left: 10px;
         padding-right: 10px;
+        padding-bottom: 25px;
     }
 
     h1 {
         padding-left: 10px;
+    }
+}
+
+@media (max-height: 800px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
     }
 }
