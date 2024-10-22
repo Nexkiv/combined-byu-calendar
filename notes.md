@@ -846,24 +846,691 @@ The section discussed two elements for creating images within HTML:
 
 </details>
 
+<details>
+<summary>17. What will the following code output when executed using a for loop and console.log?</summary>
 
-What will the following code output when executed using a for loop and console.log?
-How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
-What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
-How do you declare the document type to be html?
-What is valid javascript syntax for if, else, for, while, switch statements?
-What is the correct syntax for creating a javascript object?
-Is it possible to add new properties to javascript objects?
-If you want to include JavaScript on an HTML page, which tag do you use?
-Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
-Which of the following correctly describes JSON?
-What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
-Which of the following console command creates a remote shell session?
-Which of the following is true when the -la parameter is specified for the ls console command?
-Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
-Is a web certificate is necessary to use HTTPS.
-Can a DNS A record can point to an IP address or another A record.
-Port 443, 80, 22 is reserved for which protocol?
-What will the following code using Promises output when executed?
+> specific to the question
+
+</details>
+
+<details>
+<summary>18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?</summary>
+
+> document.getElementById("byu").style.color = "green";
+>
+> > https://www.w3schools.com/jsref/prop_style_color.asp
+
+</details>
+
+<details>
+<summary>19. What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?</summary>
+
+> ```html
+> <p>paragraph</p>
+> <ul>unordered list</ul>
+> <ol>ordered list</ol>
+> <h2>second level heading</h2>
+> <h1>first level heading</h1>
+> <h3>third level heading</h3>
+> ```
+
+</details>
+
+<details>
+<summary>20. How do you declare the document type to be html?</summary>
+
+> The `<!DOCTYPE html>` declaration defines that this document is an HTML5 document
+> The `<html>` element is the root element of an HTML page
+> The `<head>` element contains meta information about the HTML page
+> The `<title>` element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+> The `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+> The `<h1>` element defines a large heading
+> The `<p>` element defines a paragraph
+>
+> > https://www.w3schools.com/html/html_intro.asp
+
+</details>
+
+<details>
+<summary>21. What is valid javascript syntax for if, else, for, while, switch statements?</summary>
+
+> Use `if` to specify a block of code to be executed, if a specified condition is true. \
+> Use `else` to specify a block of code to be executed, if the same condition is false. \
+> Use `else if` to specify a new condition to test, if the first condition is false.
+>  ```javascript
+> if (condition) {
+>   //  block of code to be executed if the condition is true
+> } else if (condition2) {
+>   //  block of code to be executed if the condition1 is false and condition2 is true
+> } else {
+>   //  block of code to be executed if the condition is false
+> }
+> ```
+>
+> The `for` statement creates a loop with 3 optional expressions:
+> ```javascript
+> for (expression 1; expression 2; expression 3) {
+>   // code block to be executed
+> }
+> ```
+>
+> Expression 1 is executed (one time) before the execution of the code block.
+> Expression 2 defines the condition for executing the code block.
+> Expression 3 is executed (every time) after the code block has been executed.
+>
+> The JavaScript `for in` statement loops through the properties of an Object:
+> ```javascript
+> for (key in object) {
+>   // code block to be executed
+> }
+> ```
+>
+> The JavaScript `for of` statement loops through the values of an iterable object.
+> It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+> ```javascript
+> for (variable of iterable) {
+>   // code block to be executed
+> }
+> ```
+> variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
+> iterable - An object that has iterable properties.
+>
+> The `while` loop loops through a block of code as long as a specified condition is true.
+> ```javascript
+> while (condition) {
+>   // code block to be executed
+> }
+> ```
+>
+> Use the `switch` statement to select one of many code blocks to be executed.
+> ```javascript
+> switch(expression) {
+>   case x:
+>     // code block
+>     break;
+>   case y:
+>     // code block
+>     break;
+>   default:
+>     // code block
+> }
+> ```
+> This is how it works:
+> * The switch expression is evaluated once.
+> * The value of the expression is compared with the values of each case.
+> * If there is a match, the associated block of code is executed.
+> * If there is no match, the default code block is executed.
+>
+> > https://www.w3schools.com/js/js_if_else.asp
+> > https://www.w3schools.com/js/js_loop_for.asp
+> > https://www.w3schools.com/js/js_loop_forin.asp
+> > https://www.w3schools.com/js/js_loop_forof.asp
+> > https://www.w3schools.com/js/js_switch.asp
+
+</details>
+
+<details>
+<summary>22. What is the correct syntax for creating a javascript object?</summary>
+
+> JavaScript Variables \
+> JavaScript variables are containers for data values.
+> This code assigns a simple value (Fiat) to a variable named car: \
+> ```javascript
+> let car = "Fiat";
+> ```
+> JavaScript Objects \
+> Objects are variables too. But objects can contain many values. \
+> This code assigns many values (Fiat, 500, white) to an object named car: \
+> ```javascript
+> const car = {type:"Fiat", model:"500", color:"white"};
+> ```
+>
+> > https://www.w3schools.com/js/js_const.asp
+
+</details>
+
+<details>
+<summary>23. Is it possible to add new properties to javascript objects?</summary>
+
+> yes
+>
+> You can add new properties to an existing object by simply giving it a value.
+> ```javascript
+> const person = {
+>   firstName: "John",
+>   lastName: "Doe",
+>   age: 50,
+>   eyeColor: "blue"
+> };
+>
+> person.nationality = "English";
+>
+> delete person.age;
+> ```
+>
+> > https://www.w3schools.com/js/js_object_property.asp
+
+</details>
+
+<details>
+<summary>24. If you want to include JavaScript on an HTML page, which tag do you use?</summary>
+
+> The `<script>` tag is used to embed a client-side script (JavaScript).
+> The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
+> Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+> 
+> ```html
+> <script src="myscripts.js"></script>
+> ```
+>
+> > https://www.w3schools.com/TAGS/tag_script.asp
+
+</details>
+
+<details>
+<summary>25. Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?</summary>
+
+<table class="ws-table-all notranslate">
+<tbody><tr>
+    <th style="width:35%">Property / Method</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td><a href="prop_html_accesskey.asp">accessKey</a></td>
+    <td>Sets or returns the accesskey attribute of an element</td>
+</tr>
+<tr>
+    <td><a href="met_element_addeventlistener.asp">addEventListener()</a></td>
+    <td>Attaches an event handler to an element</td>
+</tr>
+<tr>
+  <td><a href="met_node_appendchild.asp">appendChild()</a></td>
+  <td>Adds (appends) a new child node to an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_attributes.asp">attributes</a></td>
+  <td>Returns a <a href="dom_obj_attributes.asp">NamedNodeMap</a> of an element's attributes</td>
+</tr>
+<tr>
+  <td><a href="met_html_blur.asp">blur()</a></td>
+  <td>Removes focus from an element</td>
+</tr>
+<tr>
+  <td><a href="prop_element_childelementcount.asp">childElementCount</a></td>
+  <td>Returns an elements's number of child elements</td>
+</tr>
+<tr>
+  <td><a href="prop_node_childnodes.asp">childNodes</a></td>
+  <td>Returns a <a href="dom_obj_html_nodelist.asp">NodeList</a> of an element's child nodes</td>
+</tr>
+<tr>
+  <td><a href="prop_element_children.asp">children</a></td>
+  <td>Returns an <a href="dom_obj_htmlcollection.asp">HTMLCollection</a> of an element's child elements</td>
+</tr>
+<tr>
+    <td><a href="prop_element_classlist.asp">classList</a></td>
+    <td>Returns the class name(s) of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_html_classname.asp">className</a></td>
+    <td>Sets or returns the value of the class attribute of an element</td>
+</tr>
+<tr>
+  <td><a href="met_html_click.asp">click()</a></td>
+  <td>Simulates a mouse-click on an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_clientheight.asp">clientHeight</a></td>
+    <td>Returns the height of an element, including padding</td>
+</tr>
+<tr>
+    <td><a href="prop_element_clientleft.asp">clientLeft</a></td>
+    <td>Returns the width of the left border of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_clienttop.asp">clientTop</a></td>
+    <td>Returns the width of the top border of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_clientwidth.asp">clientWidth</a></td>
+    <td>Returns the width of an element, including padding</td>
+</tr>
+<tr>
+  <td><a href="met_node_clonenode.asp">cloneNode()</a></td>
+  <td>Clones an element</td>
+</tr>
+<tr>
+  <td><a href="met_element_closest.asp">closest()</a></td>
+  <td>Searches the DOM tree for the closest element that matches a CSS selector</td>
+</tr>
+<tr>
+  <td><a href="met_node_comparedocumentposition.asp">compareDocumentPosition()</a></td>
+  <td>Compares the document position of two elements</td>
+</tr>
+<tr>
+  <td><a href="met_node_contains.asp">contains()</a></td>
+  <td>Returns true if a node is a descendant of a node</td>
+</tr>
+<tr>
+  <td><a href="prop_html_contenteditable.asp">contentEditable</a></td>
+  <td>Sets or returns whether the content of an element is editable or not</td>
+</tr>
+<tr>
+    <td><a href="prop_html_dir.asp">dir</a></td>
+    <td>Sets or returns the value of the dir attribute of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_firstchild.asp">firstChild</a></td>
+  <td>Returns the first child node of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_element_firstelementchild.asp">firstElementChild</a></td>
+  <td>Returns the first child element of an element</td>
+</tr>
+<tr>
+  <td><a href="met_html_focus.asp">focus()</a></td>
+  <td>Gives focus to an element</td>
+</tr>
+<tr>
+  <td><a href="met_element_getattribute.asp">getAttribute()</a></td>
+  <td>Returns the value of an element's attribute</td>
+</tr>
+<tr>
+  <td><a href="met_element_getattributenode.asp">getAttributeNode()</a></td>
+  <td>Returns an attribute node</td>
+</tr>
+<tr>
+  <td><a href="met_element_getboundingclientrect.asp">getBoundingClientRect()</a></td>
+  <td>Returns the size of an element and its position relative to the viewport</td>
+</tr>
+<tr>
+  <td><a href="met_element_getelementsbyclassname.asp">getElementsByClassName()</a></td>
+  <td>Returns a collection of child elements with a given class name</td>
+</tr>
+<tr>
+  <td><a href="met_element_getelementsbytagname.asp">getElementsByTagName()</a></td>
+  <td>Returns a collection of child elements with a given tag name</td>
+</tr>
+<tr>
+  <td><a href="met_element_hasattribute.asp">hasAttribute()</a></td>
+  <td>Returns true if an element has a given attribute</td>
+</tr>
+<tr>
+  <td><a href="met_node_hasattributes.asp">hasAttributes()</a></td>
+  <td>Returns true if an element has any attributes</td>
+</tr>
+<tr>
+  <td><a href="met_node_haschildnodes.asp">hasChildNodes()</a></td>
+  <td>Returns true if an element has any child nodes</td>
+</tr>
+<tr>
+    <td><a href="prop_html_id.asp">id</a></td>
+    <td>Sets or returns the value of the id attribute of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_html_innerhtml.asp">innerHTML</a></td>
+    <td>Sets or returns the content of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_node_innertext.asp">innerText</a></td>
+    <td>Sets or returns the text content of a node and its descendants</td>
+</tr>
+<tr>
+  <td><a href="met_node_insertadjacentelement.asp">insertAdjacentElement()</a></td>
+  <td>Inserts a new HTML element at a position relative to an element</td>
+</tr>
+<tr>
+  <td><a href="met_node_insertadjacenthtml.asp">insertAdjacentHTML()</a></td>
+  <td>Inserts an HTML formatted text at a position relative to an element</td>
+</tr>
+<tr>
+  <td><a href="met_node_insertadjacenttext.asp">insertAdjacentText()</a></td>
+  <td>Inserts text into a position relative to an element</td>
+</tr>
+<tr>
+  <td><a href="met_node_insertbefore.asp">insertBefore()</a></td>
+  <td>Inserts a new child node before an existing child node</td>
+</tr>
+<tr>
+  <td><a href="prop_html_iscontenteditable.asp">isContentEditable</a></td>
+  <td>Returns true if an element's content is editable</td>
+</tr>
+<tr>
+  <td><a href="met_node_isdefaultnamespace.asp">isDefaultNamespace()</a></td>
+  <td>Returns true if a given namespaceURI is the default</td>
+</tr>
+<tr>
+  <td><a href="met_node_isequalnode.asp">isEqualNode()</a></td>
+  <td>Checks if two elements are equal</td>
+</tr>
+<tr>
+  <td><a href="met_node_issamenode.asp">isSameNode()</a></td>
+  <td>Checks if two elements are the same node</td>
+</tr>
+<tr>
+  <td><a href="met_node_issupported.asp">isSupported()</a></td>
+  <td><span class="deprecated"><a href="met_node_issupported.asp">Deprecated</a></span></td>
+</tr>
+<tr>
+    <td><a href="prop_html_lang.asp">lang</a></td>
+    <td>Sets or returns the value of the lang attribute of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_lastchild.asp">lastChild</a></td>
+  <td>Returns the last child node of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_element_lastelementchild.asp">lastElementChild</a></td>
+  <td>Returns the last child element of an element</td>
+</tr>
+<tr>
+  <td><a href="met_element_matches.asp">matches()</a></td>
+  <td>Returns true if an element is matched by a given CSS selector</td>
+</tr>
+<tr>
+  <td><a href="prop_node_namespaceuri.asp">namespaceURI</a></td>
+  <td>Returns the namespace URI of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_nextsibling.asp">nextSibling</a></td>
+  <td>Returns the next node at the same node tree level</td>
+</tr>
+<tr>
+  <td><a href="prop_element_nextelementsibling.asp">nextElementSibling</a></td>
+  <td>Returns the next element at the same node tree level</td>
+</tr>
+<tr>
+  <td><a href="prop_node_nodename.asp">nodeName</a></td>
+  <td>Returns the name of a node</td>
+</tr>
+<tr>
+  <td><a href="prop_node_nodetype.asp">nodeType</a></td>
+  <td>Returns the node type of a node</td>
+</tr>
+<tr>
+  <td><a href="prop_node_nodevalue.asp">nodeValue</a></td>
+  <td>Sets or returns the value of a node</td>
+</tr>
+<tr>
+  <td><a href="met_node_normalize.asp">normalize()</a></td>
+  <td>Joins adjacent text nodes and removes empty text nodes in an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_offsetheight.asp">offsetHeight</a></td>
+    <td>Returns the height of an element, including padding, border and scrollbar</td>
+</tr>
+<tr>
+    <td><a href="prop_element_offsetwidth.asp">offsetWidth</a></td>
+    <td>Returns the width of an element, including padding, border and scrollbar</td>
+</tr>
+<tr>
+    <td><a href="prop_element_offsetleft.asp">offsetLeft</a></td>
+    <td>Returns the horizontal offset position of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_offsetparent.asp">offsetParent</a></td>
+    <td>Returns the offset container of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_offsettop.asp">offsetTop</a></td>
+    <td>Returns the vertical offset position of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_html_outerhtml.asp">outerHTML</a></td>
+    <td>Sets or returns the content of an element (including the start tag and the end tag)</td>
+</tr>
+<tr>
+    <td><a href="prop_node_outertext.asp">outerText</a></td>
+    <td>Sets or returns the outer text content of a node and its descendants</td>
+</tr>
+<tr>
+  <td><a href="prop_node_ownerdocument.asp">ownerDocument</a></td>
+  <td>Returns the root element (document object) for an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_parentnode.asp">parentNode</a></td>
+  <td>Returns the parent node of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_parentelement.asp">parentElement</a></td>
+  <td>Returns the parent element node of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_previoussibling.asp">previousSibling</a></td>
+  <td>Returns the previous node at the same node tree level</td>
+</tr>
+<tr>
+  <td><a href="prop_element_previouselementsibling.asp">previousElementSibling</a></td>
+  <td>Returns the previous element at the same node tree level</td>
+</tr>
+<tr>
+    <td><a href="met_element_queryselector.asp">querySelector()</a></td>
+    <td>Returns the first child element that matches a CSS selector(s)</td>
+</tr>
+<tr>
+    <td><a href="met_element_queryselectorall.asp">querySelectorAll()</a></td>
+    <td>Returns all child elements that matches a CSS selector(s)</td>
+</tr>
+<tr>
+  <td><a href="met_element_remove.asp">remove()</a></td>
+  <td>Removes an element from the DOM</td>
+</tr>
+<tr>
+  <td><a href="met_element_removeattribute.asp">removeAttribute()</a></td>
+  <td>Removes an attribute from an element</td>
+</tr>
+<tr>
+  <td><a href="met_element_removeattributenode.asp">removeAttributeNode()</a></td>
+  <td>Removes an attribute node, and returns the removed node</td>
+</tr>
+<tr>
+  <td><a href="met_node_removechild.asp">removeChild()</a></td>
+  <td>Removes a child node from an element</td>
+</tr>
+<tr>
+  <td><a href="met_element_removeeventlistener.asp">removeEventListener()</a></td>
+  <td>Removes an event handler that has been attached with the addEventListener() method</td>
+</tr>
+<tr>
+  <td><a href="met_node_replacechild.asp">replaceChild()</a></td>
+  <td>Replaces a child node in an element</td>
+</tr>
+<tr>
+    <td><a href="prop_element_scrollheight.asp">scrollHeight</a></td>
+    <td>Returns the entire height of an element, including padding</td>
+</tr>
+<tr>
+    <td><a href="met_element_scrollintoview.asp">scrollIntoView()</a></td>
+    <td>Scrolls the an element into the visible area of the browser window</td>
+</tr>
+<tr>
+    <td><a href="prop_element_scrollleft.asp">scrollLeft</a></td>
+    <td>Sets or returns the number of pixels an element's content is scrolled horizontally</td>
+</tr>
+<tr>
+    <td><a href="prop_element_scrolltop.asp">scrollTop</a></td>
+    <td>Sets or returns the number of pixels an element's content is scrolled vertically</td>
+</tr>
+<tr>
+    <td><a href="prop_element_scrollwidth.asp">scrollWidth</a></td>
+    <td>Returns the entire width of an element, including padding</td>
+</tr>
+<tr>
+    <td><a href="met_element_setattribute.asp">setAttribute()</a></td>
+  <td>Sets or changes an attribute's value</td>
+</tr>
+<tr>
+  <td><a href="met_element_setattributenode.asp">setAttributeNode()</a></td>
+  <td>Sets or changes an attribute node</td>
+</tr>
+<tr>
+    <td><a href="prop_html_style.asp">style</a></td>
+    <td>Sets or returns the value of the style attribute of an element</td>
+</tr>
+<tr>
+    <td><a href="prop_html_tabindex.asp">tabIndex</a></td>
+    <td>Sets or returns the value of the tabindex attribute of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_element_tagname.asp">tagName</a></td>
+  <td>Returns the tag name of an element</td>
+</tr>
+<tr>
+  <td><a href="prop_node_textcontent.asp">textContent</a></td>
+  <td>Sets or returns the textual content of a node and its descendants</td>
+</tr>
+<tr>
+    <td><a href="prop_html_title.asp">title</a></td>
+    <td>Sets or returns the value of the title attribute of an element</td>
+</tr>
+<tr>
+    <td>toString()</td>
+    <td>Converts an element to a string</td>
+</tr>
+</tbody></table>
+
+</details>
+
+<details>
+<summary>26. Which of the following correctly describes JSON?</summary>
+
+> JSON is a format for storing and transporting data. \
+> JSON is often used when data is sent from a server to a web page. \
+> JSON stands for JavaScript Object Notation \
+> JSON is a lightweight data interchange format \
+> JSON is language independent * \
+> JSON is "self-describing" and easy to understand \
+> <p>* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.</p>
+
+</details>
+
+<details>
+<summary>27. What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?</summary>
+
+> - **chmod** - Modifies file permissions
+> - **pwd** - Output the present working directory
+> - **cd** - Change directory
+> - **ls** - List files
+> - **vim** - Opens vim editor
+> - **nano** - Opens nano editor
+> - **mkdir** - Make directory
+> - **mv** - Move file(s)
+> - **rm** - Remove file(s)
+> - **man** - Look up a command in the manual
+> - **ssh** - Create a secure shell on a remote computer
+> - **ps** - View the currently running processes
+> - **wget** - Download the resource specified in the `[url]` to the current directory
+> - **sudo** - Execute a command as a super user (admin)
+> - **echo** - Output the parameters of the command
+> - **rmdir** - Remove directory
+> - **cp** - Copy files
+> - **curl** - Command line client URL browser
+> - **grep** - Regular expression search
+> - **find** - Find files
+> - **top** - View running processes with CPU and memory usage
+> - **df** - View disk statistics
+> - **cat** - Output the contents of a file
+> - **less** - Interactively output the contents of a file
+> - **wc** - Count the words in a file
+> - **kill** - Kill a currently running process
+> - **scp** - Securely copy files to a remote computer
+> - **history** - Show the history of commands
+> - **ping** - Check if a website is up
+> - **tracert** - Trace the connections to a website
+> - **dig** - Show the DNS information for a domain
+>
+> > https://github.com/webprogramming260/.github/blob/main/profile/essentials/console/console.md
+
+</details>
+
+<details>
+<summary>28. Which of the following console command creates a remote shell session?</summary>
+
+> ssh
+
+</details>
+
+<details>
+<summary>29. Which of the following is true when the -la parameter is specified for the ls console command?</summary>
+
+> The `ls -al` command is a combination of `ls -l` (use a long listing format) and `ls -a` (do not ignore entries starting with `.`)
+> The result is a long list (the `ls -l` part) with (from left to right):
+> * filetype
+> * file permissions
+> * number of links
+> * owner name
+> * owner group
+> * file size
+> * time of last modification
+> * the name of the file or directory
+> while the `ls -a` means that hidden files are listed as well.
+>
+> > https://askubuntu.com/questions/517229/what-does-ls-la-do
+
+</details>
+
+<details>
+<summary>30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?</summary>
+
+> ![alt Domain Name Parts](domainNameParts.jpg "Domain Name Parts")
+> 
+> - **Top Level Domain (TLD)** - .click
+> - **Subdomain** - banana is a subdomain of fruit.bozo.click and fruit is a subdomain of bozo.click
+> - **Root Domain** - bozo.click
+> - **Second Level Domain (SLD)** - bozo
+> - **Third Level Domain** - fruit
+> - **Fourth Level Domain** - banana
+
+</details>
+
+<details>
+<summary>31. Is a web certificate is necessary to use HTTPS.</summary>
+
+> Yes, a web certificate (also known as an SSL certificate) is necessary to use HTTPS
+
+</details>
+
+<details>
+<summary>32. Can a DNS A record can point to an IP address or another A record.</summary>
+
+> Yes, a DNS A record can point to an IP address or another A record:
+> > IP address \
+> > An A record points a domain or subdomain to an IPv4 address. For example, a domain like google.com might be pointed to the IP address of its DNS hosting server. \
+> > Another A record \
+> > You can have multiple A records for the same domain name, each pointing to a different IP address. This can be used to provide redundancy and fallbacks.
+
+</details>
+
+<details>
+<summary>33. Port 443, 80, 22 is reserved for which protocol?</summary>
+
+> - **443** - HTTPS
+> - **80** - HTTP
+> - **22** - ssh
+
+</details>
+
+<details>
+<summary>34. What will the following code using Promises output when executed?</summary>
+
+> JavaScript Promises are a powerful feature for handling asynchronous operations in web programming. Here's a summary of the key points:
+> ## Purpose and Functionality
+> Promises allow for the execution of long-running or blocking tasks without interrupting the main rendering thread. This is crucial for maintaining a responsive user interface while performing complex operations in the background.
+> ## Promise States
+> A Promise can be in one of three states:
+> 1. **Pending**: The asynchronous operation is still running.
+> 2. **Fulfilled**: The operation completed successfully.
+> 3. **Rejected**: The operation failed to complete.
+> ## Creating and Using Promises
+> To create a Promise, you use the Promise constructor and pass it an executor function. This function takes two parameters: `resolve` and `reject`, which are used to change the Promise's state to fulfilled or rejected, respectively.
+> ## Handling Promise Results
+> Promises provide three methods for handling their results:
+> 1. **then()**: Called when the Promise is fulfilled.
+> 2. **catch()**: Called when the Promise is rejected.
+> 3. **finally()**: Always called after the Promise is settled, regardless of its final state.
+>
+> > https://github.com/webprogramming260/.github/blob/main/profile/javascript/promises/promises.md
+
+</details>
 
 </details>
