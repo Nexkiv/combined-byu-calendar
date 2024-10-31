@@ -8,9 +8,9 @@ Imagine having all your BYU class assignments from Learning Suite and Canvas in 
 ### Design
 Here are some rough sketches of how the inteface will look and operate.
 
-![Mock showing welcome page and calendar page with a description of the create account popup and how assignments will show up](mockUI_page1.JPG)
+![Mock showing welcome page and calendar page with a description of the create account popup and how assignments will show up](public/mockUI_page1.JPG)
 
-![Mock showing the add assignment popup and the add class popup](mockUI_page2.JPG)
+![Mock showing the add assignment popup and the add class popup](public/mockUI_page2.JPG)
 
 ### Key features
 - Secure login over HTTPS

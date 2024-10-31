@@ -253,7 +253,7 @@ The section discussed two elements for creating images within HTML:
 <details>
 <summary>4. In the following code, what is the difference between padding and margin?</summary>
 
-> ![alt Box Model](box_model.png "Box Model")
+> ![alt Box Model](public/box_model.png "Box Model")
 > 
 > ****Padding****: \
 > The CSS `padding` properties are used to generate space around an element's content,
@@ -827,7 +827,7 @@ The section discussed two elements for creating images within HTML:
 <details>
 <summary>15. In the CSS box model, what is the ordering of the box layers starting at the inside and working out?</summary>
 
-> ![alt Box Model](box_model.png "Box Model")
+> ![alt Box Model](public/box_model.png "Box Model")
 >
 > content, padding, boarder, margin
 
@@ -1472,7 +1472,7 @@ The section discussed two elements for creating images within HTML:
 <details>
 <summary>30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?</summary>
 
-> ![alt Domain Name Parts](domainNameParts.jpg "Domain Name Parts")
+> ![alt Domain Name Parts](public/domainNameParts.jpg "Domain Name Parts")
 > 
 > - **Top Level Domain (TLD)** - .click
 > - **Subdomain** - banana is a subdomain of fruit.bozo.click and fruit is a subdomain of bozo.click
