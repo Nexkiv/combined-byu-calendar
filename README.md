@@ -54,6 +54,16 @@ For this deliverable I built out the structure of my calendar webservice using H
 - [x] **WebSocket** - Calendar data is pulled from the database when a user signs in and when it is updated on any device accross devices.
 
 ## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance using CSS.
+
+- [x] **Header, footer, and main content body**
+- [x] **Navigation elements** - I restyled my buttons and continued support for connecting between the two pages using the sign in and sign out buttons.
+- [x] **Responsive to window resizing** - I made it so that my app fits on different screen sizes and doesn't loose funtionality.
+- [x] **Application elements** - The calendar and login space now look clean and neat, and the pop-ups work.
+- [x] **Application text content** - The fonts are consistent and the text doesn't look cramped. The text on the calendar is well formatted.
+- [x] **Application images** - I added a image to the background of the login page to make it look more professional. I also styled my icon to match the text coloring.
+
 ## React deliverable
 ## Service deliverable
 ## DB/Login deliverable
