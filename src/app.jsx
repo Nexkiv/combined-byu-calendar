@@ -7,17 +7,27 @@ import './app.css';
 
 export default function App() {
     return (
-        <div className='body bg-dark text-light'>
-            <header className='container-fluid'>
-                <h1 className="title">BYU Combined Calender <img src="public/favicon.png" alt="Y calendar" height="50px"></img></h1>
-            </header>
+        <BrowserRouter>
+            <div className='body bg-dark text-light'>
+                <header className='container-fluid'>
+                    <h1 className="title">BYU Combined Calender <img src="public/favicon.png" alt="Y calendar" height="50px"></img></h1>
+                </header>
 
-            <main>App components go here</main>
+                <Routes>
+                    <Route path='/' element={<Login />} exact />
+                    <Route path='/calendar' element={<Calendar />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
 
-            <footer className="container-fluid">
-                <span className="text-reset">Created By: Kevin Peter Karatassos</span>
-                <a href="https://github.com/Nexkiv/combined-byu-calendar">GitHub Source</a>
-            </footer>
-        </div>
+                <footer className="container-fluid">
+                    <span className="text-reset">Created By: Kevin Peter Karatassos</span>
+                    <a href="https://github.com/Nexkiv/combined-byu-calendar">GitHub Source</a>
+                </footer>
+            </div>
+        </BrowserRouter>
     );
+}
+
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
 }
