@@ -1,10 +1,23 @@
 import React from 'react';
 import { AuthState } from '../login/authState';
+import ICalendarFeed from './ICalendarFeed';
 import './calendar.css';
 
 export function Calendar() {
+  fetch('https://quote.cs260.click')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+  
+  const calendarUrl = "../public/Spreadsheets.ics";
+
   return (
     <main>
+      <div>
+      <h1>My Calendar App</h1>
+        <ICalendarFeed url={calendarUrl} />
+      </div>
       <h1 id="week-title">Week of September 30 to October 6, 2024</h1>
       <div id="calendar-container">
           <div className="table-responsive">

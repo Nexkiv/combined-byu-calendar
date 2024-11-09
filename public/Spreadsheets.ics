@@ -1,0 +1,637 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ctl.byu.edu//NONSGML kigkonsult.se iCalcreator 2.24//
+X-WR-CALNAME:Spreadsheets &amp\; Business Analysis
+BEGIN:VEVENT
+UID:0FbrjwSKZAO2jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Course Introduction
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Course Introduction
+END:VEVENT
+BEGIN:VEVENT
+UID:0qLftAiyHHrYjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: Exam 1 (Midterm)
+DTSTART;VALUE=DATE:20241023
+SUMMARY:DUE: Excel Educator: Exam 1 (Midterm)
+END:VEVENT
+BEGIN:VEVENT
+UID:1dxSqIiggt_djaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 3 - Boolean Logic and If Functions assignm
+ ent
+DTSTART;VALUE=DATE:20240925
+SUMMARY:DUE: Excel Educator: 3 - Boolean Logic and If Functions assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:1w8vDQjIrZRcjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 5 - Date\, Time\, and Text assignment\n
+DTSTART;VALUE=DATE:20241003
+SUMMARY:Start Excel Educator: 5 - Date\, Time\, and Text assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:27QGAFyDV9dfjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Correct Student ID on MyEducator assignment
+DTSTART;VALUE=DATE:20240918
+SUMMARY:DUE: Correct Student ID on MyEducator assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:2iwmrC638QJcjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: Appendix G - Optimization Analysis assign
+ ment\n
+DTSTART;VALUE=DATE:20241205
+SUMMARY:Start Excel Educator: Appendix G - Optimization Analysis assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:2l75RrCA4b-3jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 5 - Date\, Time\, and TextPrior to class\, read
+  through the online lessons and/or watch the videos\, then complete the pr
+ actice problems.\n
+DTSTART;VALUE=DATE:20241003
+SUMMARY:Excel Educator: 5 - Date\, Time\, and TextPrior to class\, read thr
+ ough the online lessons and/or wa
+END:VEVENT
+BEGIN:VEVENT
+UID:3lXyjddtr9_WjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Read course materialsSyllabusFAQsWelcome slides (shown on the f
+ irst day of class)
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Read course materialsSyllabusFAQsWelcome slides (shown on the first
+  day of class)
+END:VEVENT
+BEGIN:VEVENT
+UID:4D_NEgPG2alBjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 5 - Date\, Time\, and Text assignment
+DTSTART;VALUE=DATE:20241009
+SUMMARY:DUE: Excel Educator: 5 - Date\, Time\, and Text assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:5wHFXx4N-diljaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 8 - Conditional Formatting assignment
+DTSTART;VALUE=DATE:20241106
+SUMMARY:DUE: Excel Educator: 8 - Conditional Formatting assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:6-Etw8fWlWKUjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Poll: Final Exam Review Topics (Optional)
+DTSTART;VALUE=DATE:20241207
+SUMMARY:DUE: Poll: Final Exam Review Topics (Optional)
+END:VEVENT
+BEGIN:VEVENT
+UID:76PAnqUH-RPxjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Complete Extra Credit: Screenshot assignment\n
+DTSTART;VALUE=DATE:20240912
+SUMMARY:Complete Extra Credit: Screenshot assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:9TwWPEn_Jig-jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 6 - ChartingPrior to class\, read through the o
+ nline lessons and/or watch the videos\, then complete the practice problem
+ s.\n
+DTSTART;VALUE=DATE:20241010
+SUMMARY:Excel Educator: 6 - ChartingPrior to class\, read through the onlin
+ e lessons and/or watch the vide
+END:VEVENT
+BEGIN:VEVENT
+UID:AQ6PMQ_m2IjOjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 2 - Formulas and Functions assignment\n
+DTSTART;VALUE=DATE:20240912
+SUMMARY:Start Excel Educator: 2 - Formulas and Functions assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:ArScAxFi4Kg7jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:(Optional) Start Excel Educator: Exam 1 (Midterm)\nAt this poin
+ t\, we have covered all the content that will be on the Midterm Exam. You 
+ can start working on the exam in sections and save as you go.\n
+DTSTART;VALUE=DATE:20241010
+SUMMARY:(Optional) Start Excel Educator: Exam 1 (Midterm)At this point\, we
+  have covered all the conte
+END:VEVENT
+BEGIN:VEVENT
+UID:a-LoftwdpdvFjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Poll: Midterm Exam Review Topics (Optional)
+DTSTART;VALUE=DATE:20241012
+SUMMARY:DUE: Poll: Midterm Exam Review Topics (Optional)
+END:VEVENT
+BEGIN:VEVENT
+UID:BpTSdABpsFy9jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 4 - Conditional and Reference FunctionsPrior to
+  class\, read through the online lessons and/or watch the videos\, then co
+ mplete the practice problems.\n
+DTSTART;VALUE=DATE:20240926
+SUMMARY:Excel Educator: 4 - Conditional and Reference FunctionsPrior to cla
+ ss\, read through the online le
+END:VEVENT
+BEGIN:VEVENT
+UID:b33F1jFvdMxfjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 10 - Statistics assignment\n
+DTSTART;VALUE=DATE:20241114
+SUMMARY:Start Excel Educator: 10 - Statistics assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:bji7AVkbVVx9jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 10 - Statistics assignment
+DTSTART;VALUE=DATE:20241120
+SUMMARY:DUE: Excel Educator: 10 - Statistics assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:bUttlktv9NBLjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Here is the practice file that will be used for the Midterm Exa
+ m Prep Session. Students may\, but are not required to\, complete it in ad
+ vance of the Prep Session.\nExam 1 Review Blank.xlsx  Download \n
+DTSTART;VALUE=DATE:20241017
+SUMMARY:Here is the practice file that will be used for the Midterm Exam Pr
+ ep Session. Students may\, but ar
+END:VEVENT
+BEGIN:VEVENT
+UID:C2J0ZgHz3K8PjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Complete Poll: Final Exam Review Topics (Optional) if you plan 
+ to attend the review session with the TAs\n
+DTSTART;VALUE=DATE:20241205
+SUMMARY:Complete Poll: Final Exam Review Topics (Optional) if you plan to a
+ ttend the review session wi
+END:VEVENT
+BEGIN:VEVENT
+UID:C6nlpULUIMzZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 2 - Formulas and Functions assignment
+DTSTART;VALUE=DATE:20240918
+SUMMARY:DUE: Excel Educator: 2 - Formulas and Functions assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:CI9CdiVZZbicjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator - Introduction assignment
+DTSTART;VALUE=DATE:20240918
+SUMMARY:DUE: Excel Educator - Introduction assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:DY42Bx5PhV1KjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 11 - PivotTablesPrior to class\, read through t
+ he online lessons and/or watch the videos\, then complete the practice pro
+ blems.\n
+DTSTART;VALUE=DATE:20241121
+SUMMARY:Excel Educator: 11 - PivotTablesPrior to class\, read through the o
+ nline lessons and/or watch the 
+END:VEVENT
+BEGIN:VEVENT
+UID:EhXU6wcY7maXjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: Exam 1 (Midterm)\n
+DTSTART;VALUE=DATE:20241017
+SUMMARY:Start Excel Educator: Exam 1 (Midterm)
+END:VEVENT
+BEGIN:VEVENT
+UID:EP3P6ZTIaeSojaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 3 - Boolean Logic and If FunctionsPrior to clas
+ s\, read through the online lessons and/or watch the videos\, then complet
+ e the practice problems.\nIf you lack experience with programming or if/th
+ en logic\, review both Microsoft Support pages below and watch the videos.
+  The most important is the Nested If video\, which is a topic with which s
+ tudents new to Excel often struggle.\nIF functionNested IF video
+DTSTART;VALUE=DATE:20240919
+SUMMARY:Excel Educator: 3 - Boolean Logic and If FunctionsPrior to class\, 
+ read through the online lessons
+END:VEVENT
+BEGIN:VEVENT
+UID:eo30kK3X7gnajaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 10 - StatisticsPrior to class\, read through th
+ e online lessons and/or watch the videos\, then complete the practice prob
+ lems.\n
+DTSTART;VALUE=DATE:20241114
+SUMMARY:Excel Educator: 10 - StatisticsPrior to class\, read through the on
+ line lessons and/or watch the v
+END:VEVENT
+BEGIN:VEVENT
+UID:FIwmIPI3jbJujaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Don't forget that the Midterm Exam covering Lessons 1-6 is due 
+ Wednesday\, October 23 by 11:59pm!You cannot use late days on the Midterm 
+ Exam. If you don't submit it by the deadline\, you will receive a late pen
+ alty.\n \nNO COLLABORATION on the Midterm Exam. The work must be solely yo
+ ur own. You may refer to your own personal past assignments and Excel Educ
+ ator.\n \nIf you submit the exam twice\, your two scores will be averaged 
+ together.\n
+DTSTART;VALUE=DATE:20241017
+SUMMARY:Don't forget that the Midterm Exam covering Lessons 1-6 is due Wedn
+ esday\, October 23 b
+END:VEVENT
+BEGIN:VEVENT
+UID:hTUO2ud2tyYDjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Confirm/install Microsoft ExcelEnsure you have the correct vers
+ ion of Excel. We recommend Office 365\, which BYU offers free to all stude
+ nts. The Introduction assignment below explains how to check if your versi
+ on of Excel is compatible with Excel Educator.
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Confirm/install Microsoft ExcelEnsure you have the correct version 
+ of Excel. We recommend Offic
+END:VEVENT
+BEGIN:VEVENT
+UID:IFM8X14z9yoFjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Final Exam Prep SessionTAs will review the material and answer 
+ your questions for Lessons 7-11 & Appendix G.Please complete the Poll: Fin
+ al Exam Review Topics (Optional) by the due date if you plan to attend the
+  review session with the TAs.
+DTSTART;VALUE=DATE:20241212
+SUMMARY:Final Exam Prep SessionTAs will review the material and answer your
+  questions for Lessons 7-11 
+END:VEVENT
+BEGIN:VEVENT
+UID:IW2edRb-lxaEjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Midterm Exam Prep SessionTAs will review the material and answe
+ r your questions for Lessons 1-6.Please complete the Poll: Midterm Exam Re
+ view Topics (Optional) by the due date if you plan to attend the review se
+ ssion with the TAs.
+DTSTART;VALUE=DATE:20241017
+SUMMARY:Midterm Exam Prep SessionTAs will review the material and answer yo
+ ur questions for Lessons 1-6
+END:VEVENT
+BEGIN:VEVENT
+UID:JxjoF7DqsaD2jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Course Introduction quiz
+DTSTART;VALUE=DATE:20240912
+SUMMARY:DUE: Course Introduction quiz
+END:VEVENT
+BEGIN:VEVENT
+UID:KQE3iTIbjoZZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Last Day of ClassesAll work (except the Final Exam) must be sub
+ mitted by 11:59pm tonight. No late days may be redeemed after this date. T
+ his is a university policy.\n
+DTSTART;VALUE=DATE:20241211
+SUMMARY:Last Day of ClassesAll work (except the Final Exam) must be submitt
+ ed by 11:59pm tonight. No late
+END:VEVENT
+BEGIN:VEVENT
+UID:KVd8Cvpvh7DKjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 8 - Conditional FormattingPrior to class\, read
+  through the online lessons and/or watch the videos\, then complete the pr
+ actice problems.\n
+DTSTART;VALUE=DATE:20241031
+SUMMARY:Excel Educator: 8 - Conditional FormattingPrior to class\, read thr
+ ough the online lessons and/or 
+END:VEVENT
+BEGIN:VEVENT
+UID:k6jn-XTDPQnSjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 1 - Excel Basics\nExcel Educator: 2 - Formulas 
+ and FunctionsPrior to class\, read through the online lessons and/or watch
+  the videos\, then complete the practice problems for both lessons.\nIn ad
+ dition to the walkthroughs for both lessons\, I'll demonstrate taking a sc
+ reenshot using the Snipping Tool\, which many of you will use for the extr
+ a credit assignment.\n
+DTSTART;VALUE=DATE:20240912
+SUMMARY:Excel Educator: 1 - Excel BasicsExcel Educator: 2 - Formulas and Fu
+ nctionsPrior to class\, read t
+END:VEVENT
+BEGIN:VEVENT
+UID:kfPD4P2ikwrmjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 11 - PivotTables assignment
+DTSTART;VALUE=DATE:20241127
+SUMMARY:DUE: Excel Educator: 11 - PivotTables assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:LPuCM8Y622HZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 4 - Conditional and Reference Functions a
+ ssignment\n
+DTSTART;VALUE=DATE:20240926
+SUMMARY:Start Excel Educator: 4 - Conditional and Reference Functions assig
+ nment
+END:VEVENT
+BEGIN:VEVENT
+UID:l6RSfhwOCaf6jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 8 - Conditional Formatting assignment\n
+DTSTART;VALUE=DATE:20241031
+SUMMARY:Start Excel Educator: 8 - Conditional Formatting assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:lQz26bXYZgUqjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: Appendix G - Optimization Analysis assignm
+ ent
+DTSTART;VALUE=DATE:20241211
+SUMMARY:DUE: Excel Educator: Appendix G - Optimization Analysis assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:MjRZglqyLdy-jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Join the Slack workspaceJoin  |  Access Workspace
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Join the Slack workspaceJoin  |  Access Workspace
+END:VEVENT
+BEGIN:VEVENT
+UID:mBFJJDvYfOpejaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Don't forget that the Final Exam covering Lessons 7-11 & Append
+ ix G is due on the last day of finals:\nWednesday\, December 18 by 11:59pm
+ \nYou cannot use late days on the Final Exam or submit it late for partial
+  credit. No exceptions. This is university policy.\n \nNO COLLABORATION on
+  the Final Exam. The work must be solely your own. You may refer to your o
+ wn personal past assignments and Excel Educator.\n \nIf you submit the exa
+ m twice\, your two scores will be averaged together.\n
+DTSTART;VALUE=DATE:20241212
+SUMMARY:Don't forget that the Final Exam covering Lessons 7-11 & Appendix G
+  is due on 
+END:VEVENT
+BEGIN:VEVENT
+UID:mDVhQ8NfV97CjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 7 - Tables assignment
+DTSTART;VALUE=DATE:20241030
+SUMMARY:DUE: Excel Educator: 7 - Tables assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:N0GRbKsZmDF_jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:HAPPY HALLOWEEN! Costumes welcome\, but not required.\n
+DTSTART;VALUE=DATE:20241031
+SUMMARY:HAPPY HALLOWEEN! Costumes welcome\, but not required.
+END:VEVENT
+BEGIN:VEVENT
+UID:NbizlePBJsXgjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 9 - ModelingPrior to class\, read through the o
+ nline lessons and/or watch the videos\, then complete the practice problem
+ s.\n
+DTSTART;VALUE=DATE:20241107
+SUMMARY:Excel Educator: 9 - ModelingPrior to class\, read through the onlin
+ e lessons and/or watch the vide
+END:VEVENT
+BEGIN:VEVENT
+UID:NR0c-x8cOPqZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 9 - Modeling assignment\n
+DTSTART;VALUE=DATE:20241107
+SUMMARY:Start Excel Educator: 9 - Modeling assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:NZZwUnZ3IX8GjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Course Introduction quiz\nYou have unlimited attempts to 
+ complete it correctly until it closes.
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Start Course Introduction quizYou have unlimited attempts to comple
+ te it correctly un
+END:VEVENT
+BEGIN:VEVENT
+UID:OZHH-hEOOIcGjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Obtain the Course TextbookThere is one required book for this c
+ lass and one optional book containing practice exercises. The optional exe
+ rcises are $9.99 until September 16\, and $19.99 thereafter.\nRequired: Ex
+ cel and SQL Educator ($95.98)Optional: Excel Case Studies ($9.99-19.99)Cli
+ ck the 'Checkout' button and submit payment information. If you already ha
+ ve a MyEducator account\, log in. Otherwise\, create a new account. Once y
+ our account is created and payment is made\, you will be directed to the c
+ ourse material.\nThe optional exercises will give you instant feedback abo
+ ut your performance and what you missed. No class credit is offered for co
+ mpleting the practice problems. They just give you more practice to apply 
+ what you learn and prepare for the exams.\n
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Obtain the Course TextbookThere is one required book for this class
+  and one optional book contain
+END:VEVENT
+BEGIN:VEVENT
+UID:PoNlJSEnSU2KjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 11 - PivotTables assignment\n
+DTSTART;VALUE=DATE:20241121
+SUMMARY:Start Excel Educator: 11 - PivotTables assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:pA-lVvdBJhZmjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:No class this week. Happy Thanksgiving!\n
+DTSTART;VALUE=DATE:20241128
+SUMMARY:No class this week. Happy Thanksgiving!
+END:VEVENT
+BEGIN:VEVENT
+UID:pDs-udcr5UVfjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:(Optional) Start Excel Educator: Exam 2 (Final)\nAt this point\
+ , we have covered all the content that will be on the Final Exam. You can 
+ start working on the exam in sections and save as you go.\n
+DTSTART;VALUE=DATE:20241205
+SUMMARY:(Optional) Start Excel Educator: Exam 2 (Final)At this point\, we h
+ ave covered all the content
+END:VEVENT
+BEGIN:VEVENT
+UID:QNZ-AG2cMbrXjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Complete Poll: Midterm Exam Review Topics (Optional) if you pla
+ n to attend the review session with the TAs\n
+DTSTART;VALUE=DATE:20241010
+SUMMARY:Complete Poll: Midterm Exam Review Topics (Optional) if you plan to
+  attend the review session 
+END:VEVENT
+BEGIN:VEVENT
+UID:QUQwruRwVov6jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: Exam 2 (Final)
+DTSTART;VALUE=DATE:20241218
+SUMMARY:DUE: Excel Educator: Exam 2 (Final)
+END:VEVENT
+BEGIN:VEVENT
+UID:Rld5BuJ1iPw0jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 7 - Tables assignment\n
+DTSTART;VALUE=DATE:20241024
+SUMMARY:Start Excel Educator: 7 - Tables assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:ROToGUVgHXLTjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Extra Credit: Excel and SQL Educator - Your Choice
+DTSTART;VALUE=DATE:20241211
+SUMMARY:DUE: Extra Credit: Excel and SQL Educator - Your Choice
+END:VEVENT
+BEGIN:VEVENT
+UID:RP9mklLLzqY5jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Video recording of class did not workI apologize for the inconv
+ enience--especially for those who were unable to attend class today. Unfor
+ tunately\, the Zoom recording of our first class did not record properly. 
+ Please review the Welcome slides carefully\, as they have all the informat
+ ion you need to get started.\nIn lieu of today's recording\, here's a reco
+ rding from the Winter 2024 class. Most of the information Dr. Allen presen
+ ted then is consistent with our class this semester. If you notice any dis
+ crepancies between what was said in January vs. what you see in Learning S
+ uite now\, use the current information posted in Learning Suite.\n\nIS 110
+  - Winter 2024 - Class 01.mp4\n \n
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Video recording of class did not workI apologize for the inconvenie
+ nce--especially for those who 
+END:VEVENT
+BEGIN:VEVENT
+UID:T9ec3xurxE_4jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:University Add/Drop Deadline\n
+DTSTART;VALUE=DATE:20240911
+SUMMARY:University Add/Drop Deadline\n
+END:VEVENT
+BEGIN:VEVENT
+UID:tpA1dkBTfc7IjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:University Withdraw Deadline\n
+DTSTART;VALUE=DATE:20241125
+SUMMARY:University Withdraw Deadline
+END:VEVENT
+BEGIN:VEVENT
+UID:twF9UOT-axGZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: 7 - TablesPrior to class\, read through the onl
+ ine lessons and/or watch the videos\, then complete the practice problems.
+ \n
+DTSTART;VALUE=DATE:20241024
+SUMMARY:Excel Educator: 7 - TablesPrior to class\, read through the online 
+ lessons and/or watch the videos
+END:VEVENT
+BEGIN:VEVENT
+UID:UEs6tqVcwqtZjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:(Optional) Start Extra Credit: Excel and SQL Educator - Your Ch
+ oice\nFor those seeking extra credit by completing an additional module in
+  the textbook outside our scheduled curriculum\, this may be a good time t
+ o start considering what topic you'd like to learn and explore.\n
+DTSTART;VALUE=DATE:20241114
+SUMMARY:(Optional) Start Extra Credit: Excel and SQL Educator - Your Choice
+ For those seeking extra cr
+END:VEVENT
+BEGIN:VEVENT
+UID:UoLXb4slZeV4jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Extra Credit: Screenshot assignment
+DTSTART;VALUE=DATE:20240914
+SUMMARY:DUE: Extra Credit: Screenshot assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:UU6XyYI9w_RHjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: Exam 2 (Final)\n
+DTSTART;VALUE=DATE:20241212
+SUMMARY:Start Excel Educator: Exam 2 (Final)
+END:VEVENT
+BEGIN:VEVENT
+UID:VefTVRCC4FX-jaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator - Introduction assignment\nWill teach you 
+ how to set up and complete assignments using Excel EducatorIncludes instru
+ ctions for configuring textbook for:Excel for WindowsExcel for MacExcel On
+ line
+DTSTART;VALUE=DATE:20240905
+SUMMARY:Start Excel Educator - Introduction assignmentWill teach you how to
+  set up and complete as
+END:VEVENT
+BEGIN:VEVENT
+UID:WTm7b6U9uP6KjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 6 - Charting assignment
+DTSTART;VALUE=DATE:20241016
+SUMMARY:DUE: Excel Educator: 6 - Charting assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:Wwl-Uj75r_tmjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 9 - Modeling assignment
+DTSTART;VALUE=DATE:20241113
+SUMMARY:DUE: Excel Educator: 9 - Modeling assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:w4HqONnIbPsFjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 6 - Charting assignment\n
+DTSTART;VALUE=DATE:20241010
+SUMMARY:Start Excel Educator: 6 - Charting assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:X8XrpVYLpRLEjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 1 - Excel Basics assignment
+DTSTART;VALUE=DATE:20240918
+SUMMARY:DUE: Excel Educator: 1 - Excel Basics assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:XWR6roHR4J1AjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 1 - Excel Basics assignment\n
+DTSTART;VALUE=DATE:20240912
+SUMMARY:Start Excel Educator: 1 - Excel Basics assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:y0vFspLWm1mYjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Start Excel Educator: 3 - Boolean Logic and If Functions assign
+ ment\n
+DTSTART;VALUE=DATE:20240919
+SUMMARY:Start Excel Educator: 3 - Boolean Logic and If Functions assignment
+END:VEVENT
+BEGIN:VEVENT
+UID:_FEyk_2pZdUyjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Excel Educator: Appendix G - Optimization AnalysisPrior to clas
+ s\, read through the online lessons and/or watch the videos\, then complet
+ e the practice problems.\n
+DTSTART;VALUE=DATE:20241205
+SUMMARY:Excel Educator: Appendix G - Optimization AnalysisPrior to class\, 
+ read through the online lessons
+END:VEVENT
+BEGIN:VEVENT
+UID:_w-DbnY919yRjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:DUE: Excel Educator: 4 - Conditional and Reference Functions as
+ signment
+DTSTART;VALUE=DATE:20241002
+SUMMARY:DUE: Excel Educator: 4 - Conditional and Reference Functions assign
+ ment
+END:VEVENT
+BEGIN:VEVENT
+UID:1hpePnmeBiOEjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Please let us know the topics on which you would prefer the TAs
+  focus the review session for the Midterm Exam. This poll is optional\, no
+ t graded\, and will not affect your score.
+DTSTART;VALUE=DATE:20241002
+DTEND;VALUE=DATE:20241013
+SUMMARY:Poll: Midterm Exam Review Topics (Optional)
+END:VEVENT
+BEGIN:VEVENT
+UID:2YKG6x4ZudZzjaBq6VcbnHiG@ctl.byu.edu
+DTSTAMP:20241109T205026Z
+DESCRIPTION:Please let us know the topics on which you would prefer the TAs
+  focus the review session for the Final Exam. This poll is optional\, not 
+ graded\, and will not affect your score.
+DTSTART;VALUE=DATE:20241127
+DTEND;VALUE=DATE:20241208
+SUMMARY:Poll: Final Exam Review Topics (Optional)
+END:VEVENT
+END:VCALENDAR
