@@ -1,10 +1,49 @@
 import React from 'react';
-import { format, addDays, isSameDay, addWeeks, subWeeks, startOfWeek, endOfWeek, isSameWeek, parse, startOfDay, endOfDay } from "date-fns";
+import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear } from "date-fns";
 import { AuthState } from '../login/authState';
 import ICalendarFeed from './ICalendarFeed';
 import './calendar.css';
 
 class Calendar extends React.Component {
+    state = {
+        currentWeek: new Date()
+    };
+
+    renderWeekTitle() {
+        const fullDateFormat = "MMMM d, yyyy";
+        const monthFormat = "MMMM d"
+        const dayFormat = "d, yyyy";
+        let weekStart;
+        let weekEnd;
+        let formattedWeekStart;
+        let formattedWeekEnd;
+
+        if (isSunday(this.state.currentWeek)) {
+            weekStart = this.state.currentWeek;
+            weekEnd = nextSaturday(this.state.currentWeek);
+        } else if (isSaturday(this.state.currentWeek)) {
+            weekStart = previousSunday(this.state.currentWeek);
+            weekEnd = this.state.currentWeek;
+        } else {
+            weekStart = previousSunday(this.state.currentWeek);
+            weekEnd = nextSaturday(this.state.currentWeek);
+        }
+          
+        if (isSameMonth(weekStart, weekEnd)) {
+            formattedWeekStart = format(weekStart, monthFormat);
+            formattedWeekEnd = format(weekEnd, dayFormat);
+        } else if (isSameYear(weekStart, weekEnd)) {
+            formattedWeekStart = format(weekStart, monthFormat);
+            formattedWeekEnd = format(weekEnd, fullDateFormat);
+        } else {
+            formattedWeekStart = format(weekStart, fullDateFormat);
+            formattedWeekEnd = format(weekEnd, fullDateFormat);
+        }
+
+        return (
+            <h1>Week of {formattedWeekStart} to {formattedWeekEnd}</h1>
+        )
+    }
   
     /*
     fetch('https://quote.cs260.click')
@@ -26,7 +65,7 @@ class Calendar extends React.Component {
                 </div>
                 */}
                 <div id="week-title">
-                    <h1>Week of September 30 to October 6, 2024</h1>
+                    {this.renderWeekTitle()}
                     <button type="button" className="btn btn-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-left-fill" viewBox="0 0 16 16">
                             <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
