@@ -5,7 +5,7 @@ import './calendar.css';
 export function Calendar() {
   return (
     <main>
-      <h1 id="week_title">Week of September 30 to October 6, 2024</h1>
+      <h1 id="week-title">Week of September 30 to October 6, 2024</h1>
       <div id="calendar-container">
           <div className="table-responsive">
               <table id="calendar">

@@ -62,4 +62,7 @@ footer a:hover {
     .second-sign-out-button {
         display: block;
     }
+    #week-title {
+        padding-top: 40px;
+    }
 }
