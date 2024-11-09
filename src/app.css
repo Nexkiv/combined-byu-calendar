@@ -57,10 +57,13 @@ footer a:hover {
     }
     main {
       flex: 1 100vh;
-      min-height: 375px;
+      min-height: 500px;
     }
     .second-sign-out-button {
         display: block;
+    }
+    #login_box img {
+        display: none;
     }
     #week-title {
         padding-top: 40px;

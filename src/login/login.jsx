@@ -6,6 +6,9 @@ export function Login() {
     <main className='container-fluid bg-secondary text-center' id="login-display">
       <div id="login_box">
           <h1>Welcome to your<br />BYU calendar</h1>
+
+          <img src="public/cougar.png" alt="BYU cougar" />
+
           <form method="get" action="calendar">
               
               {/* <!-- Normal Login Menu --> */}

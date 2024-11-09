@@ -16,7 +16,7 @@ export default function App() {
         <BrowserRouter>
             <div className='body bg-dark text-light'>
                 <header className='container-fluid'>
-                    <h1 className="title">BYU Combined Calender <img src="public/favicon.png" alt="Y calendar" height="50px"></img></h1>
+                    <h1 className="title">BYU Combined Calender <img src="public/favicon.png" alt="Y calendar" height="50px" /></h1>
                     {authState === AuthState.Authenticated && (
                         <div className="sign-out-button">
                             <form method="get" action='/'>
