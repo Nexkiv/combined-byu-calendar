@@ -1,4 +1,4 @@
-main {
+#login-display {
     background-image: url('BYU\ Watercolor.png');
     display: flex;
     flex-direction: column;
@@ -46,6 +46,10 @@ main {
 
 .modal input[type=checkbox]:checked{
     background-color: grey;
+}
+
+.btn {
+    margin: 3px;
 }
 
 @media (max-height: 800px) {

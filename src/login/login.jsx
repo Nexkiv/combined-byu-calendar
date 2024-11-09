@@ -3,7 +3,7 @@ import './login.css';
 
 export function Login() {
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className='container-fluid bg-secondary text-center' id="login-display">
       <div id="login_box">
           <h1>Welcome to your<br />BYU calendar</h1>
           <form method="get" action="calendar">

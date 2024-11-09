@@ -8,6 +8,8 @@
 
 header {
     flex: 0 80px;
+    margin: 0;
+    padding: 0;
     background-color: #103e6d;
     color: white;
 }
