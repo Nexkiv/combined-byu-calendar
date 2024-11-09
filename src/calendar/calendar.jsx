@@ -1,4 +1,5 @@
 import React from 'react';
+import { AuthState } from '../login/authState';
 import './calendar.css';
 
 export function Calendar() {
@@ -119,6 +120,7 @@ export function Calendar() {
           <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button>
           <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
       </div>
+
       <div className="second-sign-out-button">
           <form method="get" action='/'>
               <button className="btn btn-secondary" type="submit">Sign-out</button>
