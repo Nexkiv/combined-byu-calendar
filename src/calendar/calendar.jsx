@@ -6,28 +6,18 @@ import './calendar.css';
 
 class Calendar extends React.Component {
     state = {
-        currentWeek: new Date()
+        currentWeek: new Date(),
+        calendarUrl: "../public/Barker.ics"
     };
 
     renderWeekTitle() {
         const fullDateFormat = "MMM d, yyyy";
         const monthFormat = "MMM d"
         const dayFormat = "d, yyyy";
-        let weekStart;
-        let weekEnd;
+        const weekStart = startOfWeek(this.state.currentWeek);
+        const weekEnd = endOfWeek(weekStart);
         let formattedWeekStart;
         let formattedWeekEnd;
-
-        if (isSunday(this.state.currentWeek)) {
-            weekStart = this.state.currentWeek;
-            weekEnd = nextSaturday(this.state.currentWeek);
-        } else if (isSaturday(this.state.currentWeek)) {
-            weekStart = previousSunday(this.state.currentWeek);
-            weekEnd = this.state.currentWeek;
-        } else {
-            weekStart = previousSunday(this.state.currentWeek);
-            weekEnd = nextSaturday(this.state.currentWeek);
-        }
           
         if (isSameMonth(weekStart, weekEnd)) {
             formattedWeekStart = format(weekStart, monthFormat);
@@ -43,6 +33,43 @@ class Calendar extends React.Component {
         return (
             <h1>Week of {formattedWeekStart} to {formattedWeekEnd}</h1>
         )
+    }
+
+    renderAssignments() {
+        const { currentWeek, selectedDate } = this.state;
+        const weekStart = startOfWeek(currentWeek);
+        const weekEnd = endOfWeek(weekStart);
+        const startDate = startOfDay(weekStart);
+        const endDate = endOfDay(weekEnd);
+    
+        const dateFormat = "d";
+        const rows = [];
+    
+        let days = [];
+        let day = startDate;
+        let formattedDate = "";
+    
+        while (day <= endDate) {
+            for (let i = 0; i < 7; i++) {
+                formattedDate = format(day, dateFormat);
+                const cloneDay = day;
+                days.push(
+                <div className={"col cell"}>
+                    <span className="number">{formattedDate}</span>
+                    <span className="bg">{formattedDate}</span>
+                </div>
+                );
+                day = addDays(day, 1);
+            }
+            rows.push(
+                <div className="row">
+                {days}
+                </div>
+            );
+            days = [];
+        }
+
+        return <div className="body">{rows}</div>;
     }
 
     nextWeek = () => {
@@ -69,8 +96,6 @@ class Calendar extends React.Component {
     .then((jsonResponse) => {
         console.log(jsonResponse);
     });
-    
-    const calendarUrl = "../public/Barker.ics";
     */
 
     render() {
@@ -79,7 +104,7 @@ class Calendar extends React.Component {
                 {/*
                 <div>
                     <h1>My Calendar App</h1>
-                    <ICalendarFeed url={calendarUrl} />
+                    <ICalendarFeed url={this.state.calendarUrl} />
                 </div>
                 */}
                 <div id="week-title">
