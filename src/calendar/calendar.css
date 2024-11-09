@@ -1,0 +1,152 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header h1 {
+    flex: 1;
+}
+
+.sign-out-button {
+    text-align: right;
+    flex: 1;
+    padding: 30px;
+}
+
+table { 
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 25px;
+    border-spacing: 0px;
+}
+
+thead, tbody  {
+    background-color: aliceblue;
+}
+
+th, td {
+    padding: 5px 4px 6px 4px; 
+    text-align: left;
+    vertical-align: top;
+    border-left: 1px solid #ddd;
+}
+
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 25px 0 0 0;
+}
+
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 25px;
+}
+
+thead:first-child tr:first-child th:last-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 0 25px 0 0;
+}
+
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:last-child {
+    border-radius: 0 0 25px 0;
+}
+
+.classes {
+    min-width: 150px;
+}
+
+.weekday {
+    min-width: 200px;
+    text-align: center;
+}
+
+.calendar {
+    padding: 50px;
+    padding-top: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    float: left;
+}
+
+ul .event {
+    color: black;
+}
+
+ul .incomplete {
+    color: black;
+}
+
+ul .completed {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+ul .last_day {
+    color: royalblue;
+    font-weight: bold;
+}
+
+li {
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+li span {
+    flex: 4;
+}
+
+.days_remaining {
+    flex: 1;
+    text-align: right;
+}
+
+td {
+    min-height: 100px;
+    height: 200px;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.buttons {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.second-sign-out-button {
+    text-align: center;
+    display: none;
+}
+
+@media (max-width: 1650px) {
+    .calendar {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-left: 10px;
+    }
+}
+
+@media (max-height: 800px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+      min-height: 375px;
+    }
+    .second-sign-out-button {
+        display: block;
+    }
+}
