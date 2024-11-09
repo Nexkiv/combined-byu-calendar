@@ -313,7 +313,7 @@ class Calendar extends React.Component {
                                     </div>
                                     <div className="input-group mb-3">
                                         <span className="input-group-text">Due Date:</span>
-                                        <input className="form-control" type="datetime-local"/>
+                                        <input className="form-control" type="datetime-local" />
                                     </div>
                                 </div>
                                 <div className="modal-footer">
