@@ -14,7 +14,7 @@ export default function App() {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={<Login />} exact />
+                    <Route path='/' element={<Login />} />
                     <Route path='/calendar' element={<Calendar />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
