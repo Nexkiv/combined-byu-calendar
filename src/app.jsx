@@ -4,6 +4,7 @@ import { Login } from './login/login';
 import { Calendar } from './calendar/calendar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
+import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
 
 export default function App() {
     return (
