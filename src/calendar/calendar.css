@@ -6,6 +6,18 @@
 
 #week-title {
     padding: 2vw;
+    display: flex;
+}
+
+#week-title h1 {
+    flex: 30;
+    float: left;
+    margin: 0;
+}
+
+#week-title button {
+    flex: 1;
+    float: right;
 }
 
 #calendar-container {
@@ -140,5 +152,6 @@ li span {
 
     #week-title {
         padding-left: 10px;
+        padding-right: 10px;
     }
 }
