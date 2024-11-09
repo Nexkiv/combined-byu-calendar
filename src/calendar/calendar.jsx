@@ -10,8 +10,8 @@ class Calendar extends React.Component {
     };
 
     renderWeekTitle() {
-        const fullDateFormat = "MMMM d, yyyy";
-        const monthFormat = "MMMM d"
+        const fullDateFormat = "MMM d, yyyy";
+        const monthFormat = "MMM d"
         const dayFormat = "d, yyyy";
         let weekStart;
         let weekEnd;
@@ -44,6 +44,24 @@ class Calendar extends React.Component {
             <h1>Week of {formattedWeekStart} to {formattedWeekEnd}</h1>
         )
     }
+
+    nextWeek = () => {
+        this.setState({
+            currentWeek: addWeeks(this.state.currentWeek, 1)
+        });
+    };
+    
+    prevWeek = () => {
+        this.setState({
+            currentWeek: subWeeks(this.state.currentWeek, 1)
+        });
+    };
+
+    thisWeek = () => {
+        this.setState({
+            currentWeek: new Date()
+        });
+    }
   
     /*
     fetch('https://quote.cs260.click')
@@ -66,12 +84,17 @@ class Calendar extends React.Component {
                 */}
                 <div id="week-title">
                     {this.renderWeekTitle()}
-                    <button type="button" className="btn btn-secondary">
+                    <button type="button" className="btn btn-secondary" onClick={this.prevWeek}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-left-fill" viewBox="0 0 16 16">
                             <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
                         </svg>
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button type="button" className="btn btn-secondary" onClick={this.thisWeek}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" className="bi bi-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" className="btn btn-secondary" onClick={this.nextWeek}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-right-fill" viewBox="0 0 16 16">
                             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
                         </svg>
