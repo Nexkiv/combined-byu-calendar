@@ -5,113 +5,111 @@ export function Calendar() {
   return (
     <main className='container-fluid bg-secondary text-center'>
       <h1 id="week_title">Week of September 30 to October 6, 2024</h1>
-        <div className="calendar">
-            <div className="table-responsive">
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th className="classes">Classes</th>
-                            <th className="weekday">Mon</th>
-                            <th className="weekday">Tue</th>
-                            <th className="weekday">Wed</th>
-                            <th className="weekday">Thu</th>
-                            <th className="weekday">Fri</th>
-                            <th className="weekday">Sat</th>
-                            <th className="weekday">Sun</th>
-                        </tr>
-                    </thead>
+        <div className="table-responsive">
+            <table id="calendar">
+                <thead id="cal-head">
+                    <tr>
+                        <th className="classes cal-box">Classes</th>
+                        <th className="weekday cal-box">Mon</th>
+                        <th className="weekday cal-box">Tue</th>
+                        <th className="weekday cal-box">Wed</th>
+                        <th className="weekday cal-box">Thu</th>
+                        <th className="weekday cal-box">Fri</th>
+                        <th className="weekday cal-box">Sat</th>
+                        <th className="weekday cal-box">Sun</th>
+                    </tr>
+                </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>General</td>
-                            <td></td>
-                            <td>
-                                <div className="general">
-                                    <ul>
-                                        <li className="event">Devotional @ 11:00 am</li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div className="general">
-                                    <ul>
-                                        <li className="event">Church @ 9:00 am</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>CS 252<br />Introduction to Compudational Theory</td>
-                            <td>
-                                <div className="CS_252">
-                                    <ul>
-                                        <li className="incomplete">
-                                            <span>Read 2.2 (last 8 pages)</span><span className="days_remaining">(2)</span>
-                                        </li>
-                                        <li className="completed">
-                                            <span>Homework 12</span><span className="days_remaining">(2)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>
-                                <div className="CS_252">
-                                    <ul>
-                                        <li className="last_day">
-                                            <span>Read 2.2 (last 8 pages)</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                        <li className="completed">
-                                            <span>Homework 12</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>
-                                <div className="CS_252">
-                                    <ul>
-                                        <li className="incomplete">
-                                            <span>Homework 13</span><span className="days_remaining">(2)</span>
-                                        </li>
-                                        <li className="incomplete">
-                                            <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(2)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>
-                                <div className="CS_252">
-                                    <ul>
-                                        <li className="last_day">
-                                            <span>Homework 13</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                        <li className="last_day">
-                                            <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>
-                                <div className="CS_252">
-                                    <ul>
-                                        <li className="last_day">
-                                            <span>Homework 14</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                        <li className="last_day">
-                                            <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(1)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <tbody id="cal-body">
+                    <tr>
+                        <td className="classes cal-box">General</td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box">
+                            <div className="general">
+                                <ul>
+                                    <li className="event">Devotional @ 11:00 am</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box">
+                            <div className="general">
+                                <ul>
+                                    <li className="event">Church @ 9:00 am</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="classes cal-box">CS 252<br />Introduction to Compudational Theory</td>
+                        <td className="cal-box">
+                            <div className="CS_252">
+                                <ul>
+                                    <li className="incomplete">
+                                        <span>Read 2.2 (last 8 pages)</span><span className="days_remaining">(2)</span>
+                                    </li>
+                                    <li className="completed">
+                                        <span>Homework 12</span><span className="days_remaining">(2)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box">
+                            <div className="CS_252">
+                                <ul>
+                                    <li className="last_day">
+                                        <span>Read 2.2 (last 8 pages)</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                    <li className="completed">
+                                        <span>Homework 12</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box">
+                            <div className="CS_252">
+                                <ul>
+                                    <li className="incomplete">
+                                        <span>Homework 13</span><span className="days_remaining">(2)</span>
+                                    </li>
+                                    <li className="incomplete">
+                                        <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(2)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box">
+                            <div className="CS_252">
+                                <ul>
+                                    <li className="last_day">
+                                        <span>Homework 13</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                    <li className="last_day">
+                                        <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box">
+                            <div className="CS_252">
+                                <ul>
+                                    <li className="last_day">
+                                        <span>Homework 14</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                    <li className="last_day">
+                                        <span>Read 2.3 (all 5 pages)</span><span className="days_remaining">(1)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td className="cal-box"></td>
+                        <td className="cal-box"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div className="buttons">

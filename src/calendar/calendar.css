@@ -4,23 +4,24 @@
     padding: 30px;
 }
 
-table { 
-    border: 1px solid #ddd;
+#calendar { 
+    border: solid #ddd;
+    border-width: 0px 0px 1px 1px;
     border-collapse: separate;
-    border-left: 0;
     border-radius: 25px;
     border-spacing: 0px;
 }
 
-thead, tbody  {
+#cal-head, #cal-body {
     background-color: aliceblue;
 }
 
-th, td {
+.cal-box {
     padding: 5px 4px 6px 4px; 
     text-align: left;
     vertical-align: top;
-    border-left: 1px solid #ddd;
+    border: solid #ddd;
+    border-width: 1px 1px 0px 0px;
 }
 
 thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
@@ -41,16 +42,18 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 
 .classes {
     min-width: 150px;
+    color: black;
 }
 
 .weekday {
     min-width: 200px;
     text-align: center;
+    color: black;
 }
 
-.calendar {
-    padding: 50px;
-    padding-top: 0;
+.table-responsive {
+    margin: 25px;
+    margin-top: 0;
 }
 
 ul {
