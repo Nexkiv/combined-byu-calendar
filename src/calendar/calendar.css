@@ -22,6 +22,8 @@
     vertical-align: top;
     border: solid #ddd;
     border-width: 1px 1px 0px 0px;
+    min-height: 100px;
+    height: 175px;
 }
 
 thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
@@ -41,22 +43,34 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 }
 
 .classes {
+    padding: 5px 4px 6px 4px; 
     min-width: 150px;
     color: black;
+    border: solid #ddd;
+    border-width: 1px 1px 0px 0px;
 }
 
 .weekday {
-    min-width: 200px;
+    padding: 5px 4px 6px 4px; 
+    min-width: 150px;
+    width: 100vw;
     text-align: center;
     color: black;
+    border: solid #ddd;
+    border-width: 1px 1px 0px 0px;
 }
 
-.table-responsive {
-    margin: 25px;
-    margin-top: 0;
+#calendar-container {
+    padding: 50px;
+    padding-top: 0;
 }
 
-ul {
+td div {
+    display: flex;
+}
+
+.assignments, .events {
+    flex: 1;
     display: flex;
     flex-direction: column;
     list-style-type: none;
@@ -64,11 +78,7 @@ ul {
     float: left;
 }
 
-ul .event {
-    color: black;
-}
-
-ul .incomplete {
+ul .event, ul .incomplete {
     color: black;
 }
 
@@ -80,10 +90,10 @@ ul .completed {
 ul .last_day {
     color: royalblue;
     font-weight: bold;
+    flex: 1;
 }
 
 li {
-    flex: 0;
     display: flex;
     flex-direction: row;
 }
@@ -95,11 +105,6 @@ li span {
 .days_remaining {
     flex: 1;
     text-align: right;
-}
-
-td {
-    min-height: 100px;
-    height: 200px;
 }
 
 h1 {
@@ -117,8 +122,18 @@ h1 {
     display: none;
 }
 
+.table-responsive {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 50;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
 @media (max-width: 1650px) {
-    .calendar {
+    #calendar-container {
         padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 25px;
