@@ -120,7 +120,7 @@ export function Calendar() {
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
         </div>
         <div className="second-sign-out-button">
-            <form method="get" action="index.html">
+            <form method="get" action='/'>
                 <button className="btn btn-secondary" type="submit">Sign-out</button>
             </form>
         </div>
