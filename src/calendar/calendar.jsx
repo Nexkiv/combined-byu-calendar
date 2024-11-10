@@ -76,6 +76,40 @@ class Calendar extends React.Component {
             </tr>
         );
 
+        function markCompleted(value, key) {
+            // This is a loose demontration of how marking assignments as complete will look
+            // The actual implementation will use a database field
+
+            let filter, table, tr, td, ul, li, i, j, k, txtValue;
+            filter = value;
+
+            table = document.getElementById("cal-body");
+            if (table != null){
+                tr = table.getElementsByTagName("tr");
+                for (i = 1; i < tr.length; i++) {
+                    for (j = 0; j < 8; j++) {
+                        td = tr[i].getElementsByTagName("td")[j];
+                        ul = td.getElementsByTagName("ul")[0];
+                        if (ul) {
+                            li = ul.getElementsByTagName("li");
+                            if (li) {
+                                for (k = 0; k < li.length; k++) {
+                                    txtValue = li[k].textContent || li[k].innerText;
+                                    console.log(txtValue);
+                                    console.log(value);
+                                    if (txtValue == value && li[k].className != "completed") {
+                                        li[k].className = "completed";
+                                    } else if (txtValue == value) {
+                                        li[k].className = "";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         calendars.forEach (function(value, key) {
             days = [];
             day = weekStart;
@@ -91,8 +125,10 @@ class Calendar extends React.Component {
 
                 days.push(
                     <td className="cal-box">
-                        Assignments due on {format(day, "MMM")} {day.getDate()}:<br />
-                        {value}
+                        <p>Assignments due on {format(day, "MMM")} {day.getDate()}:</p>
+                        <ul className="assignments">
+                            <li onClick={() => markCompleted(value, key)}>{value}</li>
+                        </ul>
                     </td>
                 );
                 day = addDays(day, 1);
