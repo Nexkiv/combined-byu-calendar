@@ -126,8 +126,8 @@ class Calendar extends React.Component {
         });
     }
 
-    addEventForm () {
-        
+    addEvent = (eventName, eventDate) => {
+        // This will add the event to the database
     }
 
     addCalendar = (calendarName, iCalLink) => {
@@ -139,10 +139,6 @@ class Calendar extends React.Component {
 
     addAssignment = (calendarID, assignmentName, dueDate) => {
         // This will add the assignment to the database
-    }
-
-    addEvent = (eventName, eventDate) => {
-        // This will add the event to the database
     }
 
     render() {
