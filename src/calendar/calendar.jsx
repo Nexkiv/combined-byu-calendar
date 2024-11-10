@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore } from "date-fns";
+import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears } from "date-fns";
 import { AuthState } from '../login/authState';
-import CalendarFeedParser from './ICalendarFeed';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
 
@@ -196,9 +195,10 @@ class Calendar extends React.Component {
         )
     }
 
-    addCalendar = (className, iCalLink) => {
+    addCalendar = (calendarName, iCalLink) => {
+        // This will call the service to parse the inputted iCal feed and then add it to the database
         this.setState({
-            userCalendars: this.state.userCalendars.set(className, iCalLink)
+            userCalendars: this.state.userCalendars.set(calendarName, iCalLink)
         });
     }
 
