@@ -4,6 +4,7 @@ import { AuthState } from '../login/authState';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
 import AddAssignmentForm from './addAssignmentForm';
+import AddEventForm from './addEventForm';
 
 class Calendar extends React.Component {
     state = {
@@ -126,36 +127,7 @@ class Calendar extends React.Component {
     }
 
     addEventForm () {
-        return (
-            <div className="modal fade" id="add_event_popup" role="dialog">
-                <div className="modal-dialog modal-dialog-centered">
-                
-                    {/* <!-- Pop-up content--> */}
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title">Add Event</h4>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <form>
-                            <div className="modal-body">
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text">Event Name:</span>
-                                    <input className="form-control" type="text" placeholder="Meeting" />
-                                </div>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text">Date:</span>
-                                    <input className="form-control" type="datetime-local"/>
-                                </div>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Add to Calendar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        )
+        
     }
 
     addCalendar = (calendarName, iCalLink) => {
@@ -167,6 +139,10 @@ class Calendar extends React.Component {
 
     addAssignment = (calendarID, assignmentName, dueDate) => {
         // This will add the assignment to the database
+    }
+
+    addEvent = (eventName, eventDate) => {
+        // This will add the event to the database
     }
 
     render() {
@@ -316,7 +292,7 @@ class Calendar extends React.Component {
                 </div>
 
                 {/* <!-- Add Event Pop-up Menu --> */}
-                <this.addEventForm />
+                <AddEventForm onAddEvent={this.addEvent}/>
 
                 {/* <!-- Add Calendar Pop-up Menu --> */}
                 <AddCalendarForm onAddCalendar={this.addCalendar} />
