@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore } from "date-fns";
 import { AuthState } from '../login/authState';
 import CalendarFeedParser from './ICalendarFeed';
@@ -39,8 +39,7 @@ class Calendar extends React.Component {
     }
 
     renderAssignments() {
-        const { currentWeek } = this.state;
-        const weekStart = startOfWeek(currentWeek);
+        const weekStart = startOfWeek(this.state.currentWeek);
         const weekEnd = endOfWeek(weekStart);
         const calendars = this.state.userCalendars;
 
@@ -99,16 +98,54 @@ class Calendar extends React.Component {
         });
     }
 
+    addCalendarForm () {
+        return (
+            <div className="modal fade" id="add_calendar_popup" role="dialog">
+                <div className="modal-dialog modal-dialog-centered">
+                
+                    {/* <!-- Pop-up content--> */}
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title">Add Calendar</h4>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form>
+                            <div className="modal-body">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">Calendar ID:</span>
+                                    <input className="form-control" type="text" placeholder="UNIV 101" />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">Calendar Name:</span>
+                                    <input className="form-control" type="text" placeholder="BYU Foundations for Student Success" />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">iCal link:</span>
+                                    <input className="form-control" type="url" placeholder="example.ical" />
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Add Calendar</button>
+                            </div>
+                        </form>
+                    </div>
+                
+                </div>
+            </div>
+        );
+    }
+
+    addCalendar = (className) => {
+        this.setState({
+            userCalendars: this.state.userCalendars.set(className, "test")
+        });
+    }
+
     render() {
 
         return (
             <main>
-                {/*
-                <div>
-                    <h1>My Calendar App</h1>
-                    <ICalendarFeed url={this.state.calendarUrl} />
-                </div>
-                */}
                 <div id="week-title">
                     {this.renderWeekTitle()}
                     <button type="button" className="btn btn-secondary" onClick={this.prevWeek}>
@@ -252,39 +289,7 @@ class Calendar extends React.Component {
                 </div>
 
                 {/* <!-- Add Calendar Pop-up Menu --> */}
-                <div className="modal fade" id="add_calendar_popup" role="dialog">
-                    <div className="modal-dialog modal-dialog-centered">
-                    
-                        {/* <!-- Pop-up content--> */}
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h4 className="modal-title">Add Calendar</h4>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <form>
-                                <div className="modal-body">
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">Calendar ID:</span>
-                                        <input className="form-control" type="text" placeholder="UNIV 101" />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">Calendar Name:</span>
-                                        <input className="form-control" type="text" placeholder="BYU Foundations for Student Success" />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">iCal link:</span>
-                                        <input className="form-control" type="url" placeholder="example.ical" />
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Add Calendar</button>
-                                </div>
-                            </form>
-                        </div>
-                    
-                    </div>
-                </div>
+                <this.addCalendarForm />
 
                 {/* <!-- Add Event Pop-up Menu --> */}
                 <div className="modal fade" id="add_event_popup" role="dialog">
