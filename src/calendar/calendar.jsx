@@ -1,5 +1,5 @@
 import React from 'react';
-import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear } from "date-fns";
+import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay } from "date-fns";
 import { AuthState } from '../login/authState';
 import ICalendarFeed from './ICalendarFeed';
 import './calendar.css';
@@ -7,7 +7,8 @@ import './calendar.css';
 class Calendar extends React.Component {
     state = {
         currentWeek: new Date(),
-        calendarUrl: "../public/Barker.ics"
+        calendarUrl: "../public/Barker.ics",
+        userCalendars: new Array
     };
 
     renderWeekTitle() {
@@ -35,41 +36,47 @@ class Calendar extends React.Component {
         )
     }
 
-    renderAssignments() {
-        const { currentWeek, selectedDate } = this.state;
+    renderAssignments(calendars) {
+        const { currentWeek } = this.state;
         const weekStart = startOfWeek(currentWeek);
         const weekEnd = endOfWeek(weekStart);
-        const startDate = startOfDay(weekStart);
-        const endDate = endOfDay(weekEnd);
-    
-        const dateFormat = "d";
+
         const rows = [];
-    
-        let days = [];
-        let day = startDate;
-        let formattedDate = "";
-    
-        while (day <= endDate) {
-            for (let i = 0; i < 7; i++) {
-                formattedDate = format(day, dateFormat);
-                const cloneDay = day;
+
+        let days;
+        let day;
+
+        for (let calendar in calendars) {
+            days = [];
+            day = weekStart;
+            
+            days.push(
+                <td className="classes cal-box">Test</td>
+            )
+
+            do {
                 days.push(
-                <div className={"col cell"}>
-                    <span className="number">{formattedDate}</span>
-                    <span className="bg">{formattedDate}</span>
-                </div>
+                    <td className="cal-box" color="black">
+                        {day.getDate()}
+                    </td>
                 );
                 day = addDays(day, 1);
-            }
-            rows.push(
-                <div className="row">
-                {days}
-                </div>
+            } while (!isSameDay(day, weekEnd));
+            
+            days.push(
+                <td className="cal-box" color="black">
+                    {day.getDate()}
+                </td>
             );
-            days = [];
+
+            rows.push(
+                <tr>
+                    {days}
+                </tr>
+            );
         }
 
-        return <div className="body">{rows}</div>;
+        return <tbody id="cal-body">{rows}</tbody>;
     }
 
     nextWeek = () => {
@@ -89,14 +96,6 @@ class Calendar extends React.Component {
             currentWeek: new Date()
         });
     }
-  
-    /*
-    fetch('https://quote.cs260.click')
-    .then((response) => response.json())
-    .then((jsonResponse) => {
-        console.log(jsonResponse);
-    });
-    */
 
     render() {
         return (
@@ -131,16 +130,17 @@ class Calendar extends React.Component {
                             <thead id="cal-head">
                                 <tr>
                                     <th className="weekday">Classes</th>
+                                    <th className="weekday">Sun</th>
                                     <th className="weekday">Mon</th>
                                     <th className="weekday">Tue</th>
                                     <th className="weekday">Wed</th>
                                     <th className="weekday">Thu</th>
                                     <th className="weekday">Fri</th>
                                     <th className="weekday">Sat</th>
-                                    <th className="weekday">Sun</th>
                                 </tr>
                             </thead>
 
+                            {/*
                             <tbody id="cal-body">
                                 <tr>
                                     <td className="classes cal-box">General</td>
@@ -230,6 +230,8 @@ class Calendar extends React.Component {
                                     <td className="cal-box"></td>
                                 </tr>
                             </tbody>
+                            */}
+                            {this.renderAssignments("test")}
                         </table>
                     </div>
                 </div>
