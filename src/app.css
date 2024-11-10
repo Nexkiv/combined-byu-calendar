@@ -19,7 +19,7 @@ header {
 header h1 {
     margin: 0;
     padding: 20px;
-    flex: 1;
+    flex: 3;
 }
 
 header img {

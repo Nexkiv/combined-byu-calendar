@@ -177,7 +177,11 @@ class Calendar extends React.Component {
         // This will add the assignment to the database
     }
 
-    render() {
+    render(props) {
+        async function logOut() {
+            localStorage.removeItem('userName');
+            props.onLogout();
+        }
 
         return (
             <main>
@@ -319,7 +323,7 @@ class Calendar extends React.Component {
 
                 <div className="second-sign-out-button">
                     <form method="get" action='/'>
-                        <button className="btn btn-secondary" type="submit">Sign-out</button>
+                        <button className="btn btn-secondary" type="submit" onClick={() => logOut()}>Sign-out</button>
                     </form>
                 </div>
 

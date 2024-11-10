@@ -12,6 +12,16 @@ export default function App() {
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
 
+    function onAuthChange (userName, authState) {
+        setAuthState(authState);
+        setUserName(userName);
+    }
+
+    function logout() {
+        localStorage.removeItem('userName');
+        () => onAuthChange(userName, AuthState.Unauthenticated);
+    }
+
     return (
         <BrowserRouter>
             <div className='body bg-dark text-light'>
@@ -20,15 +30,27 @@ export default function App() {
                     {authState === AuthState.Authenticated && (
                         <div className="sign-out-button">
                             <form method="get" action='/'>
-                                <button className="btn btn-secondary" type="submit">Sign-out</button>
+                                <button className="btn btn-secondary" type="submit" onClick={() => logout()}>Sign-out</button>
                             </form>
                         </div>
                     )}
                 </header>
 
                 <Routes>
-                    <Route path='/' element={<Login />} />
-                    <Route path='/calendar' element={<Calendar />} />
+                    {authState !== AuthState.Authenticated && (
+                        <Route 
+                            path='/' 
+                            element={<Login
+                                        userName={userName}
+                                        onLogin={(loginEmail) => {
+                                            onAuthChange(loginEmail, AuthState.Authenticated);
+                                        }}
+                                    />} 
+                        />)
+                    }
+                    {authState === AuthState.Authenticated && (
+                        <Route path='/' element={<Calendar onLogout = {() => onAuthChange(userName, AuthState.Unauthenticated)} />} />
+                    )}
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 
