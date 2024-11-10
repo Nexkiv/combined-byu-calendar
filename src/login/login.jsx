@@ -21,7 +21,7 @@ export function Login( props ) {
         <div id="login_box">
             <h1>Welcome to your<br />BYU calendar</h1>
 
-            <img src="public/cougar.png" alt="BYU cougar" />
+            <img src="cougar.png" alt="BYU cougar" />
 
             <form method="get" action="/">
                 
