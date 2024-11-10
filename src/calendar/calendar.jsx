@@ -196,9 +196,9 @@ class Calendar extends React.Component {
         )
     }
 
-    addCalendar = (className) => {
+    addCalendar = (className, iCalLink) => {
         this.setState({
-            userCalendars: this.state.userCalendars.set(className, "test")
+            userCalendars: this.state.userCalendars.set(className, iCalLink)
         });
     }
 
@@ -352,7 +352,7 @@ class Calendar extends React.Component {
                 <this.addEventForm />
 
                 {/* <!-- Add Calendar Pop-up Menu --> */}
-                <this.addCalendarForm />
+                <AddCalendarForm onAddCalendar={this.addCalendar} />
 
                 {/* <!-- Add Assignment Pop-up Menu --> */}
                 <this.addAssignmentForm />
