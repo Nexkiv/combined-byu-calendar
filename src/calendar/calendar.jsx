@@ -374,8 +374,8 @@ class Calendar extends React.Component {
                 </div>
 
                 <div className="buttons">
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_calendar_popup">Add Calendar</button>
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button>
+                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_calendar_popup">Add Calendar</button>
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
                 </div>
 
@@ -385,11 +385,11 @@ class Calendar extends React.Component {
                     </form>
                 </div>
 
-                {/* <!-- Add Calendar Pop-up Menu --> */}
-                <this.addCalendarForm />
-
                 {/* <!-- Add Event Pop-up Menu --> */}
                 <this.addEventForm />
+
+                {/* <!-- Add Calendar Pop-up Menu --> */}
+                <this.addCalendarForm />
 
                 {/* <!-- Add Assignment Pop-up Menu --> */}
                 <this.addAssignmentForm />
