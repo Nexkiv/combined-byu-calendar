@@ -64,6 +64,7 @@ class Calendar extends React.Component {
 
                 days.push(
                     <td className="cal-box">
+                        Assignments due on {format(day, "MMM")} {day.getDate()}:<br />
                         {value}
                     </td>
                 );
