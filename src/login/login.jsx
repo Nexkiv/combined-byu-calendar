@@ -65,11 +65,11 @@ export function Login( props ) {
                                 </div>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Email</span>
-                                    <input className="form-control" type="email" placeholder="your@email.com" />
+                                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" />
                                 </div>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text">Password</span>
-                                    <input className="form-control" type="password" placeholder="password" />
+                                    <input className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                                 </div>
                                 <div className="form-check">
                                     <input type="checkbox" className="form-check-input" id="create_check" name="option" value="persist_login" />
