@@ -176,10 +176,6 @@ class Calendar extends React.Component {
                         <form>
                             <div className="modal-body">
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text">Calendar ID:</span>
-                                    <input className="form-control" type="text" placeholder="General" />
-                                </div>
-                                <div className="input-group mb-3">
                                     <span className="input-group-text">Event Name:</span>
                                     <input className="form-control" type="text" placeholder="Meeting" />
                                 </div>
