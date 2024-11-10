@@ -46,6 +46,7 @@
     border-width: 1px 1px 0px 0px;
     min-height: 100px;
     height: 175px;
+    color: black;
 }
 
 thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {

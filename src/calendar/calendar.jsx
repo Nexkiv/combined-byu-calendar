@@ -1,14 +1,16 @@
 import React from 'react';
-import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay } from "date-fns";
+import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore } from "date-fns";
 import { AuthState } from '../login/authState';
-import ICalendarFeed from './ICalendarFeed';
+import CalendarFeedParser from './ICalendarFeed';
 import './calendar.css';
 
 class Calendar extends React.Component {
     state = {
         currentWeek: new Date(),
-        calendarUrl: "../public/Barker.ics",
-        userCalendars: new Array
+        userCalendars: new Map([
+            ["CS 252\nIntroduction to Compudational Theory", "../public/Barker.ics"],
+            ["IS 110\nSpreadsheets & Business Analysis", "../public/Speadsheets.ics"]
+        ])
     };
 
     renderWeekTitle() {
@@ -36,45 +38,44 @@ class Calendar extends React.Component {
         )
     }
 
-    renderAssignments(calendars) {
+    renderAssignments() {
         const { currentWeek } = this.state;
         const weekStart = startOfWeek(currentWeek);
         const weekEnd = endOfWeek(weekStart);
+        const calendars = this.state.userCalendars;
 
         const rows = [];
 
         let days;
         let day;
 
-        for (let calendar in calendars) {
+        calendars.forEach (function(value, key) {
             days = [];
             day = weekStart;
             
             days.push(
-                <td className="classes cal-box">Test</td>
+                <td className="classes cal-box">
+                    {key}
+                </td>
             )
 
-            do {
+            while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
+                // Query the database table which is passed in as a value using day to determine the assignemnts
+
                 days.push(
-                    <td className="cal-box" color="black">
-                        {day.getDate()}
+                    <td className="cal-box">
+                        {value}
                     </td>
                 );
                 day = addDays(day, 1);
-            } while (!isSameDay(day, weekEnd));
-            
-            days.push(
-                <td className="cal-box" color="black">
-                    {day.getDate()}
-                </td>
-            );
+            }
 
             rows.push(
                 <tr>
                     {days}
                 </tr>
             );
-        }
+        })
 
         return <tbody id="cal-body">{rows}</tbody>;
     }
@@ -98,6 +99,7 @@ class Calendar extends React.Component {
     }
 
     render() {
+
         return (
             <main>
                 {/*
@@ -231,7 +233,7 @@ class Calendar extends React.Component {
                                 </tr>
                             </tbody>
                             */}
-                            {this.renderAssignments("test")}
+                            {this.renderAssignments()}
                         </table>
                     </div>
                 </div>
