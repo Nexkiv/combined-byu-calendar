@@ -65,6 +65,20 @@ For this deliverable I properly styled the application into its final appearance
 - [x] **Application images** - I added a image to the background of the login page to make it look more professional. I also styled my icon to match the text coloring.
 
 ## React deliverable
+
+For this deliverable I used JavaScript and React so that the application partially works for a single user. I also added placeholders for future technology.
+
+- [x] **Bundled and transpiled** - done!
+- [x] **Components** - Login, calendar, vote are all components with mocks for login, WebSocket.
+  - [x] **login** - When you press enter or the login button it takes you to the calendar page.
+  - [x] **logout** - Pressing sign-out takes you back to the login page
+  - [x] **database** - Displayed the user's calendar data. Currently this is a mockup that is stored and retrieved from local storage, but it will be replaced with the database data later.
+  - [x] **WebSocket** - I used functions that are mock ups of the functions that will effect all sessions of the user. This will be replaced with WebSocket messages later.
+  - [x] **application logic** - I included a mock up of the ability to check off assignments. This will be replaced with a database.
+- [x] **Router** - Routing between login and calendar components. I chose to keep them both at the "/" location to ensure security.
+- [x] **Hooks** - The login system uses `UseState` to track changes in login state. The calendar uses a class structure to keep track of added calendars.
+
+
 ## Service deliverable
 ## DB/Login deliverable
 ## WebSocket deliverable
