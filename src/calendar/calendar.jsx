@@ -7,6 +7,7 @@ import './calendar.css';
 class Calendar extends React.Component {
     state = {
         currentWeek: new Date(),
+        generalCalendar: "General database",
         userCalendars: new Map([
             ["CS 252\nIntroduction to Compudational Theory", "../public/Barker.ics"],
             ["IS 110\nSpreadsheets & Business Analysis", "../public/Speadsheets.ics"]
@@ -45,8 +46,33 @@ class Calendar extends React.Component {
 
         const rows = [];
 
-        let days;
-        let day;
+        let days = [];
+        let day = weekStart;
+        
+        // Handling the special General Calendar
+        days.push(
+            <td className="classes cal-box">
+                General
+            </td>
+        )
+
+        while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
+            // Query the database table which is passed in as a value using day to determine the assignemnts
+
+            days.push(
+                <td className="cal-box">
+                    Events on {format(day, "MMM")} {day.getDate()}:<br />
+                    {this.state.generalCalendar}
+                </td>
+            );
+            day = addDays(day, 1);
+        }
+
+        rows.push(
+            <tr>
+                {days}
+            </tr>
+        );
 
         calendars.forEach (function(value, key) {
             days = [];
@@ -168,6 +194,44 @@ class Calendar extends React.Component {
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+        )
+    }
+
+    addAssignmentForm () {
+        return (
+            <div className="modal fade" id="add_assignment_popup" role="dialog">
+                <div className="modal-dialog modal-dialog-centered">
+                
+                    {/* <!-- Pop-up content--> */}
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title">Add Assignment</h4>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form>
+                            <div className="modal-body">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">Calendar ID:</span>
+                                    <input className="form-control" type="text" placeholder="CS 252" />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">Event Name:</span>
+                                    <input className="form-control" type="text" placeholder="Homework 42" />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text">Due Date:</span>
+                                    <input className="form-control" type="datetime-local" />
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Add to Calendar</button>
+                            </div>
+                        </form>
+                    </div>
+                
                 </div>
             </div>
         )
@@ -332,39 +396,7 @@ class Calendar extends React.Component {
                 <this.addEventForm />
 
                 {/* <!-- Add Assignment Pop-up Menu --> */}
-                <div className="modal fade" id="add_assignment_popup" role="dialog">
-                    <div className="modal-dialog modal-dialog-centered">
-                    
-                        {/* <!-- Pop-up content--> */}
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h4 className="modal-title">Add Assignment</h4>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <form>
-                                <div className="modal-body">
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">Calendar ID:</span>
-                                        <input className="form-control" type="text" placeholder="CS 252" />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">Event Name:</span>
-                                        <input className="form-control" type="text" placeholder="Homework 42" />
-                                    </div>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text">Due Date:</span>
-                                        <input className="form-control" type="datetime-local" />
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">Add to Calendar</button>
-                                </div>
-                            </form>
-                        </div>
-                    
-                    </div>
-                </div>
+                <this.addAssignmentForm />
             </main>
         );
     }
