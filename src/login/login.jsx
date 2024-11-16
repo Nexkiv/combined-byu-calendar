@@ -32,7 +32,7 @@ export function Login( props ) {
     }
 
     return (
-        <main className='container-fluid bg-secondary text-center' id="login-display">
+        <main style={{backgroundImage:"url(/BYU%20Watercolor.png)"}} className='container-fluid bg-secondary text-center' id="login-display">
             <div id="login_box">
                 <h1>Welcome to your<br />BYU calendar</h1>
 
