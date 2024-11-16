@@ -13,7 +13,8 @@ class Calendar extends React.Component {
         userCalendars: new Map([
             ["CS 252\nIntroduction to Compudational Theory", "../public/Barker.ics"],
             ["IS 110\nSpreadsheets & Business Analysis", "../public/Speadsheets.ics"]
-        ])
+        ]),
+        events: new String()
     };
 
     renderWeekTitle() {
@@ -45,6 +46,8 @@ class Calendar extends React.Component {
         const weekStart = startOfWeek(this.state.currentWeek);
         const weekEnd = endOfWeek(weekStart);
         const calendars = this.state.userCalendars;
+        // const [quote, setQuote] = React.useState('Loading...');
+        // const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
         const rows = [];
 
@@ -58,16 +61,39 @@ class Calendar extends React.Component {
             </td>
         )
 
+        // React.useEffect(() => {
+        //         // fetch(`https://calendar.byu.edu/api/Events.json?categories=all&event[min][date]=${day.toISOString.substring(0,10)}&event[max][date]=${day.toISOString.substring(0,10)}`)
+        //         //     .then((response) => response.json())
+        //         //     .then((data) => {
+        //         //         for (let i = 0; i < data.length; i++) {
+        //         //             const title = data[i].Title;
+        //         //             const startTime = data[i].StratDateTime.substring(0,5);
+        //         //             this.state.events = this.state.events + "\n" + title + "\nStarts at: " + startTime;
+        //         //         }
+        //         //     })
+        //         //     .catch();
+                
+        //         // fetch('https://quote.cs260.click')
+        //         // .then((response) => response.json())
+        //         // .then((data) => {
+        //         //     setQuote(data.quote);
+        //         //     setQuoteAuthor(data.author);
+        //         // })
+        //         // .catch();
+        // }, []);
+
         while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
             // Query the database table which is passed in as a value using day to determine the assignemnts
+            const nextDay = addDays(day, 1);
 
             days.push(
                 <td className="cal-box">
                     Events on {format(day, "MMM")} {day.getDate()}:<br />
-                    {this.state.generalCalendar}
+                    <p>{this.state.events}</p>
                 </td>
             );
-            day = addDays(day, 1);
+
+            day = nextDay;
         }
 
         rows.push(
