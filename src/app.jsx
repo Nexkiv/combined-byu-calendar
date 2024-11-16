@@ -18,9 +18,17 @@ export default function App() {
     }
 
     function logout() {
-        localStorage.removeItem('userName');
-        () => onAuthChange(userName, AuthState.Unauthenticated);
-    }
+        fetch(`/api/auth/logout`, {
+          method: 'delete',
+        })
+          .catch(() => {
+            // Logout failed. Assuming offline
+          })
+          .finally(() => {
+            localStorage.removeItem('userName');
+            () => onAuthChange(userName, AuthState.Unauthenticated);
+          });
+      }
 
     return (
         <BrowserRouter>
