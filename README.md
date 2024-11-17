@@ -80,6 +80,16 @@ For this deliverable I used JavaScript and React so that the application partial
 
 
 ## Service deliverable
+
+For this deliverable I added backend endpoints that allows for login credentials to be stored and pulls devotional info from BYU.
+
+- [x] **Node.js/Express HTTP service** - done!
+- [x] **Static middleware for frontend** - done!
+- [x] **Calls to third party endpoints** - The sit pulls from BYU's calendar API
+- [x] **Backend service endpoints** - Placeholders for login that stores the current user on the server.
+- [x] **Frontend calls service endpoints** - I did this using the fetch function.
+
+
 ## DB/Login deliverable
 ## WebSocket deliverable
 
