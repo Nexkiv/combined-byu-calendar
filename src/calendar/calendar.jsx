@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, formatISO, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears } from "date-fns";
+import { format, formatISO, addDays, isSameWeek, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears, isEqual } from "date-fns";
 import { AuthState } from '../login/authState';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
@@ -14,7 +14,8 @@ class Calendar extends React.Component {
             ["CS 252\nIntroduction to Compudational Theory", "../public/Barker.ics"],
             ["IS 110\nSpreadsheets & Business Analysis", "../public/Speadsheets.ics"]
         ]),
-        events: new String()
+        events: new String(),
+        devotionalInfo: null
     };
 
     renderWeekTitle() {
@@ -42,30 +43,38 @@ class Calendar extends React.Component {
         )
     }
 
-    updateDevotional() {
-        // const [quote, setQuote] = useState('Loading...');
-        // const [quoteAuthor, setQuoteAuthor] = useState('unknown');
-        let day = startOfWeek(this.state.currentWeek);
-        day = addDays(addDays(day, 1), 1);
+    componentDidMount() {
+        this.fetchDevotionalInfo();
+    }
 
-        fetch(`https://calendar.byu.edu/api/Events.json?categories=7&event%5Bmin%5D%5Bdate%5D=${formatISO(day, { representation: 'date' })}&event%5Bmax%5D%5Bdate%5D=${formatISO(day, { representation: 'date' })}`)
-            .then((response) => response.json())
-            .then((data) => {
-                for (let i = 0; i < data.length; i++) {
-                    const title = data[i].Title;
-                    const startTime = data[i].StartDateTime.substring(16,5);
-                    this.state.events = this.state.events + "\n" + title + "\nStarts at: " + startTime;
-                }
-            })
-            .catch();
-        
-        // fetch('https://quote.cs260.click')
-        // .then((response) => response.json())
-        // .then((data) => {
-        //     setQuote(data.quote);
-        //     setQuoteAuthor(data.author);
-        // })
-        // .catch();
+    componentDidUpdate(prevProps, prevState) {
+        if (!isSameWeek(prevState.currentWeek, this.state.currentWeek)) {
+            this.state.devotionalInfo = null;
+            this.fetchDevotionalInfo();
+        }
+    }
+
+    fetchDevotionalInfo = () => {
+        const weekStart = startOfWeek(this.state.currentWeek);
+        let devoDay = addDays(addDays(weekStart, 1), 1);
+    
+        fetch(`https://calendar.byu.edu/api/Events.json?categories=7&event%5Bmin%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}&event%5Bmax%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.length > 0) {
+                const title = data[0].Title;
+                const startTime = data[0].StartDateTime.substring(11, 16);
+                const devotionalInfo = `${title}\nStarts at: ${startTime}`;
+                this.setState({ devotionalInfo });
+            } else {
+                const devotionalInfo = `No Devotional Today`;
+                this.setState({ devotionalInfo });
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching devotional info:', error);
+            this.setState({ devotionalInfo: 'Unable to load devotional information' });
+          });
     }
 
     renderAssignments() {
@@ -77,6 +86,7 @@ class Calendar extends React.Component {
 
         let days = [];
         let day = weekStart;
+        let devoDay = addDays(addDays(weekStart, 1), 1);
         
         // Handling the special General Calendar
         days.push(
@@ -87,17 +97,26 @@ class Calendar extends React.Component {
 
         while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
             // Query the database table which is passed in as a value using day to determine the assignemnts
-            const nextDay = addDays(day, 1);
 
-            days.push(
-                <td className="cal-box">
-                    Events on {format(day, "MMM")} {day.getDate()}:<br />
-                    <p>{this.state.events}</p>
-                </td>
-            );
+            if (isEqual(day, devoDay)) {
+                days.push(
+                    <td className="cal-box">
+                        Events on {format(day, "MMM")} {day.getDate()}:<br />
+                        <p>{this.state.devotionalInfo || 'Loading...'}</p>
+                    </td>
+                );
+            } else {
+                days.push(
+                    <td className="cal-box">
+                        Events on {format(day, "MMM")} {day.getDate()}:<br />
+                    </td>
+                );
+            }
 
-            day = nextDay;
+            day = addDays(day, 1);
         }
+
+
 
         rows.push(
             <tr>
@@ -211,8 +230,6 @@ class Calendar extends React.Component {
             localStorage.removeItem('userName');
             props.onLogout();
         }
-
-        this.updateDevotional();
 
         return (
             <main>
