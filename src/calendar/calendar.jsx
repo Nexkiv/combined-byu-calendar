@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears } from "date-fns";
+import { format, formatISO, addDays, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears } from "date-fns";
 import { AuthState } from '../login/authState';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
@@ -42,12 +42,36 @@ class Calendar extends React.Component {
         )
     }
 
+    updateDevotional() {
+        // const [quote, setQuote] = useState('Loading...');
+        // const [quoteAuthor, setQuoteAuthor] = useState('unknown');
+        let day = startOfWeek(this.state.currentWeek);
+        day = addDays(addDays(day, 1), 1);
+
+        fetch(`https://calendar.byu.edu/api/Events.json?categories=7&event%5Bmin%5D%5Bdate%5D=${formatISO(day, { representation: 'date' })}&event%5Bmax%5D%5Bdate%5D=${formatISO(day, { representation: 'date' })}`)
+            .then((response) => response.json())
+            .then((data) => {
+                for (let i = 0; i < data.length; i++) {
+                    const title = data[i].Title;
+                    const startTime = data[i].StartDateTime.substring(16,5);
+                    this.state.events = this.state.events + "\n" + title + "\nStarts at: " + startTime;
+                }
+            })
+            .catch();
+        
+        // fetch('https://quote.cs260.click')
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     setQuote(data.quote);
+        //     setQuoteAuthor(data.author);
+        // })
+        // .catch();
+    }
+
     renderAssignments() {
         const weekStart = startOfWeek(this.state.currentWeek);
         const weekEnd = endOfWeek(weekStart);
         const calendars = this.state.userCalendars;
-        // const [quote, setQuote] = React.useState('Loading...');
-        // const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
         const rows = [];
 
@@ -60,27 +84,6 @@ class Calendar extends React.Component {
                 General
             </td>
         )
-
-        // React.useEffect(() => {
-        //         // fetch(`https://calendar.byu.edu/api/Events.json?categories=all&event[min][date]=${day.toISOString.substring(0,10)}&event[max][date]=${day.toISOString.substring(0,10)}`)
-        //         //     .then((response) => response.json())
-        //         //     .then((data) => {
-        //         //         for (let i = 0; i < data.length; i++) {
-        //         //             const title = data[i].Title;
-        //         //             const startTime = data[i].StratDateTime.substring(0,5);
-        //         //             this.state.events = this.state.events + "\n" + title + "\nStarts at: " + startTime;
-        //         //         }
-        //         //     })
-        //         //     .catch();
-                
-        //         // fetch('https://quote.cs260.click')
-        //         // .then((response) => response.json())
-        //         // .then((data) => {
-        //         //     setQuote(data.quote);
-        //         //     setQuoteAuthor(data.author);
-        //         // })
-        //         // .catch();
-        // }, []);
 
         while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
             // Query the database table which is passed in as a value using day to determine the assignemnts
@@ -208,6 +211,8 @@ class Calendar extends React.Component {
             localStorage.removeItem('userName');
             props.onLogout();
         }
+
+        this.updateDevotional();
 
         return (
             <main>
