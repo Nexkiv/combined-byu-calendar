@@ -49,7 +49,6 @@ class Calendar extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (!isSameWeek(prevState.currentWeek, this.state.currentWeek)) {
-            this.state.devotionalInfo = null;
             this.fetchDevotionalInfo();
         }
     }
