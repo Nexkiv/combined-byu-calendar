@@ -3,15 +3,15 @@ import './login.css';
 
 export function Login( props ) {
     const [email, setEmail] = React.useState(props.email);
-    const [password, setPassword] = React.useState('');
+    const [password, setPassword] = React.useState(props.password);
     const [displayError, setDisplayError] = React.useState(null);
 
     async function loginUser() {
-        loginOrCreate(`/api/auth/login`);
+        await loginOrCreate(`/api/auth/login`);
     }
 
     async function createUser() {
-        loginOrCreate(`/api/auth/create`);
+        await loginOrCreate(`/api/auth/create`);
     }
 
     async function loginOrCreate(endpoint) {
@@ -19,10 +19,10 @@ export function Login( props ) {
             method: 'post',
             body: JSON.stringify({ email: email, password: password }),
             headers: {
-            'Content-type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=UTF-8',
             },
         });
-        if (response?.status === 200) {
+        if (response.status === 200) {
             localStorage.setItem('userName', email);
             props.onLogin(email);
         } else {
@@ -47,7 +47,7 @@ export function Login( props ) {
                     </div>
                     <div className="input-group mb-3">
                         <span className="input-group-text">Password</span>
-                        <input className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" />
+                        <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                     </div>
                     <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="check" name="option" value="persist_login" />
@@ -55,7 +55,7 @@ export function Login( props ) {
                     </div>
 
                     <div className="buttons">
-                        <button type="submit" className="btn btn-primary" onClick={() => loginUser()} disabled={!email || !password}>
+                        <button type="submit" className="btn btn-primary" onClick={async () => await loginUser()} disabled={!email || !password}>
                             Login
                         </button>
                         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#account_creation_popup">
@@ -84,7 +84,7 @@ export function Login( props ) {
                                     </div>
                                     <div className="input-group mb-3">
                                         <span className="input-group-text">Password</span>
-                                        <input className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password" />
+                                        <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                                     </div>
                                     <div className="form-check">
                                         <input type="checkbox" className="form-check-input" id="create_check" name="option" value="persist_login" />
@@ -93,7 +93,7 @@ export function Login( props ) {
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => createUser()} disabled={!email || !password}>Create Account</button>
+                                    <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal" onClick={async () => await createUser()} disabled={!email || !password}>Create Account</button>
                                 </div>
                             </div>
                         
