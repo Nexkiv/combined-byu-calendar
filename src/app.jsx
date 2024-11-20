@@ -8,27 +8,27 @@ import './app.css';
 import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
 
 export default function App() {
-    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
-    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [email, setEmail] = React.useState(localStorage.getItem('email') || '');
+    const currentAuthState = email ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
 
-    function onAuthChange (userName, authState) {
+    function onAuthChange(email, authState) {
         setAuthState(authState);
-        setUserName(userName);
+        setEmail(email);
     }
 
     function logout() {
         fetch(`/api/auth/logout`, {
-          method: 'delete',
+            method: 'delete',
         })
-          .catch(() => {
-            // Logout failed. Assuming offline
-          })
-          .finally(() => {
-            localStorage.removeItem('userName');
-            () => onAuthChange(userName, AuthState.Unauthenticated);
-          });
-      }
+            .catch(() => {
+                // Logout failed. Assuming offline
+            })
+            .finally(() => {
+                localStorage.removeItem('email');
+                () => onAuthChange(email, AuthState.Unauthenticated);
+            });
+    }
 
     return (
         <BrowserRouter>
@@ -46,18 +46,18 @@ export default function App() {
 
                 <Routes>
                     {authState !== AuthState.Authenticated && (
-                        <Route 
-                            path='/' 
+                        <Route
+                            path='/'
                             element={<Login
-                                        userName={userName}
-                                        onLogin={(loginEmail) => {
-                                            onAuthChange(loginEmail, AuthState.Authenticated);
-                                        }}
-                                    />} 
+                                email={email}
+                                onLogin={(loginEmail) => {
+                                    onAuthChange(loginEmail, AuthState.Authenticated);
+                                }}
+                            />}
                         />)
                     }
                     {authState === AuthState.Authenticated && (
-                        <Route path='/' element={<Calendar onLogout = {() => onAuthChange(userName, AuthState.Unauthenticated)} />} />
+                        <Route path='/' element={<Calendar onLogout={() => onAuthChange(email, AuthState.Unauthenticated)} />} />
                     )}
                     <Route path='*' element={<NotFound />} />
                 </Routes>
