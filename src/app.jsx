@@ -57,8 +57,13 @@ export default function App() {
                         />)
                     }
                     {authState === AuthState.Authenticated && (
-                        <Route path='/' element={<Calendar onLogout={() => onAuthChange(email, AuthState.Unauthenticated)} />} />
-                    )}
+                        <Route
+                            path='/'
+                            element={<Calendar
+                                onLogout={() => onAuthChange(email, AuthState.Unauthenticated)}
+                            />}
+                        />)
+                    }
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 
