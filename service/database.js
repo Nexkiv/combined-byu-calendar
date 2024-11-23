@@ -39,8 +39,31 @@ async function createUser(email, password) {
   return user;
 }
 
+/**
+ * @param {string} token
+ * @param {Date} startDate
+ * @param {Date} endDate
+ */
+async function getSchedule(token, startDate, endDate) {
+  const calendarCollection = db.collection(token);
+  const calendars = calendarCollection.distinct('calendar');
+  const fullSchedule = new Map;
+  for (const calendar in calendars) {
+    const assignemnts = calendarCollection.find({
+      $and: [
+        { calendar: calendar },
+        { dueDate: { $gte: startDate } },
+        { dueDate: { $lte: endDate } }
+      ]
+    });
+    fullSchedule.set(calendar, assignemnts);
+  }
+
+  return fullSchedule;
+}
+
 module.exports = {
-    getUser,
-    getUserByToken,
-    createUser
-  };
+  getUser,
+  getUserByToken,
+  createUser
+};
