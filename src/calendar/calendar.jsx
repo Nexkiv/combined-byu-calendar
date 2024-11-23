@@ -45,11 +45,13 @@ class Calendar extends React.Component {
 
     componentDidMount() {
         this.fetchDevotionalInfo();
+        // this.fetchCalendarInfo();
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (!isSameWeek(prevState.currentWeek, this.state.currentWeek)) {
             this.fetchDevotionalInfo();
+            // this.fetchCalendarInfo();
         }
     }
 
@@ -76,17 +78,20 @@ class Calendar extends React.Component {
           });
     }
 
-    renderAssignments() {
-        const weekStart = startOfWeek(this.state.currentWeek);
-        const weekEnd = endOfWeek(weekStart);
-        const calendars = this.state.userCalendars;
+    fetchCalendarInfo = () => {
+        
+    }
 
-        const rows = [];
-
+    /**
+     * @param {Date} weekStart
+     * @param {Date} weekEnd
+     * @param {any[]} rows
+     */
+    getGenralCalendarInfo(weekStart, weekEnd, rows) {
         let days = [];
         let day = weekStart;
         let devoDay = addDays(addDays(weekStart, 1), 1);
-        
+
         // Handling the special General Calendar
         days.push(
             <td className="classes cal-box">
@@ -122,6 +127,16 @@ class Calendar extends React.Component {
                 {days}
             </tr>
         );
+    }
+
+    renderAssignments() {
+        const weekStart = startOfWeek(this.state.currentWeek);
+        const weekEnd = endOfWeek(weekStart);
+        const calendars = this.state.userCalendars;
+
+        const rows = [];
+
+        this.getGenralCalendarInfo(weekStart, weekEnd, rows);
 
         function markCompleted(value, key) {
             // This is a loose demontration of how marking assignments as complete will look
@@ -158,8 +173,8 @@ class Calendar extends React.Component {
         }
 
         calendars.forEach (function(value, key) {
-            days = [];
-            day = weekStart;
+            let days = [];
+            let day = weekStart;
             
             days.push(
                 <td className="classes cal-box">
