@@ -57,8 +57,11 @@ apiRouter.post('/auth/login', async (req, res) => {
 
 // DeleteAuth logout a user by deleting the token if stored in cookie
 apiRouter.delete('/auth/logout', async (req, res) => {
-    const exists = await DB.getUserByToken(req.cookies.token);
-    if (exists) {
+    const userData = await DB.getUserByToken(req.cookies.token);
+    if (userData) {
+        res.clearCookie(authCookieName);
+        res.status(204).end();
+    } else {
         res.clearCookie(authCookieName);
         res.status(204).end();
     }
