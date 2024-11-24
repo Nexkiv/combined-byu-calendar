@@ -56,9 +56,12 @@ apiRouter.post('/auth/login', async (req, res) => {
 });
 
 // DeleteAuth logout a user by deleting the token if stored in cookie
-apiRouter.delete('/auth/logout', (_req, res) => {
-    res.clearCookie(authCookieName);
-    res.status(204).end();
+apiRouter.delete('/auth/logout', async (req, res) => {
+    const exists = await DB.getUserByToken(req.cookies.token);
+    if (exists) {
+        res.clearCookie(authCookieName);
+        res.status(204).end();
+    }
 });
 
 // secureApiRouter verifies credentials for endpoints
