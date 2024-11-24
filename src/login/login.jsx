@@ -40,11 +40,9 @@ export function Login(props) {
 
                 {/* <!-- Normal Login Menu --> */}
                 <div className="input-group mb-3">
-                    <span className="input-group-text">Email</span>
-                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" />
+                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">Password</span>
                     <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                 </div>
                 <div className="form-check">
@@ -73,15 +71,12 @@ export function Login(props) {
                             </div>
                             <div className="modal-body">
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text">First Name</span>
                                     <input className="form-control" type="text" placeholder="first name" />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text">Email</span>
-                                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" />
+                                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text">Password</span>
                                     <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                                 </div>
                                 <div className="form-check">
