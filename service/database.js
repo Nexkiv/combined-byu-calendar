@@ -46,20 +46,47 @@ async function createUser(email, password) {
  */
 async function getSchedule(token, startDate, endDate) {
   const calendarCollection = db.collection(token);
-  const calendars = calendarCollection.distinct('calendar');
-  const fullSchedule = new Map;
-  for (const calendar in calendars) {
-    const assignemnts = calendarCollection.find({
-      $and: [
-        { calendar: calendar },
-        { dueDate: { $gte: startDate } },
-        { dueDate: { $lte: endDate } }
-      ]
-    });
-    fullSchedule.set(calendar, assignemnts);
-  }
+  if (calendarCollection) {
+    const calendars = calendarCollection.distinct('calendarID');
+    const fullSchedule = new Map;
+    for (const calendar in calendars) {
+      const assignemnts = calendarCollection.find({
+        $and: [
+          { calendar: calendar },
+          { dueDate: { $gte: startDate } },
+          { dueDate: { $lte: endDate } }
+        ]
+      });
+      fullSchedule.set(calendar, assignemnts);
+    }
 
-  return fullSchedule;
+    return fullSchedule;
+  }
+}
+
+async function addAssignment(token, assignmentInfo) {
+  const calendarCollection = db.collection(token);
+  const calendar = calendarCollection.find({ calendarID: assignmentInfo.calendarID });
+  if (calendar) {
+    calendarCollection.insertOne(assignmentInfo);
+  } else {
+    // throw console.error("Calendar not found");
+  }
+}
+
+async function completeAssignment(token, assignmentInfo) {
+  const calendarCollection = db.collection(token);
+  const calendar = calendarCollection.find({ calendarID: assignmentInfo.calendarID });
+  if (calendar) {
+    calendarCollection.updateOne({
+      $and: [
+        { calendarID: assignmentInfo.calendarID },
+        { assignmentName: assignmentInfo.assignmentName },
+        { dueDate: assignmentInfo.dueDate }
+      ]
+    },
+      { $set: { "completed": true } })
+  }
 }
 
 module.exports = {
