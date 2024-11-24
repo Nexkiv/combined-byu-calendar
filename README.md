@@ -37,6 +37,7 @@ I am going to use the required technologies in the following ways:
     - pulls down iCal updates every five minutes or so to match instructor changes
     - parsing of iCal feed (using a parser API like https://github.com/nponsard/ical.ts)
 - **DB/Login** - Store calendar data and assignment data in a database. Credentials securly stored in a database. Only those with an account can have a calendar and calendars' status are not shared between users.
+```TODO "Store the calendar data under the same user if the user already exists."```
 - **WebSocket** - Provide calendar updates, adding a calendar or assignment will effect all the instances logged in with the same credentials, checking off an assignment will effect all instances of the calendars with the same credentials, notify users of an instructor change and gives them the option to accept it.
 
 ## HTML deliverable
@@ -91,6 +92,16 @@ For this deliverable I added backend endpoints that allows for login credentials
 
 
 ## DB/Login deliverable
+
+For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
+
+- [x] **MongoDB Atlas database created** - done!
+- [x] **Stores data in MongoDB** - done!
+- [x] **User registration** - Creates a new account in the database.
+- [x] **existing user** - Able to log in if an account has been created.
+- [x] **Use MongoDB to store credentials** - Stores user credentials and queries them.
+- [x] **Restricts functionality** - You cannot view the calendar until you have logged in. 
+
 ## WebSocket deliverable
 
 # Class Notes
