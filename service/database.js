@@ -171,5 +171,8 @@ function convertRawToJSON(calendarRaw, calendarID, calendarName) {
 module.exports = {
   getUser,
   getUserByToken,
-  createUser
+  createUser,
+  addCalendar,
+  removeCalendar,
+  getCalendarsByToken
 };
