@@ -91,6 +91,15 @@ secureApiRouter.post('/calendar', async (req, res) => {
     res.send(calendars);
 });
 
+// Remove Calendar
+secureApiRouter.delete('/calendar', async (req, res) => {
+    const authToken = req.cookies[authCookieName];
+    const calendar = { ...req.body, authToken: authToken };
+    wait DB.removeCalendar(calendar);
+    const calendars = await DB.getCalendarByToken(authToken);
+    res.send(calendars);
+});
+
 // Default error handler
 app.use(function (err, req, res, next) {
     res.status(500).send({ type: err.name, message: err.message });
