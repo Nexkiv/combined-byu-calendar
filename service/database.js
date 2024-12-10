@@ -7,6 +7,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('calendar');
 const userCollection = db.collection('user');
+const calendarCollection = db.collection('calendar');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -37,6 +38,17 @@ async function createUser(email, password) {
   await userCollection.insertOne(user);
 
   return user;
+}
+
+function getCalendarsByToken(authToken) {
+  let myCursor = calendarCollection.find({authToken: authToken}, {calendarData: true});
+  let calendarDataArray = {};
+
+  while (myCursor.hasNext()) {
+    calendarDataArray.push(myCursor.next());
+  }
+
+  return calendarDataArray;
 }
 
 /**
@@ -126,7 +138,7 @@ function convertRawToJSON(calendarRaw, calendarID, calendarName) {
   const calendar = new Array;
   let calendarString = calendarRaw;
   let position = calendarString.search("DTSTART;VALUE=DATE:");
-  
+
   while (position != -1) {
     calendarString = calendarString.substring(position + 19);
     const dueDate = calendarString.substring(0, 8);
@@ -134,11 +146,11 @@ function convertRawToJSON(calendarRaw, calendarID, calendarName) {
     const assignmentName = calendarString.substring(position + 8, calendarString.search("\n"));
 
     const event = {
-        calendarID: calendarID,
-        calendarName: calendarName,
-        assignmentName: assignmentName,
-        dueDate: dueDate,
-        completed: false
+      calendarID: calendarID,
+      calendarName: calendarName,
+      assignmentName: assignmentName,
+      dueDate: dueDate,
+      completed: false
     };
 
     calendar.push(event);
