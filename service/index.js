@@ -95,7 +95,7 @@ secureApiRouter.post('/calendar', async (req, res) => {
 secureApiRouter.delete('/calendar', async (req, res) => {
     const authToken = req.cookies[authCookieName];
     const calendar = { ...req.body, authToken: authToken };
-    wait DB.removeCalendar(calendar);
+    await DB.removeCalendar(calendar);
     const calendars = await DB.getCalendarByToken(authToken);
     res.send(calendars);
 });
