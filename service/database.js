@@ -53,7 +53,7 @@ function getCalendarsByToken(authToken) {
   let calendarDataArray = {};
 
   while (myCursor.hasNext()) {
-    calendarDataArray.push(myCursor.next());
+    calendarDataArray.push(myCursor.next().calendarData);
   }
 
   return calendarDataArray;
