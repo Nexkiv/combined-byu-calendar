@@ -44,6 +44,10 @@ async function addCalendar(calendar) {
   await calendarCollection.insertOne(calendar);
 }
 
+async function removeCalendar(calendar) {
+  await calendarCollection.deleteMany(calendar);  
+}
+
 function getCalendarsByToken(authToken) {
   let myCursor = calendarCollection.find({authToken: authToken}, {calendarData: true});
   let calendarDataArray = {};
