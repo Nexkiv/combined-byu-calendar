@@ -40,6 +40,10 @@ async function createUser(email, password) {
   return user;
 }
 
+async function addCalendar(calendar) {
+  await calendarCollection.insertOne(calendar);
+}
+
 function getCalendarsByToken(authToken) {
   let myCursor = calendarCollection.find({authToken: authToken}, {calendarData: true});
   let calendarDataArray = {};
