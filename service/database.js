@@ -48,15 +48,14 @@ async function removeCalendar(calendar) {
   await calendarCollection.deleteMany(calendar);  
 }
 
-function getCalendarsByToken(authToken) {
-  let myCursor = calendarCollection.find({authToken: authToken}, {calendarData: true});
-  let calendarDataArray = {};
+async function getCalendarsByToken(authToken) {
+  const query = {
+    authToken: authToken, 
+    calendarData: { $exists: true } 
+  };
+  const cursor = calendarCollection.find(query);
 
-  while (myCursor.hasNext()) {
-    calendarDataArray.push(myCursor.next().calendarData);
-  }
-
-  return calendarDataArray;
+  return cursor.toArray();
 }
 
 /**
