@@ -103,7 +103,7 @@ class Calendar extends React.Component {
 
         // Handling the special General Calendar
         days.push(
-            <td className="classes cal-box">
+            <td className="cal-box">
                 General
             </td>
         )
@@ -181,12 +181,24 @@ class Calendar extends React.Component {
             }
         }
 
+        const deleteCalendar = async (calendar) => {
+            const endpoint = '/api/calendar';
+
+            await fetch(endpoint, {
+                method: 'delete',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(calendar),
+            });
+    
+            this.fetchCalendarInfo();
+        }
+
         calendars.forEach(function (obj) {
             let days = [];
             let day = weekStart;
 
             days.push(
-                <td className="classes cal-box">
+                <td className="classes cal-box" onClick={() => deleteCalendar(obj)}>
                     {obj.calendarName}
                 </td>
             )

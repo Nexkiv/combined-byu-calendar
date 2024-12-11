@@ -49,6 +49,11 @@
     color: black;
 }
 
+.classes:hover {
+    text-decoration: line-through;
+    color: grey;
+}
+
 thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
     border-radius: 25px 0 0 0;
 }
