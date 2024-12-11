@@ -45,7 +45,7 @@ async function addCalendar(calendar) {
 }
 
 async function removeCalendar(calendar) {
-  await calendarCollection.deleteOne({ calendarName: calendar.calendarName });
+  await calendarCollection.deleteOne({ calendarName: calendar.calendarName, authToken: calendar.authToken });
 }
 
 async function getCalendarsByToken(authToken) {
