@@ -1,3 +1,16 @@
+# dependencies
 node_modules
+/.pnp
+.pnp.js
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
 depreciated
+
+npm-debug.log*
+.vscode
 dbConfig.json

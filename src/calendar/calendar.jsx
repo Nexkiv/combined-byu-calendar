@@ -26,7 +26,7 @@ class Calendar extends React.Component {
         const weekEnd = endOfWeek(weekStart);
         let formattedWeekStart;
         let formattedWeekEnd;
-          
+
         if (isSameMonth(weekStart, weekEnd)) {
             formattedWeekStart = format(weekStart, monthFormat);
             formattedWeekEnd = format(weekEnd, dayFormat);
@@ -45,41 +45,50 @@ class Calendar extends React.Component {
 
     componentDidMount() {
         this.fetchDevotionalInfo();
-        // this.fetchCalendarInfo();
+        this.fetchCalendarInfo();
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (!isSameWeek(prevState.currentWeek, this.state.currentWeek)) {
             this.fetchDevotionalInfo();
-            // this.fetchCalendarInfo();
+            this.fetchCalendarInfo();
         }
     }
 
     fetchDevotionalInfo = () => {
         const weekStart = startOfWeek(this.state.currentWeek);
         let devoDay = addDays(addDays(weekStart, 1), 1);
-    
-        fetch(`https://calendar.byu.edu/api/Events.json?categories=7&event%5Bmin%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}&event%5Bmax%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.length > 0) {
-                const title = data[0].Title;
-                const startTime = data[0].StartDateTime.substring(11, 16);
-                const devotionalInfo = `${title}\nStarts at: ${startTime}`;
-                this.setState({ devotionalInfo });
-            } else {
-                const devotionalInfo = `No Devotional Today`;
-                this.setState({ devotionalInfo });
-            }
-          })
-          .catch((error) => {
-            console.error('Error fetching devotional info:', error);
-            this.setState({ devotionalInfo: 'Unable to load devotional information' });
-          });
+        const endpoint = `https://calendar.byu.edu/api/Events.json?categories=7&event%5Bmin%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}&event%5Bmax%5D%5Bdate%5D=${formatISO(devoDay, { representation: 'date' })}`;
+
+        fetch(endpoint)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.length > 0) {
+                    const title = data[0].Title;
+                    const startTime = data[0].StartDateTime.substring(11, 16);
+                    const devotionalInfo = `${title}\nStarts at: ${startTime}`;
+                    this.setState({ devotionalInfo: devotionalInfo });
+                } else {
+                    const devotionalInfo = `No Devotional Today`;
+                    this.setState({ devotionalInfo: devotionalInfo });
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching devotional info:', error);
+                this.setState({ devotionalInfo: 'Unable to load devotional information' });
+            });
     }
 
     fetchCalendarInfo = () => {
-        
+        const endpoint = '/api/calendar';
+
+        fetch(endpoint, {
+            method: 'get'
+        })
+            .then((response) => response.json())
+            .then((calendars) => {
+                this.setState({ userCalendars: calendars })
+            });
     }
 
     /**
@@ -87,7 +96,7 @@ class Calendar extends React.Component {
      * @param {Date} weekEnd
      * @param {any[]} rows
      */
-    getGenralCalendarInfo(weekStart, weekEnd, rows) {
+    getGeneralCalendarInfo(weekStart, weekEnd, rows) {
         let days = [];
         let day = weekStart;
         let devoDay = addDays(addDays(weekStart, 1), 1);
@@ -136,7 +145,7 @@ class Calendar extends React.Component {
 
         const rows = [];
 
-        this.getGenralCalendarInfo(weekStart, weekEnd, rows);
+        this.getGeneralCalendarInfo(weekStart, weekEnd, rows);
 
         function markCompleted(value, key) {
             // This is a loose demontration of how marking assignments as complete will look
@@ -146,7 +155,7 @@ class Calendar extends React.Component {
             filter = value;
 
             table = document.getElementById("cal-body");
-            if (table != null){
+            if (table != null) {
                 tr = table.getElementsByTagName("tr");
                 for (i = 1; i < tr.length; i++) {
                     for (j = 0; j < 8; j++) {
@@ -172,10 +181,10 @@ class Calendar extends React.Component {
             }
         }
 
-        calendars.forEach (function(value, key) {
+        calendars.forEach(function (value, key) {
             let days = [];
             let day = weekStart;
-            
+
             days.push(
                 <td className="classes cal-box">
                     {key}
@@ -211,7 +220,7 @@ class Calendar extends React.Component {
             currentWeek: addWeeks(this.state.currentWeek, 1)
         });
     };
-    
+
     prevWeek = () => {
         this.setState({
             currentWeek: subWeeks(this.state.currentWeek, 1)
@@ -390,7 +399,7 @@ class Calendar extends React.Component {
                 </div>
 
                 {/* <!-- Add Event Pop-up Menu --> */}
-                <AddEventForm onAddEvent={this.addEvent}/>
+                <AddEventForm onAddEvent={this.addEvent} />
 
                 {/* <!-- Add Calendar Pop-up Menu --> */}
                 <AddCalendarForm onAddCalendar={this.addCalendar} />

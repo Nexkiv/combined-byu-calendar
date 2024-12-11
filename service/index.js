@@ -111,9 +111,10 @@ app.use((_req, res) => {
 });
 
 // setAuthCookie in the HTTP response
+// TODO: change back before deployment
 function setAuthCookie(res, authToken) {
     res.cookie(authCookieName, authToken, {
-        secure: true,
+        secure: false, //true
         httpOnly: true,
         sameSite: 'strict',
     });

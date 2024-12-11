@@ -19,7 +19,7 @@ export default function App() {
 
     function logout() {
         fetch(`/api/auth/logout`, {
-            method: 'delete',
+            method: 'delete'
         })
             .catch(() => {
                 // Logout failed. Assuming offline
