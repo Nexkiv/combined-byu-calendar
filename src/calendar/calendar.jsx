@@ -46,9 +46,9 @@ class Calendar extends React.Component {
     }
 
     componentDidMount() {
+        AppNotifier.addHandler(this.fetchCalendarInfo);
         this.fetchDevotionalInfo();
         this.fetchCalendarInfo();
-        AppNotifier.addHandler(this.fetchCalendarInfo);
     }
 
     componentDidUpdate(prevProps, prevState) {
