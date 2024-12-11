@@ -104,6 +104,13 @@ For this deliverable I associate the votes with the logged in user. I stored the
 
 ## WebSocket deliverable
 
+For this deliverable I used webSocket to update the votes on the frontend in realtime.
+
+- [x] **Backend listens for WebSocket connection** - done!
+- [x] **Frontend makes WebSocket connection** - done!
+- [x] **Data sent over WebSocket connection** - done!
+- [x] **WebSocket data displayed** - When a user updates their calendar in one browser window it updates on all of their logged in browser windows.
+
 # Class Notes
 The [notes.md](notes.md) file contains my notes from the class.
 
