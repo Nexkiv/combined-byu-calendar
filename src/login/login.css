@@ -30,7 +30,7 @@
 
 #login_box img {
     flex: 0;
-    height: 300px;
+    max-height: 300px;
 }
 
 #login_box form {
@@ -39,6 +39,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.login-element {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .form-check {

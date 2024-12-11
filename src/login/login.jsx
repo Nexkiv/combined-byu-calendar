@@ -34,29 +34,36 @@ export function Login(props) {
     return (
         <main style={{ backgroundImage: "url(/BYU%20Watercolor.png)" }} className='container-fluid bg-secondary text-center' id="login-display">
             <div id="login_box">
-                <h1>Welcome to your<br />BYU calendar</h1>
+                <div className="login-element">
+                    <h1>Welcome to your<br />BYU calendar</h1>
+                </div>
 
-                <img src="cougar.png" alt="BYU cougar" />
+                <div className="login-element">
+                    <img src="cougar.png" alt="BYU cougar" />
+                </div>
+
 
                 {/* <!-- Normal Login Menu --> */}
-                <div className="input-group mb-3">
-                    <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
-                </div>
-                <div className="input-group mb-3">
-                    <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
-                </div>
-                <div className="form-check">
-                    <input type="checkbox" className="form-check-input" id="check" name="option" value="persist_login" />
-                    <label className="form-check-label" htmlFor="check">Keep me Logged-in</label>
-                </div>
+                <div className="login-element">
+                    <div className="input-group mb-3">
+                        <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+                    </div>
+                    <div className="input-group mb-3">
+                        <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" />
+                    </div>
+                    <div className="form-check">
+                        <input type="checkbox" className="form-check-input" id="check" name="option" value="persist_login" />
+                        <label className="form-check-label" htmlFor="check">Keep me Logged-in</label>
+                    </div>
 
-                <div className="buttons">
-                    <button type="submit" className="btn btn-primary" onClick={() => loginUser()} disabled={!email || !password}>
-                        Login
-                    </button>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#account_creation_popup">
-                        Create Account
-                    </button>
+                    <div className="buttons">
+                        <button type="submit" className="btn btn-primary" onClick={() => loginUser()} disabled={!email || !password}>
+                            Login
+                        </button>
+                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#account_creation_popup">
+                            Create Account
+                        </button>
+                    </div>
                 </div>
 
                 {/* <!-- Create Account Pop-up --> */}
