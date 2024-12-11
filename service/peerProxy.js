@@ -22,7 +22,7 @@ function peerProxy(httpServer) {
     // Inform all instances of the same user that a change has been made
     socket.on('message', function message(data) {
       connections.forEach((c) => {
-        if (c.id === connection.id) {
+        if (c.id !== connection.id) {
           c.ws.send(data);
         }
       });

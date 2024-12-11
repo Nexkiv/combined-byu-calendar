@@ -16,7 +16,8 @@ class Calendar extends React.Component {
             calendarName: "Previous"
         }],
         events: new String(),
-        devotionalInfo: null
+        devotionalInfo: null,
+        onLogout: () => {}
     };
 
     renderWeekTitle() {
@@ -47,6 +48,7 @@ class Calendar extends React.Component {
     componentDidMount() {
         this.fetchDevotionalInfo();
         this.fetchCalendarInfo();
+        AppNotifier.addHandler(this.fetchCalendarInfo);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -54,6 +56,10 @@ class Calendar extends React.Component {
             this.fetchDevotionalInfo();
             this.fetchCalendarInfo();
         }
+    }
+
+    componentWillUnmount() {
+        AppNotifier.removeHandler(this.fetchCalendarInfo);
     }
 
     fetchDevotionalInfo = () => {
@@ -194,60 +200,64 @@ class Calendar extends React.Component {
             this.fetchCalendarInfo();
 
             // Notify all instances of the same user that a calendar has been deleted
-            AppNotifier.syncCalendars(AppEvent.RemovedCalendar, {});
+            AppNotifier.syncCalendars(AppEvent.RemovedCalendar, { msg: 'removed calendar' });
         }
 
-        calendars.forEach(function (obj) {
-            let days = [];
-            let day = weekStart;
-
-            days.push(
-                <td className="classes cal-box" onClick={() => deleteCalendar(obj)}>
-                    {obj.calendarName}
-                </td>
-            )
-
-            const events = obj.calendarEvents;
-
-            while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
-                // Query the database table which is passed in as a value using day to determine the assignemnts
-
-                let assignments = [];
-
-                if (events == "Error") {
-                    assignments.push(<li>Invalid iCal link</li>);
-                } else if (events) {
-                    for (const event of events) {
-                        const dueDate = parseISO(event["DTSTART;VALUE=DATE"]);
-                        if (isSameDay(day, dueDate)) {
-                            const length = 40;
-                            let assignment = event.SUMMARY.replace(/\\n/g, "").replace(/\\/g, "");
-                            assignment = assignment.length > length ? 
-                                         assignment.substring(0, length) + "..." : 
-                                         assignment;
-                            assignments.push(<li>{assignment}</li>);
-                        }
-                    }
-                }
+        if (calendars.msg != null && calendars.msg === "Unauthorized") {
+            this.logout;
+        } else {
+            calendars.forEach(function (obj) {
+                let days = [];
+                let day = weekStart;
 
                 days.push(
-                    <td className="cal-box">
-                        <p>Assignments due on {format(day, "MMM")} {day.getDate()}:</p>
-                        <ul className="assignments">
-                            {assignments}
-                            {/* <li onClick={() => markCompleted(value, key)}>{value}</li> */}
-                        </ul>
+                    <td className="classes cal-box" onClick={() => deleteCalendar(obj)}>
+                        {obj.calendarName}
                     </td>
-                );
-                day = addDays(day, 1);
-            }
+                )
 
-            rows.push(
-                <tr>
-                    {days}
-                </tr>
-            );
-        })
+                const events = obj.calendarEvents;
+
+                while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
+                    // Query the database table which is passed in as a value using day to determine the assignemnts
+
+                    let assignments = [];
+
+                    if (events == "Error") {
+                        assignments.push(<li>Invalid iCal link</li>);
+                    } else if (events) {
+                        for (const event of events) {
+                            const dueDate = parseISO(event["DTSTART;VALUE=DATE"]);
+                            if (isSameDay(day, dueDate)) {
+                                const length = 40;
+                                let assignment = event.SUMMARY.replace(/\\n/g, "").replace(/\\/g, "");
+                                assignment = assignment.length > length ? 
+                                            assignment.substring(0, length) + "..." : 
+                                            assignment;
+                                assignments.push(<li>{assignment}</li>);
+                            }
+                        }
+                    }
+
+                    days.push(
+                        <td className="cal-box">
+                            <p>Assignments due on {format(day, "MMM")} {day.getDate()}:</p>
+                            <ul className="assignments">
+                                {assignments}
+                                {/* <li onClick={() => markCompleted(value, key)}>{value}</li> */}
+                            </ul>
+                        </td>
+                    );
+                    day = addDays(day, 1);
+                }
+
+                rows.push(
+                    <tr>
+                        {days}
+                    </tr>
+                );
+            })
+        }
 
         return <tbody id="cal-body">{rows}</tbody>;
     }
@@ -287,18 +297,20 @@ class Calendar extends React.Component {
         this.fetchCalendarInfo();
 
         // Notify all instances of the same user that a calendar has been added
-        AppNotifier.syncCalendars(AppEvent.NewCalendar, {});
+        AppNotifier.syncCalendars(AppEvent.NewCalendar, { msg: 'new calendar' });
     }
 
     addAssignment = (calendarID, assignmentName, dueDate) => {
         // This will add the assignment to the database
     }
 
+    logout = async function logOut() {
+        localStorage.removeItem('userName');
+        this.state.onLogout();
+    }
+
     render(props) {
-        async function logOut() {
-            localStorage.removeItem('userName');
-            props.onLogout();
-        }
+        this.setState({ onLogout: () => props.onLogout() });
 
         return (
             <main>
@@ -440,7 +452,7 @@ class Calendar extends React.Component {
 
                 <div className="second-sign-out-button">
                     <form method="get" action='/'>
-                        <button className="btn btn-secondary" type="submit" onClick={() => logOut()}>Sign-out</button>
+                        <button className="btn btn-secondary" type="submit" onClick={() => this.logout()}>Sign-out</button>
                     </form>
                 </div>
 
