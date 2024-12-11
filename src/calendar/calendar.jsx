@@ -192,6 +192,9 @@ class Calendar extends React.Component {
             });
 
             this.fetchCalendarInfo();
+
+            // Notify all instances of the same user that a calendar has been deleted
+            AppNotifier.syncCalendars(AppEvent.RemovedCalendar, {});
         }
 
         calendars.forEach(function (obj) {
@@ -283,8 +286,8 @@ class Calendar extends React.Component {
 
         this.fetchCalendarInfo();
 
-        // Let other players know a new game has started
-        AppNotifier.syncCalendars(AppEvent.Start, {});
+        // Notify all instances of the same user that a calendar has been added
+        AppNotifier.syncCalendars(AppEvent.NewCalendar, {});
     }
 
     addAssignment = (calendarID, assignmentName, dueDate) => {
