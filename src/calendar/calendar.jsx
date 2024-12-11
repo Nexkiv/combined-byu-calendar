@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { format, formatISO, addDays, isSameWeek, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears, isEqual, parseISO } from "date-fns";
 import { AuthState } from '../login/authState';
+import { AppEvent, AppNotifier } from './appNotifier';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
 import AddAssignmentForm from './addAssignmentForm';
@@ -281,6 +282,9 @@ class Calendar extends React.Component {
         });
 
         this.fetchCalendarInfo();
+
+        // Let other players know a new game has started
+        AppNotifier.syncCalendars(AppEvent.Start, {});
     }
 
     addAssignment = (calendarID, assignmentName, dueDate) => {
