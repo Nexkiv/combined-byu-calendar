@@ -10,10 +10,10 @@ class Calendar extends React.Component {
     state = {
         currentWeek: new Date(),
         generalCalendar: "General database",
-        userCalendars: new Map([
-            ["CS 252\nIntroduction to Compudational Theory", "../public/Barker.ics"],
-            ["IS 110\nSpreadsheets & Business Analysis", "../public/Speadsheets.ics"]
-        ]),
+        userCalendars: [{
+            calendarData: "Previous",
+            calendarName: "Previous"
+        }],
         events: new String(),
         devotionalInfo: null
     };
@@ -181,13 +181,13 @@ class Calendar extends React.Component {
             }
         }
 
-        calendars.forEach(function (value, key) {
+        calendars.forEach(function (obj) {
             let days = [];
             let day = weekStart;
 
             days.push(
                 <td className="classes cal-box">
-                    {key}
+                    {obj.calendarName}
                 </td>
             )
 
@@ -198,7 +198,8 @@ class Calendar extends React.Component {
                     <td className="cal-box">
                         <p>Assignments due on {format(day, "MMM")} {day.getDate()}:</p>
                         <ul className="assignments">
-                            <li onClick={() => markCompleted(value, key)}>{value}</li>
+                            <li>{obj.calendarData}</li>
+                            {/* <li onClick={() => markCompleted(value, key)}>{value}</li> */}
                         </ul>
                     </td>
                 );
@@ -237,11 +238,17 @@ class Calendar extends React.Component {
         // This will add the event to the database
     }
 
-    addCalendar = (calendarName, iCalLink) => {
-        // This will call the service to parse the inputted iCal feed and then add it to the database
-        this.setState({
-            userCalendars: this.state.userCalendars.set(calendarName, iCalLink)
+    addCalendar = async (name, iCalLink) => {
+        const endpoint = '/api/calendar';
+        const newCalendar = { calendarName: name, calendarData: iCalLink };
+
+        await fetch(endpoint, {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newCalendar),
         });
+
+        this.fetchCalendarInfo();
     }
 
     addAssignment = (calendarID, assignmentName, dueDate) => {

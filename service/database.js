@@ -45,13 +45,14 @@ async function addCalendar(calendar) {
 }
 
 async function removeCalendar(calendar) {
-  await calendarCollection.deleteMany(calendar);  
+  await calendarCollection.deleteMany(calendar);
 }
 
 async function getCalendarsByToken(authToken) {
   const query = {
-    authToken: authToken, 
-    calendarData: { $exists: true } 
+    authToken: authToken,
+    calendarData: { $exists: true },
+    calendarName: { $exists: true }
   };
   const cursor = calendarCollection.find(query);
 
@@ -129,12 +130,12 @@ async function completeAssignment(token, assignmentInfo) {
  * @param {any} calendarName
  * @param {string} calendarRaw
  */
-async function addCalendar(token, calendarID, calendarName, calendarRaw) {
-  const calendarJSON = convertRawToJSON(calendarRaw, calendarID, calendarName);
+// async function addCalendar(token, calendarID, calendarName, calendarRaw) {
+//   const calendarJSON = convertRawToJSON(calendarRaw, calendarID, calendarName);
 
-  const calendarCollection = db.collection(token);
-  await calendarCollection.insertMany([calendarJSON]);
-}
+//   const calendarCollection = db.collection(token);
+//   await calendarCollection.insertMany([calendarJSON]);
+// }
 
 /**
  * @param {string} calendarRaw
