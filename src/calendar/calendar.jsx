@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, formatISO, addDays, isSameWeek, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears, isEqual } from "date-fns";
+import { format, formatISO, addDays, isSameWeek, isSunday, nextSaturday, previousSunday, addWeeks, subWeeks, startOfWeek, endOfWeek, startOfDay, endOfDay, isSaturday, isSameMonth, isSameYear, isSameDay, isBefore, differenceInCalendarISOWeekYears, isEqual, parseISO } from "date-fns";
 import { AuthState } from '../login/authState';
 import './calendar.css';
 import AddCalendarForm from './addCalendarForm';
@@ -138,7 +138,7 @@ class Calendar extends React.Component {
         );
     }
 
-    renderAssignments() {
+    renderCalendar() {
         const weekStart = startOfWeek(this.state.currentWeek);
         const weekEnd = endOfWeek(weekStart);
         const calendars = this.state.userCalendars;
@@ -189,7 +189,7 @@ class Calendar extends React.Component {
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(calendar),
             });
-    
+
             this.fetchCalendarInfo();
         }
 
@@ -203,14 +203,30 @@ class Calendar extends React.Component {
                 </td>
             )
 
+            const events = obj.calendarEvents;
+
             while (isBefore(day, weekEnd) || isSameDay(day, weekEnd)) {
                 // Query the database table which is passed in as a value using day to determine the assignemnts
+
+                let assignments = [];
+
+                if (events == "Error") {
+                    assignments.push(<li>Invalid iCal link</li>);
+                } else if (events) {
+                    for (const event of events) {
+                        const dueDate = parseISO(event["DTSTART;VALUE=DATE"]);
+                        if (isSameDay(day, dueDate)) {
+                            const assignment = event.SUMMARY;
+                            assignments.push(<li>{assignment}</li>);
+                        }
+                    }
+                }
 
                 days.push(
                     <td className="cal-box">
                         <p>Assignments due on {format(day, "MMM")} {day.getDate()}:</p>
                         <ul className="assignments">
-                            <li>{obj.calendarData}</li>
+                            {assignments}
                             {/* <li onClick={() => markCompleted(value, key)}>{value}</li> */}
                         </ul>
                     </td>
@@ -400,7 +416,7 @@ class Calendar extends React.Component {
                                 </tr>
                             </tbody>
                             */}
-                            {this.renderAssignments()}
+                            {this.renderCalendar()}
                         </table>
                     </div>
                 </div>
