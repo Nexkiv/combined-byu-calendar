@@ -216,7 +216,11 @@ class Calendar extends React.Component {
                     for (const event of events) {
                         const dueDate = parseISO(event["DTSTART;VALUE=DATE"]);
                         if (isSameDay(day, dueDate)) {
-                            const assignment = event.SUMMARY;
+                            const length = 40;
+                            let assignment = event.SUMMARY.replace(/\\n/g, "").replace(/\\/g, "");
+                            assignment = assignment.length > length ? 
+                                         assignment.substring(0, length) + "..." : 
+                                         assignment;
                             assignments.push(<li>{assignment}</li>);
                         }
                     }
