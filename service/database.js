@@ -56,7 +56,27 @@ async function getCalendarsByToken(authToken) {
   };
   const cursor = calendarCollection.find(query);
 
-  return cursor.toArray();
+  let calendars = await cursor.toArray();
+
+  let filledCalendars = [];
+
+  for (const cal of calendars) {
+    const name = cal.calendarName;
+    const endpoint = cal.calendarData;
+    let calendarEvents;
+
+    try {
+      const response = await fetch(endpoint);
+      calendarEvents = await response.text();
+    } catch (error) {
+      console.error(`Error fetching calendar for ${name}:`, error);
+      calendarEvents = "Error";
+    }
+
+    filledCalendars.push({ ...cal, calendarEvents });
+  }
+
+  return filledCalendars;
 }
 
 /**
