@@ -203,10 +203,7 @@ class Calendar extends React.Component {
             AppNotifier.syncCalendars(AppEvent.RemovedCalendar, { msg: 'removed calendar' });
         }
 
-        if (calendars.msg != null && calendars.msg === "Unauthorized") {
-            this.logout;
-        } else {
-            calendars.forEach(function (obj) {
+        calendars.forEach(function (obj) {
                 let days = [];
                 let day = weekStart;
 
@@ -256,8 +253,7 @@ class Calendar extends React.Component {
                         {days}
                     </tr>
                 );
-            })
-        }
+        })
 
         return <tbody id="cal-body">{rows}</tbody>;
     }
@@ -304,13 +300,11 @@ class Calendar extends React.Component {
         // This will add the assignment to the database
     }
 
-    logout = async function logOut() {
-        localStorage.removeItem('userName');
-        this.state.onLogout();
-    }
-
     render(props) {
-        this.setState({ onLogout: () => props.onLogout() });
+        async function logout() {
+            localStorage.removeItem('userName');
+            props.onLogout();
+        }
 
         return (
             <main>
@@ -452,7 +446,7 @@ class Calendar extends React.Component {
 
                 <div className="second-sign-out-button">
                     <form method="get" action='/'>
-                        <button className="btn btn-secondary" type="submit" onClick={() => this.logout()}>Sign-out</button>
+                        <button className="btn btn-secondary" type="submit" onClick={() => logout()}>Sign-out</button>
                     </form>
                 </div>
 
