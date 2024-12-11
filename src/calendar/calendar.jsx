@@ -17,7 +17,7 @@ class Calendar extends React.Component {
         }],
         events: new String(),
         devotionalInfo: null,
-        onLogout: () => {}
+        onLogout: () => { }
     };
 
     renderWeekTitle() {
@@ -203,7 +203,10 @@ class Calendar extends React.Component {
             AppNotifier.syncCalendars(AppEvent.RemovedCalendar, { msg: 'removed calendar' });
         }
 
-        calendars.forEach(function (obj) {
+        if (calendars.msg != null && calendars.msg == "Unauthorized") {
+            
+        } else {
+            calendars.forEach(function (obj) {
                 let days = [];
                 let day = weekStart;
 
@@ -228,9 +231,9 @@ class Calendar extends React.Component {
                             if (isSameDay(day, dueDate)) {
                                 const length = 40;
                                 let assignment = event.SUMMARY.replace(/\\n/g, "").replace(/\\/g, "");
-                                assignment = assignment.length > length ? 
-                                            assignment.substring(0, length) + "..." : 
-                                            assignment;
+                                assignment = assignment.length > length ?
+                                    assignment.substring(0, length) + "..." :
+                                    assignment;
                                 assignments.push(<li>{assignment}</li>);
                             }
                         }
@@ -253,7 +256,8 @@ class Calendar extends React.Component {
                         {days}
                     </tr>
                 );
-        })
+            })
+        }
 
         return <tbody id="cal-body">{rows}</tbody>;
     }
