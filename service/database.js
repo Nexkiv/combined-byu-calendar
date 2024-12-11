@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const ical2json = require("ical2json");
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const config = require('./dbConfig.json');
@@ -67,7 +68,7 @@ async function getCalendarsByToken(authToken) {
 
     try {
       const response = await fetch(endpoint);
-      calendarEvents = await response.text();
+      calendarEvents = ical2json.convert(await response.text()).VCALENDAR[0].VEVENT;
     } catch (error) {
       console.error(`Error fetching calendar for ${name}:`, error);
       calendarEvents = "Error";
