@@ -98,9 +98,9 @@ For this deliverable I associate the votes with the logged in user. I stored the
 - [x] **MongoDB Atlas database created** - done!
 - [x] **Stores data in MongoDB** - done!
 - [x] **User registration** - Creates a new account in the database.
-- [x] **existing user** - Able to log in if an account has been created.
-- [x] **Use MongoDB to store credentials** - Stores user credentials and queries them.
-- [x] **Restricts functionality** - You cannot view the calendar until you have logged in. 
+- [x] **existing user** - Able to log in if an account has been created. Stores the calendars for the same user if the user already exists.
+- [x] **Use MongoDB to store credentials** - Stores user credentials and queries them. Stores calendars and queries them.
+- [x] **Restricts functionality** - You cannot view the calendar until you have logged in and you can only see your calendars.
 
 ## WebSocket deliverable
 
