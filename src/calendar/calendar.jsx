@@ -426,9 +426,9 @@ class Calendar extends React.Component {
                 </div>
 
                 <div className="buttons">
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button>
+                    {/* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_event_popup">Add Event</button> */}
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_calendar_popup">Add Calendar</button>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button>
+                    {/* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_assignment_popup">Add Assignment</button> */}
                 </div>
 
                 <div className="second-sign-out-button">
@@ -437,14 +437,16 @@ class Calendar extends React.Component {
                     </form>
                 </div>
 
-                {/* <!-- Add Event Pop-up Menu --> */}
+                {/* <!-- Add Event Pop-up Menu --> 
                 <AddEventForm onAddEvent={this.addEvent} />
+                */}
 
                 {/* <!-- Add Calendar Pop-up Menu --> */}
                 <AddCalendarForm onAddCalendar={this.addCalendar} />
 
-                {/* <!-- Add Assignment Pop-up Menu --> */}
+                {/* <!-- Add Assignment Pop-up Menu --> 
                 <AddAssignmentForm onAddAssignment={this.addAssignment} />
+                */}
             </main>
         );
     }
