@@ -56,6 +56,23 @@ apiRouter.post('/auth/login', async (req, res) => {
     res.status(401).send({ msg: 'Unauthorized' });
 });
 
+apiRouter.get('/auth/check', async (req, res) => {
+    const authToken = req.cookies[authCookieName];
+    const user = await DB.getUserByToken(authToken);
+    if (user) {
+        res.status(200).send({ msg: "Authorized" })
+    } else {
+        res.status(401).send({ msg: 'Unauthorized' });
+    }
+    return;
+})
+
+// DeleteAuth logout a user by deleting the token if stored in cookie
+apiRouter.delete('/auth/logout', async (req, res) => {
+    res.clearCookie(authCookieName);
+    res.status(204).end();
+});
+
 // secureApiRouter verifies credentials for endpoints
 const secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
@@ -68,12 +85,6 @@ secureApiRouter.use(async (req, res, next) => {
     } else {
         res.status(401).send({ msg: 'Unauthorized' });
     }
-});
-
-// DeleteAuth logout a user by deleting the token if stored in cookie
-secureApiRouter.delete('/auth/logout', async (req, res) => {
-    res.clearCookie(authCookieName);
-    res.status(204).end();
 });
 
 // Get Calendars

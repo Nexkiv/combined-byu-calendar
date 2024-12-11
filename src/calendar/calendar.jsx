@@ -204,7 +204,7 @@ class Calendar extends React.Component {
         }
 
         if (calendars.msg != null && calendars.msg == "Unauthorized") {
-            
+
         } else {
             calendars.forEach(function (obj) {
                 let days = [];
@@ -304,12 +304,16 @@ class Calendar extends React.Component {
         // This will add the assignment to the database
     }
 
-    render(props) {
-        async function logout() {
-            localStorage.removeItem('userName');
-            props.onLogout();
-        }
+    logout = () => {
+        fetch('/api/auth/logout', {
+            method: 'delete'
+        })
+            .catch(() => {
+                // Logout failed. Assuming offline
+            })
+    }
 
+    render(props) {
         return (
             <main>
                 <div id="week-title">
@@ -450,7 +454,7 @@ class Calendar extends React.Component {
 
                 <div className="second-sign-out-button">
                     <form method="get" action='/'>
-                        <button className="btn btn-secondary" type="submit" onClick={() => logout()}>Sign-out</button>
+                        <button className="btn btn-secondary" type="submit" onClick={this.logout()}>Sign-out</button>
                     </form>
                 </div>
 

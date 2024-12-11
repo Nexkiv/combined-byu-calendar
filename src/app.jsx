@@ -18,17 +18,30 @@ export default function App() {
     }
 
     function logout() {
-        fetch(`/api/auth/logout`, {
+        fetch('/api/auth/logout', {
             method: 'delete'
         })
             .catch(() => {
                 // Logout failed. Assuming offline
             })
-            .finally(() => {
-                localStorage.removeItem('email');
-                () => onAuthChange(email, AuthState.Unauthenticated);
+    }
+
+    function checkAuth() {
+        const endpoint = '/api/auth/check';
+
+        fetch(endpoint, {
+            method: 'get'
+        })
+            .then((response) => {
+                if (response.status == 200) {
+                    setAuthState(AuthState.Authenticated);
+                } else {
+                    setAuthState(AuthState.Unauthenticated);
+                }
             });
     }
+
+    checkAuth();
 
     return (
         <BrowserRouter>
