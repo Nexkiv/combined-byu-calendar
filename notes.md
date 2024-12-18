@@ -1621,4 +1621,597 @@ Cannot fork other processes
   
 </details>
 
+<details>
+<summary><h4>Review Questions</h4></summary>
+
+1. What is the default port for HTTP/HTTPS/SSH?
+
+HTTP: 80\
+HTTPS: 443\
+SSH: 22
+
+2. What does an HTTP status code in the range of 300/400/500 indicate?
+
+**300 Range: Redirection**\
+301: Permanent redirect - the resource has been permanently moved to a new location\
+302: Temporary redirect - the resource is temporarily located at a different URL\
+**400 Range: Client Error**\
+400: Bad Request - the server couldn't understand the request due to invalid syntax\
+401: Unauthorized - the request requires user authentication\
+403: Forbidden - the client doesn't have access rights to the content\
+404: Not Found - the server can't find the requested resource\
+**500 Range: Server Error**\
+500: Internal Server Error - a generic error message when the server encounters an unexpected condition\
+502: Bad Gateway - the server, while acting as a gateway or proxy, received an invalid response from an upstream server\
+503: Service Unavailable - the server is not ready to handle the request, often due to maintenance or overloading
+
+3. What does the HTTP header content-type allow you to do?
+
+The format of the body of an HTTP request or response is defined by the Content-Type header. For example, it may be HTML text (text/html), a binary image format (image/png), JSON (application/json), or JavaScript (text/javascript).
+
+4. What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do? https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+
+**“Secure cookie”**\
+Indicates that the cookie is sent to the server only when a request is made with the https: scheme (except on localhost), and therefore, is more resistant to man-in-the-middle attacks.\
+A Secure cookie is an HTTP cookie with the Secure attribute set. This attribute ensures that:\
+The cookie is only transmitted over encrypted HTTPS connections, never in plain text.\
+It protects the cookie's confidentiality and helps prevent theft via network attacks.\
+The browser will only send the cookie to the website if the request is made over a secure channel (HTTPS).\
+**”Http-only cookie”**\
+Forbids JavaScript from accessing the cookie, for example, through the Document.cookie property. Note that a cookie that has been created with HttpOnly will still be sent with JavaScript-initiated requests, for example, when calling XMLHttpRequest.send() or fetch(). This mitigates attacks against cross-site scripting (XSS).\
+HttpOnly cookies are designed to be inaccessible to client-side scripts, such as JavaScript. Key features include:\
+They can only be accessed by the server, not by client-side scripts.\
+This attribute helps prevent cross-site scripting (XSS) attacks by protecting sensitive information stored in cookies.\
+HttpOnly cookies are included in HTTP requests to the server but cannot be read or modified by JavaScript.\
+**”Same-site cookie”**\
+Controls whether or not a cookie is sent with cross-site requests, providing some protection against cross-site request forgery attacks (CSRF).\
+SameSite is a security attribute for cookies that controls how they are sent in cross-site requests. It offers three levels of restrictions:\
+*Strict*: The cookie is only sent for same-site requests, providing the highest level of protection.\
+*Lax*: The default in most browsers. The cookie is sent for top-level navigations and same-site requests, but not for cross-site subresource requests.\
+*None*: The cookie is sent with all cross-site requests, but must be used with the Secure attribute (HTTPS only).\
+SameSite cookies help protect against Cross-Site Request Forgery (CSRF) attacks and unintended information leakage.
+
+5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?
+
+Determined by code snippit.
+
+6. Given the following Express service code: What does the following front end JavaScript that performs a fetch return?
+
+Determined by code snippit.
+
+7. Given the following MongoDB query, select all of the matching documents {name:Mark}
+
+Determined by code snippit.
+
+8. How should user passwords be stored?
+
+As hashed and salted values.
+
+9. Assuming the following node.js websocket code in the back end, and the following front end websocket code, what will the front end log to the console?
+
+Determined by code snippit.
+
+10. What is the websocket protocol intended to provide?
+
+A peer to peer relationship that both sides can send messages.
+
+11. What do the following acronyms stand for? JSX, JS, AWS, NPM, NVM
+
+JSX:\
+JSX stands for JavaScript XML or JavaScript Syntax eXtension. It's an XML-like extension to JavaScript syntax, initially created by Facebook for use with React.\
+JS:\
+JS typically stands for JavaScript, a high-level, just-in-time compiled, object-oriented programming language.\
+AWS:\
+AWS stands for Amazon Web Services. It's a comprehensive cloud computing platform provided by Amazon, offering a wide range of services including compute power, database storage, and content delivery.\
+NPM:\
+NPM stands for Node Package Manager. It's a package manager for JavaScript and the default package manager for Node.js.\
+NVM:\
+NVM stands for Node Version Manager. NVM is a powerful tool that allows developers to manage multiple versions of Node.js on a single machine. 
+
+12. Assuming an HTML document with a body element. What text content will the following React component generate?  The react component will use parameters.
+
+React components can accept parameters, known as props, to make them more dynamic and reusable. Here's how to use React component parameters effectively:
+
+## Passing Props to Components
+
+To pass parameters to a React component, you use props. Props are passed as attributes in JSX when rendering a component:
+
+```jsx
+<ChildComponent parameter1="value1" parameter2={42} />
+```
+
+## Receiving Props in Components
+
+### Functional Components
+
+In functional components, props are received as the first argument to the function:
+
+```jsx
+function ChildComponent(props) {
+  return <div>{props.parameter1}</div>;
+}
+```
+
+You can also use destructuring for cleaner code:
+
+```jsx
+function ChildComponent({ parameter1, parameter2 }) {
+  return (
+    <div>
+      <p>{parameter1}</p>
+      <p>{parameter2}</p>
+    </div>
+  );
+}
+```
+
+### Class Components
+
+In class components, props are accessed through `this.props`:
+
+```jsx
+class ChildComponent extends React.Component {
+  render() {
+    return <div>{this.props.parameter1}</div>;
+  }
+}
+```
+
+## Typing Props with TypeScript
+
+When using TypeScript, you can define the shape of your props:
+
+```typescript
+interface ChildProps {
+  parameter1: string;
+  parameter2: number;
+}
+
+const ChildComponent: React.FC<ChildProps> = ({ parameter1, parameter2 }) => {
+  return (
+    <div>
+      <p>{parameter1}</p>
+      <p>{parameter2}</p>
+    </div>
+  );
+};
+```
+
+## Best Practices
+
+1. **Default Props**: Provide default values for optional props:
+
+   ```jsx
+   function ChildComponent({ parameter1 = "Default Value" }) {
+     return <div>{parameter1}</div>;
+   }
+   ```
+
+2. **PropTypes**: Use PropTypes for runtime type checking in non-TypeScript projects:
+
+   ```jsx
+   import PropTypes from 'prop-types';
+
+   ChildComponent.propTypes = {
+     parameter1: PropTypes.string.isRequired,
+     parameter2: PropTypes.number
+   };
+   ```
+
+3. **Immutability**: Treat props as read-only. Never modify props directly within a component.
+
+4. **Passing Objects**: You can pass entire objects as props:
+
+   ```jsx
+   const data = { name: "John", age: 30 };
+   <ChildComponent userData={data} />
+   ```
+
+By following these practices, you can effectively use React component parameters to create flexible and reusable components in your applications.
+
+13. Given a set of React components that include each other, what will be generated
+
+Depends upon code snippit.
+
+14. What does a React component with React.useState do?
+
+## State
+
+In addition to properties, a component can have internal state. Component state is created by calling the `React.useState` hook function. The `useState` function returns a variable that contains the current state and a function to update the state. The following example creates a state variable called `clicked` and toggles the click state in the `updateClicked` function that gets called when the paragraph text is clicked.
+
+```jsx
+const Clicker = () => {
+  const [clicked, updateClicked] = React.useState(false);
+
+  const onClicked = (e) => {
+    updateClicked(!clicked);
+  };
+
+  return <p onClick={(e) => onClicked(e)}>clicked: {`${clicked}`}</p>;
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker />);
+```
+
+You should note that you can use JSX even without a function. A simple variable representing JSX will work anyplace you would otherwise provide a component.
+
+```jsx
+const hello = <div>Hello</div>;
+
+ReactDOM.render(hello, document.getElementById('root'));
+```
+
+A React component using React.useState allows for the management of state within functional components. Here's what it does:
+
+## State Declaration
+
+The useState Hook declares a "state variable" in a functional component:
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+This creates a state variable 'count' initialized to 0, and a function 'setCount' to update it.
+
+## State Persistence
+
+useState preserves the state value between re-renders of the component. Unlike regular variables that are reinitialized every time the function runs, state variables maintain their values across renders.
+
+## Triggering Re-renders
+
+When the state update function (e.g., setCount) is called, it not only changes the state value but also triggers a re-render of the component. This ensures that the UI reflects the latest state.
+
+## Multiple State Variables
+
+You can use useState multiple times in a single component to manage different pieces of state:
+
+```jsx
+const [age, setAge] = useState(42);
+const [name, setName] = useState('Taylor');
+```
+
+## Updating State
+
+State can be updated in response to user interactions or other events:
+
+```jsx
+function handleClick() {
+  setCount(count + 1);
+}
+```
+
+## Performance Optimization
+
+useState can accept a function for lazy initialization, which is useful when the initial state is the result of an expensive computation.
+
+## Conditional Rendering
+
+State variables can be used for conditional rendering, allowing components to display different content based on the current state.
+
+By using useState, React components become more dynamic and interactive, capable of managing their own data and responding to changes over time.
+
+
+15. What are React Hooks used for?
+
+# React hooks
+
+📖 **Recommended reading**: [Reactjs.org - Hooks Overview](https://reactjs.org/docs/hooks-overview.html)
+
+React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already seen one use of hooks to declare and update state in a function component with the `useState` hook.
+
+```jsx
+function Clicker({initialCount}) {
+  const [count, updateCount] = React.useState(initialCount);
+  return <div onClick={() => updateCount(count + 1)}>Click count: {count}</div>;
+}
+
+ReactDOM.render(<Clicker initialCount={3} />, document.getElementById('root'));
+```
+
+## useEffect hook
+
+The `useEffect` hook allows you to represent lifecycle events. For example, if you want to run a function every time the component completes rendering, you could do the following.
+
+```jsx
+function UseEffectHookDemo() {
+  React.useEffect(() => {
+    console.log('rendered');
+  });
+
+  return <div>useEffectExample</div>;
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+You can also take action when the component cleans up by returning a cleanup function from the function registered with `useEffect`. In the following example, every time the component is clicked the state changes and so the component is rerendered. This causes both the cleanup function to be called in addition to the hook function. If the function was not rerendered then only the cleanup function would be called.
+
+```jsx
+function UseEffectHookDemo() {
+  const [count, updateCount] = React.useState(0);
+  React.useEffect(() => {
+    console.log('rendered');
+
+    return function cleanup() {
+      console.log('cleanup');
+    };
+  });
+
+  return <div onClick={() => updateCount(count + 1)}>useEffectExample {count}</div>;
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+This is useful when you want to create side effects for things such as tracking when a component is displayed or hidden, or creating and disposing of resources.
+
+## Hook dependencies
+
+You can control what triggers a `useEffect` hook by specifying its dependencies. In the following example we have two state variables, but we only want the `useEffect` hook to be called when the component is initially called and when the first variable is clicked. To accomplish this you pass an array of dependencies as a second parameter to the `useEffect` call.
+
+```jsx
+function UseEffectHookDemo() {
+  const [count1, updateCount1] = React.useState(0);
+  const [count2, updateCount2] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log(`count1 effect triggered ${count1}`);
+  }, [count1]);
+
+  return (
+    <ol>
+      <li onClick={() => updateCount1(count1 + 1)}>Item 1 - {count1}</li>
+      <li onClick={() => updateCount2(count2 + 1)}>Item 2 - {count2}</li>
+    </ol>
+  );
+}
+
+ReactDOM.render(<UseEffectHookDemo />, document.getElementById('root'));
+```
+
+If you specify an empty array `[]` as the hook dependency then it is only called when the component is first rendered.
+
+Note that hooks can only be used in function style components and must be called at the top scope of the function. That means a hook cannot be called inside of a loop or conditional. This restriction ensures that hooks are always called in the same order when a component is rendered.
+
+16. What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do? https://react.dev/reference/react/hooks
+
+React Hooks are functions that allow you to use various React features in functional components. Here's an overview of the different types of Hooks and their purposes:
+
+## State Hooks
+
+State Hooks allow components to manage and remember information:
+
+- **useState**: Declares a state variable that can be updated directly.
+- **useReducer**: Declares a state variable with update logic inside a reducer function.
+
+These Hooks are useful for storing user input, selected items, or any data that changes over time within a component.
+
+## Context Hooks
+
+Context Hooks facilitate the sharing of data across components without explicit prop passing:
+
+- **useContext**: Reads and subscribes to a context, allowing components to access data from distant parents.
+
+This is particularly useful for sharing global data like themes or user authentication status.
+
+## Ref Hooks
+
+Ref Hooks provide a way to hold information that doesn't affect rendering:
+
+- **useRef**: Declares a ref, typically used to hold DOM nodes or values that persist across renders.
+- **useImperativeHandle**: Customizes the ref exposed by a component (rarely used).
+
+Refs are useful for accessing DOM elements directly or storing values that don't require re-rendering when changed.
+
+## Effect Hooks
+
+Effect Hooks allow components to interact with external systems:
+
+- **useEffect**: Connects a component to external systems, such as APIs, browser DOM, or third-party libraries.
+- **useLayoutEffect**: Fires before browser repaint, useful for DOM measurements.
+- **useInsertionEffect**: Fires before DOM mutations, primarily for CSS-in-JS libraries.
+
+These Hooks are essential for side effects, data fetching, and synchronizing with non-React code.
+
+## Performance Hooks
+
+Performance Hooks help optimize rendering and computation:
+
+- **useMemo**: Caches the result of expensive calculations.
+- **useCallback**: Caches function definitions for optimized child components.
+- **useTransition**: Marks state transitions as non-blocking, allowing other updates to interrupt.
+- **useDeferredValue**: Defers updates to non-critical UI parts, prioritizing more important updates.
+
+These Hooks are crucial for improving application performance by reducing unnecessary re-renders and optimizing expensive operations.
+
+17. Given React Router code, select statements that are true.
+
+Determined by code snippit.
+
+18. What does the package.json file do?
+
+The package.json file is a crucial component of Node.js projects, serving as the heart of any Node.js application. Here's what the package.json file does:
+
+## Project Metadata
+It stores important metadata about the project, including:
+- Name of the project
+- Version number
+- Description
+- Author information
+- License
+
+This metadata helps identify and describe the project, especially when published to the npm registry.
+
+## Dependency Management
+package.json lists all the dependencies required by the project:
+- Production dependencies
+- Development dependencies
+
+This allows npm (Node Package Manager) to install the correct versions of required packages when someone sets up the project.
+
+## Scripts Definition
+It defines various scripts that can be run using npm, such as:
+- Starting the application
+- Running tests
+- Building the project
+
+These scripts streamline development workflows and make project management easier.
+
+## Project Configuration
+package.json can include configuration settings for various tools and libraries used in the project.
+
+## Entry Point Specification
+It specifies the main entry point of the application through the "main" field.
+
+## NPM Publishing
+For packages intended to be published to the npm registry, package.json provides necessary information for distribution and installation.
+
+By centralizing this information, package.json enables developers to quickly understand a project's structure, dependencies, and available commands, facilitating easier project setup, management, and collaboration.
+
+19. What does the fetch function do?
+
+The ability to make HTTP requests from JavaScript is one of the main technologies that changed the web from static content pages (Web 1.0) to one of web applications (Web 2.0) that fully interact with the user. Microsoft introduced the first API for making HTTP requests from JavaScript with the XMLHttpRequest API.
+
+Today, the fetch API is the preferred way to make HTTP requests. The fetch function is built into the browser's JavaScript runtime. This means you can call it from JavaScript code running in a browser.
+
+The basic usage of fetch takes a URL and returns a promise. The promise then function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type application/json you can use the json function on the response object to convert it to a JavaScript object.
+
+20. What does node.js do?
+
+Allow you to run JavaScript on the server.
+
+Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser. Here's what Node.js does:
+
+## Server-Side JavaScript Execution
+Node.js enables developers to use JavaScript for server-side scripting, allowing them to create dynamic web page content before it's sent to the user's browser.
+
+## Asynchronous, Event-Driven Architecture
+Node.js uses a non-blocking, event-driven I/O model, which makes it:
+- Lightweight and efficient for data-intensive real-time applications
+- Capable of handling thousands of concurrent connections with high throughput
+
+## Building Scalable Network Applications
+Node.js excels in creating fast, scalable network applications, particularly those involving:
+- Real-time functionality (e.g., chat applications, online gaming)
+- APIs and microservices
+- Streaming applications
+
+## NPM Ecosystem
+Node.js comes with npm (Node Package Manager), providing access to a vast ecosystem of open-source libraries and tools[8].
+
+## File System Operations
+It allows creating, reading, writing, deleting, and closing files on the server.
+
+## Database Interactions
+Node.js can add, delete, and modify data in databases.
+
+## Performance Optimization
+Built on Chrome's V8 JavaScript engine, Node.js compiles JavaScript to machine code, resulting in fast execution.
+
+## Cross-Platform Development
+Node.js applications can run on various platforms (Windows, macOS, Linux), enabling developers to write code once and run it anywhere.
+
+By leveraging these capabilities, Node.js provides a unified JavaScript environment for full-stack development, making it a popular choice for building modern web applications.
+
+21. What does pm2 do?
+
+When you run a program from the console, the program will automatically terminate when you close the console or if the computer restarts. In order to keep programs running after a shutdown you need to register it as a daemon. The term daemon comes from the idea of something that is always there working in the background. Hopefully you only have good daemons running in your background.
+
+We want our web services to continue running as a daemon. We would also like an easy way to start and stop our services. That is what Process Manager 2 (PM2) does.
+
+PM2 is an advanced process manager for Node.js applications that provides several key features:
+
+## Process Management
+
+- Starts, stops, and restarts Node.js applications easily
+- Manages multiple applications simultaneously
+- Automatically restarts applications if they crash or encounter errors
+
+## Monitoring and Logging
+
+- Offers real-time monitoring of CPU usage, memory consumption, and process uptime
+- Provides centralized logging, allowing developers to view and analyze logs for debugging
+- Includes a terminal-based monitoring interface (pm2 monit)
+
+## Performance Optimization
+
+- Supports cluster mode to utilize multiple CPU cores, improving scalability and performance
+- Enables load balancing across multiple application instances
+
+## Deployment and Updates
+
+- Facilitates zero-downtime reloads for application updates
+- Includes a built-in deployment system for updating applications across multiple machines
+
+## Persistence
+
+- Keeps applications running continuously, even after server restarts
+- Provides startup scripts to automatically restart applications on system reboot
+
+## Ecosystem Configuration
+
+- Allows defining application behavior and environment variables in a configuration file
+
+By providing these features, PM2 helps developers and DevOps teams manage Node.js applications more efficiently, ensuring high availability, improved performance, and easier maintenance in production environments.
+
+22. What does Vite do?
+
+Now that we have covered the basics of React, we want to extend our usage to include a full web framework toolchain that allows us to use JSX, minification, polyfills, and bundling for our Simon and startup applications. One common way for configuring your project to take advantage of these technologies is to use a Command Line Interface (CLI) to initially set up a web application. Using a CLI saves you the trouble of configuring the toolchain parameters and gets you quickly started with a default application.
+
+For our toolchain we are going to use Vite. Vite bundles your code quickly, has great debugging support, and allows you to easily support JSX, TypeScript, and different CSS flavors. To get started with Vite, let's first build a simple web application. Later we will convert Simon over to React using Vite. This will teach you what you need to know in order to move your startup to React.
+
+Vite is a modern, fast JavaScript build tool and development server designed to enhance the frontend development experience. Here's what Vite does:
+
+## Fast Development Server
+
+Vite provides an extremely fast development server that:
+
+- Starts instantly, regardless of application size
+- Uses native ES modules for on-demand file serving
+- Implements hot module replacement (HMR) for near-instantaneous updates during development
+
+## Optimized Build Process
+
+For production builds, Vite:
+
+- Uses Rollup for efficient code bundling
+- Performs tree-shaking to eliminate unused code
+- Implements code splitting for optimized loading
+
+## Dependency Pre-bundling
+
+Vite pre-bundles dependencies using esbuild, which:
+
+- Speeds up the development server startup
+- Improves loading times for dependencies with many small modules
+- Converts CommonJS and UMD modules to ESM for browser compatibility
+
+## Framework Support
+
+Vite offers:
+
+- Out-of-the-box support for popular frameworks like React, Vue, and Svelte
+- An extensive plugin ecosystem for additional functionality and framework support
+
+## Performance Optimization
+
+Vite enhances application performance through:
+
+- Lazy loading of modules
+- Optimized code sizes via tree-shaking and code splitting
+- Fast compilation and hot module replacement
+
+## Developer Experience Improvements
+
+Vite focuses on developer experience (DX) by providing:
+
+- Near-instant feedback loop during development
+- Simplified configuration compared to traditional bundlers
+- Built-in support for TypeScript, CSS pre-processors, and more
+
+By leveraging modern web technologies and innovative build strategies, Vite significantly speeds up the development process and improves the overall efficiency of frontend projects.
+
+</details>
+
 </details>
