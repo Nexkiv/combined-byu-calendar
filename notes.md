@@ -1536,59 +1536,89 @@ The section discussed two elements for creating images within HTML:
 </details>
 
 <details>
-  <summary><h2>Final Review Questions</h2></summary>
+<summary><h2>Final Review Questions</h2></summary>
+
+<details>
+<summary><h4>Kahoot</h4></summary>
+
+1. Port 80 is reserved for?
+HTTP
+
+2. HTTP status codes in the 300 range are for?
+Content redirects or caching
+
+3. Which is NOT a standard HTTP header?
+Language
+
+4. Cookies allow:
+A server to store data on the client
+
+5. For the request [GET] /fav/george what is logged?
+<details>
+<summary>picture</summary>
   
-  <details>
-    <summary><h4>Kahoot</h4></summary>
+![alt Question 5](public/Question_5.jpeg "Question 5")
+</details>
+paul george john
 
-    1. Port 80 is reserved for?
-      HTTP
-
-    2. HTTP status codes in the 300 range are for?
-      Content redirects or caching
-
-    3. Which is NOT a standard HTTP header?
-      Language
-
-    4. Cookies allow:
-      A server to store data on the client
-
-    5. For the request [GET] /fav/george what is logged?
-      paul george john
-
-    6. Which Express middleware will match this fetch request?
-      app.delete(/fav\/(.*)/. () => {})
-
-    7. What document matches this MongoDB query?
-      { name: "Walke", score: -55 }
-
-    8. Why is hashing stored passwords important?
-      It improves security by making the password unreadable
-
-    9. Given the following code what will console.log print?
-      Client:Server:Hello
-
-    10. What value does WebSocket add to HTTP?
-      It is peer to peer instead of client to server.
-
-    11. What is NOT a purpose of JSX?
-      To combine CSS, HTML, and JavaScript
-
-    12. What will component A initially display?
-      tacofish
-
-    13. What component will the URL `/burger` render?
-      B
-
-    14. What does the command "npm install ws" NOT do?
-      Add template code for WebSockets to your JavaScript
-
-    15. You can use fetch in front-end and back-end code.
-      True
-
-    16. Which of the following is NOT true about a Linux daemon?
-      Cannot fork other processes
-      
-  </details>
+6. Which Express middleware will match this fetch request?
+<details>
+<summary>picture</summary>
   
+![alt Question 6](public/Question_6.jpeg "Question 6")
+</details>
+app.delete(/fav\/(.*)/. () => {})
+
+7. What document matches this MongoDB query?
+<details>
+<summary>picture</summary>
+  
+![alt Question 7](public/Question_7.jpeg "Question 7")
+</details>
+{ name: "Walke", score: -55 }
+
+8. Why is hashing stored passwords important?
+It improves security by making the password unreadable
+
+9. Given the following code what will console.log print?
+<details>
+<summary>picture</summary>
+  
+![alt Question 9](public/Question_9.jpeg "Question 9")
+</details>
+Client:Server:Hello
+
+10. What value does WebSocket add to HTTP?
+It is peer to peer instead of client to server.
+
+11. What is NOT a purpose of JSX?
+To combine CSS, HTML, and JavaScript
+
+12. What will component A initially display?
+<details>
+<summary>picture</summary>
+  
+![alt Question 12](public/Question_12.jpeg "Question 12")
+</details>
+tacofish
+
+13. What component will the URL `/burger` render?
+<details>
+<summary>picture</summary>
+  
+![alt Question 13](public/Question_13.jpeg "Question 13")
+</details>
+B
+
+14. What does the command "npm install ws" NOT do?
+Add template code for WebSockets to your JavaScript
+
+15. You can use fetch in front-end and back-end code.
+True
+
+16. Which of the following is NOT true about a Linux daemon?
+Cannot fork other processes
+  
+</details>
+
 </details>
